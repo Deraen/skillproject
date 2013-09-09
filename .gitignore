@@ -1,0 +1,9 @@
+*.swp
+.settings
+.project
+node_modules
+public/components
+dist
+*.sublime-workspace
+.tmp
+.grunt
