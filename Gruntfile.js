@@ -61,9 +61,23 @@ module.exports = function (grunt) {
           '**/*.{html,txt,css,js,svg,png,jpg}',
           '!components/**/*',
           'components/html5shiv/dist/html5shiv.js',
-          'components/font-awesome/font/*'
+          'components/bootstrap/fonts/*'
         ],
         dest: '<%= yeoman.dist %>/'
+      },
+      dist2: {
+        expand: true,
+        src: [
+          'hours.tsv'
+        ],
+        dest: '<%= yeoman.dist %>/'
+      },
+      server: {
+        expand: true,
+        src: [
+          'hours.tsv'
+        ],
+        dest: '.tmp'
       }
     },
     'gh-pages': {
@@ -76,6 +90,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', [
     'less:server',
+    'copy:server',
     'express',
     'open',
     'watch'
@@ -84,7 +99,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'less:dist',
-    'copy:dist'
+    'copy:dist',
+    'copy:dist2'
   ]);
 
   grunt.registerTask('deploy', [

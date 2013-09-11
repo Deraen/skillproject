@@ -41,11 +41,11 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#project">Project</a></li>
-          <li><a href="#techs">Technologies</a></li>
-          <li><a href="#people">Peoples</a></li>
-          <li><a href="#hours">Hour log</a></li>
-          <li><a href="#issues">Issue log</a></li>
+          <li><a href="#project">Projekti</a></li>
+          <li><a href="#techs">Tekniikat</a></li>
+          <li><a href="#people">Henkilöt</a></li>
+          <li><a href="#hours">Tunnit</a></li>
+          <li><a href="#issues">Ongelmat</a></li>
         </ul>
       </div>
     </div>
@@ -55,7 +55,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <h2>PROJECT</h2>
+        <h2>PROJEKTI</h2>
         <div class="col-sm-12">
           <p>
             A thing. A thing that does things.
@@ -72,29 +72,35 @@
   <section>
     <div class="container">
       <div class="row techs">
-        <h2>TECHNOLOGIES</h2>
+        <h2>TEKNIIKAT</h2>
 
-        <div class="col-sm-12">
-          <h3>PROJECT MANAGEMENT</h3>
+        <div class="col-sm-4">
+          <h3>PROJEKTIN HALLINTA</h3>
           <h4>Skrum</h4>
-          <div><img src="https://www.atlassian.com/en/wac/software/jira/productLogo/imageBinary/jira_logo_landing.png" alt=""></div>
-          <div><img src="https://f.cloud.github.com/assets/72919/381606/fffdd290-a5e2-11e2-8099-e1b5d8286da3.jpg" width="400"></div>
-          <div class="irc"># IRC</div>
+          <ul class="techs-list">
+            <li>Jira</li>
+            <li>GitHub</li>
+            <li>IRC</li>
+          </ul>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <h3>BACKEND</h3>
           <h4>Rest</h4>
-          <div class="nodejs"><img src="http://nodejs.org/images/logo.png"></div>
-          <div class="mongodb"><img src="http://media.mongodb.org/logo-mongodb.png" width="217" height="90" alt="mongoDB"></div>
-          <div class="mongoose">Mongoose</div>
+          <ul class="techs-list">
+            <li>NodeJS</li>
+            <li>MongoDB</li>
+            <li>Mongoose</li>
+          </ul>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <h3>FRONTEND</h3>
           <h4>Singlepage app</h4>
-          <div><img class="AngularJS-large" src="http://angularjs.org/img/AngularJS-large.png"></div>
-          <div class="bootstrap">Bootstrap</div>
+          <ul class="techs-list">
+            <li>AngularJS</li>
+            <li>Bootstrap</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -104,7 +110,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <h2>PEOPLES</h2>
+        <h2>HENKILÖT</h2>
         <div class="people">
           <h3>JUSSI TUURINKOSKI</h3>
           <h4>Project manager</h4>
@@ -157,27 +163,22 @@
   </section>
 
   <a name="hours"></a>
-  <section>
+  <section id="hours">
     <div class="container">
       <div class="row">
-        <h2>HOUR LOG</h2>
+        <h2>TUNNIT</h2>
         <div class="col-sm-12">
           <table class="table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Participants</th>
-                <th>Category</th>
-                <th>Duration</th>
+                <th>Päivä</th>
+                <th>Kesto</th>
+                <th>Kategoria</th>
+                <th>Osallisina</th>
+                <th>Kuvaus</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>3.9.2013 18:00</td>
-                <td>Everyone</td>
-                <td><abbr title="Meetings">MEET</abbr></td>
-                <td>1 hours</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -189,7 +190,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <h2>ISSUE LOG</h2>
+        <h2>ONGELMAT</h2>
         <div class="col-sm-12">
           <table class="table">
             <thead>
@@ -201,12 +202,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1.10.2013 18:00</td>
-                <td>&infin;</td>
-                <td>Juho</td>
-                <td>Too much documentation required</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -221,5 +216,9 @@
         </div>
       </div>
   </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+
 </body>
 </html>
