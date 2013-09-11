@@ -1,8 +1,9 @@
 $(function() {
   $("a[href^=http]").attr("target", "_blank");
 
-  $('a[href="' + location.hash + '"]').each(function () {
-    $(this).parent().addClass('active');
+  $('body').scrollspy({
+    offset: 50,
+    target: '.navbar-default'
   });
 
   // Smooth(er) jumping to anchors:
@@ -14,8 +15,6 @@ $(function() {
 
     e.preventDefault();
 
-    $('.navbar-nav li').removeClass('active');
-    el.parent().addClass('active');
     $("html, body").stop().animate({
       scrollTop: target.offset().top
     }, 600, function() {
