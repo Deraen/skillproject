@@ -35,7 +35,7 @@ $(function() {
     'OTH': 'Other'
   };
   var el = $('#hours table tbody');
-  $.get('/hours.tsv', function (data, status) {
+  $.get('hours.tsv', function (data, status) {
     var r = '';
     data.split('\n').forEach(function (line) {
       if (line === '') return;
