@@ -35,35 +35,64 @@ $(function() {
   };
   var users = ['Juho', 'Masi', 'Oskari', 'Niko', 'Taina', 'Jussi'];
 
-  var el = $('#hours table tbody');
+  var el = $('.table-hours tbody');
   var tasks = [];
+  var weeks = {};
+  var totals = {};
   $.get('hours.tsv', function (data, status) {
     data.split('\n').forEach(function (line) {
       if (line === '') return;
 
       var c = line.split('\t');
+      var date = moment(c[0], 'D.M.YYYY');
+
+      var week = date.format('YYYY-w');
+      var participants = c[3].split(',');
+      var duration = c[1];
 
       tasks.push({
-        date: moment(c[0], 'D.M.YYYY'),
-        duration: c[1],
+        date: date,
+        duration: duration,
         category: c[2],
-        participants: c[3].split(','),
+        participants: participants,
         summary: c[4]
+      });
+
+      if (!_.has(weeks, week)) weeks[week] = {};
+
+      participants.forEach(function (user) {
+        totals[user] = (totals[user] || 0) + parseFloat(duration);
+        weeks[week][user] = (weeks[week][user] || 0) + parseFloat(duration);
       });
     });
     displayHours(undefined, undefined, true);
+
+    var r = '';
+    for (var week in weeks) {
+      var d = weeks[week];
+      r += '<tr><td>Viikko ' + week + '</td>';
+      r += '<td>' + d['Juho'] + '</td>';
+      r += '<td>' + d['Jussi'] + '</td>';
+      r += '<td>' + d['Masi'] + '</td>';
+      r += '<td>' + d['Niko'] + '</td>';
+      r += '<td>' + d['Oskari'] + '</td>';
+      r += '<td>' + d['Taina'] + '</td>';
+      r += '</tr>';
+    }
+    $('.table-weeks tbody').html(r);
+    $('.table-weeks tfoot').html('<tr><td>Koko projekti</td><td>' + totals['Juho'] + '</td><td>' + totals['Jussi'] + '</td><td>' + totals['Masi'] + '</td>      <td>' + totals['Niko'] + '</td><td>' + totals['Oskari'] + '</td><td>' + totals['Taina'] + '</td></tr>');
   });
 
   function displayHours(filter, sort, inverse) {
     filter = filter || {};
     sort = sort || 'date';
 
-    $('#hours .sort').removeClass('sort-asc sort-desc').addClass('sort-inactive');
+    $('.table-hours .sort').removeClass('sort-asc sort-desc').addClass('sort-inactive');
     var sorting = 'sort-asc';
     if (inverse) {
       sorting = 'sort-desc';
     }
-    $('#hours .sort[data-sort="' + sort + '"]').removeClass('sort-inactive').addClass(sorting);
+    $('.table-hours .sort[data-sort="' + sort + '"]').removeClass('sort-inactive').addClass(sorting);
 
     tasks = _.sortBy(tasks, sort);
 
@@ -101,13 +130,13 @@ $(function() {
   });
   $('.dropdown-users ul').html(r);
   $('.dropdown-users ul a').bind('click', function (e) {
-    e.preventDefault()
+    e.preventDefault();
     var el = $(this);
     var user = $(this).text();
     displayHours({'participants': user});
   });
 
-  $('#hours .sort').each(function () {
+  $('.table-hours .sort').each(function () {
     var el = $(this);
     var inverse = false;
     el.bind('click', function (e) {
@@ -117,6 +146,6 @@ $(function() {
       inverse = !inverse;
       displayHours(null, sort, inverse);
       return false;
-    })
+    });
   });
 });
