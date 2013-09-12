@@ -84,9 +84,12 @@ $(function() {
 
       var date = task.date.format('D.M.YYYY');
       var participants = task.participants.join(', ');
+      if (task.participants.length === 6) {
+        participants = '<abbr title="' + participants + '">Kaikki</abbr>';
+      }
       var category = '<abbr title="' + categories[task.category] + '">' + task.category + '</abbr>';
 
-      r += '<tr><td>' + date + '</td><td>' + task.duration + 'h</td><td>' + task.category + '</td><td>' + participants + '</td><td>' + task.summary + '</td></tr>';
+      r += '<tr><td>' + date + '</td><td>' + task.duration + 'h</td><td>' + category + '</td><td>' + participants + '</td><td>' + task.summary + '</td></tr>';
     }
     el.html(r);
     $('.table-hours .total-hours').html(totalHours + 'h');
