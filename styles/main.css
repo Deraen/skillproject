@@ -5986,3 +5986,26 @@ h4 {
 a[class^='icon-']:hover {
   text-decoration: none;
 }
+.table-hours thead a:hover {
+  text-decoration: none;
+}
+.table-hours tfoot {
+  background: #eee;
+  font-weight: bold;
+}
+.sort {
+  font-family: 'Glyphicons Halflings';
+  color: #ccc;
+}
+.sort:before {
+  content: "\e114";
+}
+.sort.sort-asc {
+  color: #222;
+}
+.sort.sort-desc {
+  color: #222;
+}
+.sort.sort-desc:before {
+  content: "\e113";
+}
