@@ -3,6 +3,7 @@
 #cron:
 # */5 * * * * /home/juho/skillproject/build.sh
 
+cd /home/juho/skillproject
 git fetch
 git reset --hard origin/master
 
