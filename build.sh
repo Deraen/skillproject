@@ -4,7 +4,7 @@
 # */5 * * * * /home/juho/skillproject/build.sh
 
 git fetch
-git reset --hard origin/hard
+git reset --hard origin/master
 
 git log -1 --format="%H" > newcommit
 
