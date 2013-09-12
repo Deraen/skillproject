@@ -51,7 +51,7 @@ $(function() {
         summary: c[4]
       });
     });
-    displayHours();
+    displayHours(undefined, undefined, true);
   });
 
   function displayHours(filter, sort, inverse) {
