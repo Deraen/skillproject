@@ -5989,7 +5989,7 @@ a[class^='icon-']:hover {
 .table-hours thead a:hover {
   text-decoration: none;
 }
-.table-hours tfoot {
+tfoot {
   background: #eee;
   font-weight: bold;
 }
