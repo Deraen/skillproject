@@ -116,7 +116,7 @@ $(function() {
       if (task.participants.length === 6) {
         participants = '<abbr title="' + participants + '">Kaikki</abbr>';
       }
-      var category = '<abbr title="' + categories[task.category] + '">' + task.category + '</abbr>';
+      var category = '<abbr title="' + task.category + '">' + categories[task.category] + '</abbr>';
 
       r += '<tr><td>' + date + '</td><td>' + task.duration + 'h</td><td>' + category + '</td><td>' + participants + '</td><td>' + task.summary + '</td></tr>';
     }
