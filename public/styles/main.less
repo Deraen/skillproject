@@ -131,3 +131,34 @@ a[class^='icon-'] {
     text-decoration: none;
   }
 }
+
+.table-hours {
+  thead {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  tfoot {
+    background: #eee;
+    font-weight: bold;
+  }
+}
+
+.sort {
+  font-family: 'Glyphicons Halflings';
+  color: #ccc;
+  &:before {
+    content: "\e114";
+  }
+  &.sort-asc {
+    color: #222;
+  }
+  &.sort-desc {
+    &:before {
+      content: "\e113";
+    }
+    color: #222;
+  }
+}

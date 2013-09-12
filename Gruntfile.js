@@ -62,6 +62,8 @@ module.exports = function (grunt) {
           '!components/**/*',
           'components/html5shiv/dist/html5shiv.js',
           'components/bootstrap/js/scrollspy.js',
+          'components/lodash/lodash.js',
+          'components/moment/moment.js',
           'components/bootstrap/fonts/*'
         ],
         dest: '<%= yeoman.dist %>/'

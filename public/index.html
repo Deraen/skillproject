@@ -76,9 +76,9 @@
 
         <div class="col-sm-4">
           <h3>PROJEKTIN HALLINTA</h3>
-          <h4>Skrum</h4>
+          <h4>Kanban?</h4>
           <ul class="techs-list">
-            <li>Jira</li>
+            <li>Agilezen? Trello?</li>
             <li>GitHub</li>
             <li>IRC</li>
           </ul>
@@ -168,18 +168,32 @@
       <div class="row">
         <h2>TUNNIT</h2>
         <div class="col-sm-12">
-          <table class="table">
+          <table class="table table-hours">
             <thead>
               <tr>
-                <th>Päivä</th>
-                <th>Kesto</th>
-                <th>Kategoria</th>
-                <th>Osallisina</th>
+                <th>Päivä <a href="#" class="sort" data-sort="date"></a></th>
+                <th>Kesto <a href="#" class="sort" data-sort="duration"></a></th>
+                <th>Kategoria <a href="#" class="sort" data-sort="category"></a></th>
+                <th>
+                  <div class="dropdown dropdown-users">
+                    <a href="#" data-toggle="dropdown">Osallisina <b class="caret"></b></a>
+                    <ul class="dropdown-menu"></ul>
+                  </div>
+                </th>
                 <th>Kuvaus</th>
               </tr>
             </thead>
             <tbody>
             </tbody>
+            <tfoot>
+              <tr>
+                <td>Yhteensä</td>
+                <td class="total-hours"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -219,6 +233,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script src="components/bootstrap/js/scrollspy.js"></script>
+  <script src="components/bootstrap/js/dropdown.js"></script>
+  <script src="components/lodash/lodash.js"></script>
+  <script src="components/moment/moment.js"></script>
   <script src="scripts/main.js"></script>
 
 </body>
