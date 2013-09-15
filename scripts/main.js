@@ -1,4 +1,10 @@
 $(function() {
+  moment.lang('fi', {
+    week: {
+      dow: 1
+    }
+  });
+
   $("a[href^=http]").attr("target", "_blank");
 
   $('body').scrollspy({
