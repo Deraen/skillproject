@@ -5932,6 +5932,7 @@ section h2 {
   section h2 {
     padding-left: 0;
     margin-bottom: 0;
+    max-width: 200px;
   }
   section .container .row {
     margin-left: 200px;
@@ -6008,4 +6009,10 @@ tfoot {
 }
 .sort.sort-desc:before {
   content: "\e113";
+}
+blockquote {
+  font-style: italic;
+  border-left: 0;
+  padding: 0;
+  margin-bottom: 10px;
 }
