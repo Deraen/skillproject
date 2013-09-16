@@ -11,6 +11,8 @@ git log -1 --format="%H" > newcommit
 
 if diff newcommit prevcommit >/dev/null; then echo "No changes"; exit; fi
 
+mv newcommit prevcommit
+
 npm install
 bower install
 grunt deploy
