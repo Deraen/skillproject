@@ -62,6 +62,7 @@ section {
     h2 {
       padding-left: 0;
       margin-bottom: 0;
+      max-width: 200px;
     }
     .container {
       .row {
@@ -130,4 +131,43 @@ a[class^='icon-'] {
   &:hover {
     text-decoration: none;
   }
+}
+
+.table-hours {
+  thead {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+tfoot {
+  background: #eee;
+  font-weight: bold;
+}
+
+.sort {
+  font-family: 'Glyphicons Halflings';
+  color: #ccc;
+  &:before {
+    content: "\e114";
+  }
+  &.sort-asc {
+    color: #222;
+  }
+  &.sort-desc {
+    &:before {
+      content: "\e113";
+    }
+    color: #222;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 0;
+  padding: 0;
+  margin-bottom: 10px;
 }
