@@ -1,6 +1,3 @@
-(function (undefined) {
-'use strict';
-
 var categories = {
   'DOC': 'Documentation',
   'REQ': 'Requirements',
@@ -148,5 +145,3 @@ $(function() {
     });
   });
 });
-
-})();
