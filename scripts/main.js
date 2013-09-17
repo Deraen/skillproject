@@ -1,6 +1,3 @@
-(function (undefined) {
-'use strict';
-
 var categories = {
   'DOC': 'Documentation',
   'REQ': 'Requirements',
@@ -34,12 +31,12 @@ function displayHours(filter, sort, inverse) {
   filter = filter || {};
   sort = sort || 'date';
 
+  var sorting = inverse ? 'sort-desc' : 'sort-asc';
+  var foreach = inverse ? _.eachRight : _.each;
+
   $('.table-hours .sort').removeClass('sort-asc sort-desc').addClass('sort-inactive');
-  var sorting = 'sort-asc';
-  if (inverse) {
-    sorting = 'sort-desc';
-  }
   $('.table-hours .sort[data-sort="' + sort + '"]').removeClass('sort-inactive').addClass(sorting);
+
 
   var filtered = _.filter(tasks, function (task) {
     return !filter.participants || _.indexOf(task.participants, filter.participants) !== -1;
@@ -48,13 +45,13 @@ function displayHours(filter, sort, inverse) {
   var sorted = _.sortBy(filtered, sort);
 
   $('.table-hours tbody').html(_.template(
-    '<% _.each(sorted, function (task) { %><tr>' +
+    '<% foreach(sorted, function (task) { %><tr>' +
     '<td><%= task.date.format(\'D.M.YYYY\') %></td>' +
     '<td><%= task.duration %>h</td>' +
     '<td><abbr title="<%= task.category %>"><%= categories[task.category] %></abbr></td>' +
     '<td><% if (task.participants.length === users.length) { %><abbr title="<%= task.participants %>">Kaikki</abbr><% } else { %><%= task.participants %><% } %></td>' +
     '<td><%= task.summary %></td>' +
-    '</tr><% }); %>', {sorted: sorted, categories: categories, users: users}));
+    '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
 
   var total = _.reduce(tasks, function (result, task) {
     return result + task.duration;
@@ -138,7 +135,7 @@ $(function() {
   displayUsers();
 
   $('.table-hours .sort').each(function () {
-    var inverse = false;
+    var inverse = true;
     $(this).bind('click', function (e) {
       e.preventDefault();
 
@@ -148,5 +145,3 @@ $(function() {
     });
   });
 });
-
-})();
