@@ -53,7 +53,7 @@ function displayHours(filter, sort, inverse) {
     '<td><%= task.summary %></td>' +
     '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
 
-  var total = _.reduce(tasks, function (result, task) {
+  var total = _.reduce(filtered, function (result, task) {
     return result + task.duration;
   }, 0);
   $('.table-hours .total-hours').html(_.template('<%= total %>h', {total: total}));
