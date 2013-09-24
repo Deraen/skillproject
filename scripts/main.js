@@ -13,18 +13,29 @@ var users = ['Juho', 'Jussi', 'Masi', 'Niko', 'Oskari', 'Taina'];
 var tasks = [];
 var weeks = {};
 var totals = {};
+var hoursByCat = {};
 
 function displayWeeks() {
-  $('.table-weeks tbody').html(_.template(
+  var el = $('.table-weeks').html('');
+
+  $('<thead>').html(_.template('<tr><th>Viikot</th><% _.each(users, function (name) { %><th><%= name %></th><% }); %></tr>', {users: users})).appendTo(el);
+
+  $('<tbody>').html(_.template(
     '<% _.each(weeks, function (week) { %><tr>' +
     '<td>Viikko <%= week[0] %></td>' +
     '<% _.each(users, function (name) { %><td><%= (week[1][name] || 0) %></td><% }); %>' +
-    '</tr><% }); %>', {weeks: _.sortBy(_.pairs(weeks), 0), users: users}));
+    '</tr><% }); %>', {weeks: _.sortBy(_.pairs(weeks), 0), users: users})).appendTo(el);
 
-  $('.table-weeks tfoot').html(_.template(
+  $('<tfoot>').html(_.template(
     '<tr><td>Koko projekti</td>' +
     '<% _.each(users, function (name) { %><td><%= totals[name] %></td><% }); %>' +
-    '</tr>', {totals: totals, users: users}));
+    '</tr>', {totals: totals, users: users})).appendTo(el);
+}
+
+function displayCategories() {
+  var el = $('.table-categories').html('');
+  $('<thead>').html(_.template('<tr><th>Kategoriat</th><% _.each(_.pairs(hoursByCat), function (c) { %><th><%= c[0] %></th><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
+  $('<tbody>').html(_.template('<tr><td></td><% _.each(_.pairs(hoursByCat), function (c) { %><td><%= c[1] %></td><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
 }
 
 function displayHours(filter, sort, inverse) {
@@ -54,7 +65,7 @@ function displayHours(filter, sort, inverse) {
     '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
 
   var total = _.reduce(filtered, function (result, task) {
-    return result + task.duration;
+    return result + (task.duration * task.participants.length);
   }, 0);
   $('.table-hours .total-hours').html(_.template('<%= total %>h', {total: total}));
 }
@@ -128,8 +139,14 @@ $(function() {
       return result;
     }, {});
 
+    hoursByCat = _.reduce(tasks, function (result, task, key) {
+      result[task.category] = (result[task.category] || 0) + (task.duration * task.participants.length);
+      return result;
+    }, {});
+
     displayHours(undefined, undefined, true);
     displayWeeks();
+    displayCategories();
   });
 
   displayUsers();
