@@ -12,7 +12,7 @@ Käytännön asioita
     uusia osaamisia. Mahdollisesti LinkedIn-importtaus.
 
 #### Järjestelmässä on autentikointi.
-  - Sisäinen autentikaatio, myöhemmin integrointi jos mahdollista.
+  - Sisäinen autentikaatio.
 
 #### Osaamisesta pitää olla määriteltävissa osaamisen taso (miten? kokemus kuukausina? tms?) ja osaamisen tasoja on voitava päivittää.
   - Oma mielipide omasta osaamisesta 1-5, Oma kiinnostus 1-5?, kokemus
