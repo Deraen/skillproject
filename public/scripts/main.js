@@ -15,6 +15,8 @@ var weeks = {};
 var totals = {};
 var hoursByCat = {};
 
+var questions = {};
+
 function displayWeeks() {
   var el = $('.table-weeks').html('');
 
@@ -79,6 +81,16 @@ function displayUsers() {
   });
 }
 
+function displayQuestions() {
+  $('.table-questions tbody').html(_.template(
+    '<% _.each(_.pairs(questions), function (q) { %><tr>' +
+    '<td class="id"><%= q[0] %></td>' +
+    '<td><strong>Kysymys:</strong> <%= q[1].question %>' +
+    '<% if (q[1].answer) { %><strong>Vastaus:</strong> <%= q[1].answer %><% } %></td>' +
+    '</tr><% }); %>'
+  ));
+}
+
 $(function() {
   $("a[href^=http]").attr("target", "_blank");
 
@@ -102,13 +114,15 @@ $(function() {
     });
     return false;
   });
+  function notEmptyLine(line) {
+    return line !== '';
+  }
 
   $.get('hours.tsv', function (data, status) {
-    var lines = _.filter(data.split('\n'), function (line) {
-      return line !== '';
-    });
+    var lines = _.filter(data.split('\n'), notEmptyLine);
 
     tasks = _.map(lines, function (line) {
+      console.log(line);
       var c = line.split('\t');
       return {
         date: moment(c[0], 'D.M.YYYY'),
@@ -147,6 +161,31 @@ $(function() {
     displayHours(undefined, undefined, true);
     displayWeeks();
     displayCategories();
+  });
+
+  $.get('questions.tsv', function (data) {
+    var lines = _.filter(data.split('\n'), notEmptyLine);
+    var raw = _.map(lines, function (line) {
+      var c = line.split('\t');
+      return {
+        type: c[0],
+        id: c[1],
+        text: c[2]
+      };
+    });
+
+    questions = _.reduce(raw, function (result, val) {
+      if (!_.has(result, val.id)) result[val.id] = {};
+
+      if (val.type === 'ask') {
+        result[val.id].question = val.text;
+      } else if (val.type === 'ans') {
+        result[val.id].answer = val.text;
+      }
+      return result;
+    }, {});
+
+    displayQuestions();
   });
 
   displayUsers();

@@ -45,7 +45,7 @@
           <li><a href="#techs">Tekniikat</a></li>
           <li><a href="#people">Henkilöt</a></li>
           <li><a href="#hours">Tunnit</a></li>
-          <li><a href="#issues">Ongelmat</a></li>
+          <li><a href="#questions">Kysymykset</a></li>
           <li><a href="#highlights">Project Highlights</a></li>
         </ul>
       </div>
@@ -77,9 +77,9 @@
 
         <div class="col-sm-4">
           <h3>PROJEKTIN HALLINTA</h3>
-          <h4>Kanban?</h4>
+          <h4>Kanban</h4>
           <ul class="techs-list">
-            <li>Agilezen? Trello?</li>
+            <li>Agilezen</li>
             <li>GitHub</li>
             <li>IRC</li>
           </ul>
@@ -211,19 +211,21 @@
     </div>
   </section>
 
-  <a name="issues"></a>
-  <section id="issues">
+  <a name="questions"></a>
+  <section id="questions">
     <div class="container">
       <div class="row">
-        <h2>ONGELMAT</h2>
+        <h2>KYSYMYKSET</h2>
         <div class="col-sm-12">
-          <table class="table">
+          <ul class="nav nav-tabs questions-filters">
+            <li class="active"><a href="#" data-filter="open">Avoimet</a></li>
+            <li><a href="#" data-filter="all">Kaikki</a></li>
+          </ul>
+          <table class="table table-questions">
             <thead>
               <tr>
-                <th>Date raised</th>
-                <th>Date solved</th>
-                <th>Participants</th>
-                <th>Summary</th>
+                <th>ID</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>

@@ -79,7 +79,7 @@ module.exports = function (grunt) {
       server: {
         expand: true,
         src: [
-          'hours.tsv'
+          '*.tsv'
         ],
         dest: '.tmp'
       }
