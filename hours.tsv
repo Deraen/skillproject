@@ -5,11 +5,60 @@
 10.9.2013	2	OTH	Juho	Tuntiseuranta ircbotin rakentaminen.
 12.9.2013	1	MEET	Niko,Juho,Masi,Oskari,Taina,Jussi	Kickoff meetti.
 27.8.2013	2	TEA	Taina,Oskari,Jussi,Masi,Niko	Avausluento
-3.9.2013	2	TEA	Taina,Oskari,Jussi,Masi,Niko,Juho	Luento 
-10.9.2013	2	TEA	Taina,Oskari,Jussi,Masi,Niko,Juho	Luento 
+3.9.2013	2	TEA	Taina,Oskari,Jussi,Masi,Niko,Juho	Luento
+10.9.2013	2	TEA	Taina,Oskari,Jussi,Masi,Niko,Juho	Luento
 10.09.2013	2	OTH	Oskari	AngularJS tutoriaalit
 15.9.2013	1	OTH	Oskari	AngularJS opiskelu
 15.9.2013	5	OTH	Taina	Osaamisartikkeleja
-15.9.2013	1	OTH	Jussi	Project highlights ja sivustop�ivityst�
+15.9.2013	1	OTH	Jussi	Project highlights ja sivustopäivitystä
 15.9.2013	0	OTH	Juho	testäääöööö
 16.9.2013	2	IMP	Niko	Projektin pohjan luonti.
+16.9.2013	1.5	MEET	Juho,Niko,Taina,Jussi,Oskari,Masi	Esityksen valmistelu.
+16.9.2013	0.5	DOC	Oskari	Todella korkean tason kuva draw.io:lla tehtynä
+16.9.2013	1	OTH	Jussi	AngularJS opiskelua
+17.9.2013	2	OTH	Niko	Expressin ja Mongon opettelua.
+16.9.2013	1.5	DOC	Jussi	Esityksen valmistelu
+17.9.2013	1.5	MEET	Juho,Niko,Taina,Jussi,Oskari,Masi	Tapaaminen Goforella.
+16.9.2013	3	DES	Masi	Käyttöliittymän paperiprototyyppien suunnittelua.
+17.9.2013	2	TEA	Juho,Niko,Taina,Jussi,Oskari,Masi	Ensimmäiset työpajat.
+17.9.2013	2	TEA	Juho,Niko,Taina,Jussi,Oskari,Masi	Työkalujen käytön läpikäyntiä.
+18.9.2013	2	OTH	Juho	Lodash-kirjastoon tutustuminen hyödyntämällä sitä ryhmän verkkosivuilla ja ircbotissa
+20.9.2013	2	DOC	Oskari,Taina,Jussi	Projektisuunnitelman luvut 1-3 aluilleen
+20.9.2013	3	IMP	Niko,Juho	Käyttäjän hallinta backendiin parikoodauksena.
+20.9.2013	1.5	IMP	Niko,Juho	Authentikaation hiominen
+21.9.2013	2.5	IMP	Juho	AngularJS yhdistäminen projektiin.
+21.9.2013	2.5	IMP	Niko	Taidot lisätty ja käyttäjille assosiaatiot niihin
+21.9.2013	1	IMP	Niko	logout lisätty ja authentikaatio korjattu
+22.9.2013	1.5	DOC	Oskari	projektihallinnan opiskelua projektisuunnitelmaa varten
+19.9.2013	1	OTH	Jussi	Työkalujen asennusta
+19.9.2013	1	DOC	Jussi	Projektisuunnitelman rungon läpikäyntiä
+23.9.2013	1.5	DOC	Oskari,Jussi	Projektisuunnitelman päivittäminen
+24.9.2013	1.5	DOC	Taina	Projektisuunnitelmaa, löhinnö riskejö
+24.9.2013	2	TEA	Oskari,Taina,Masi,Niko,Juho	vierailuluento
+24.9.2013	1.5	MEET	Juho,Niko,Taina,Jussi,Oskari,Masi	viikkopalaveri
+25.9.2013	1	IMP	Niko	Tuki istunnon uudistamiselle backendiin.
+24.9.2013	2	DOC	Jussi	Projektisuunnitelma
+25.9.2013	0.5	IMP	Niko	backendin koodin refaktorointi
+25.9.2013	3	IMP	Juho	Authentikaation pohja Angulariin.
+25.9.2013	0.5	OTH	Jussi,Juho	Backlog suunnittelua.
+25.9.2013	1	IMP	Masi,Juho	Parikoodattiin profiilisivua.
+26.9.2013	2	IMP	Oskari,Niko	Skillin parikooda
+26.9.2013	0.5	MEET	Oskari,Niko	Toteutuksen suunnittelua
+26.9.2013	2	MEET	Oskari,Niko	Käyttäjän taitojen muokkaus \"toteutettu\".
+26.9.2013	2	DOC	Jussi	Projektisuunnitelman tekoa
+27.9.2013	4	DOC	Jussi	Projektisuunnitelman tekoa
+27.9.2013	1	IMP	Niko	Mongoosen ihmettelyä
+28.9.2013	1	IMP	Niko	User skills toimintakunnossa
+29.9.2013	2	TEA	Niko	Angularin opettelua ja testaamista
+29.9.2013	2	IMP	Niko	Käyttöliittymään lisätty taidot
+29.9.2013	1.5	IMP	Oskari	Käyttöliittymään lisätty taidon lisääminen
+29.9.2013	2	OTH	Taina	Tekniikoiden opettelua
+30.9.2013	2	OTH	Oskari	mongon ja mongoosen opettelua ja sklillien testaamista
+30.9.2013	2	IMP	Oskari,Niko	Taitojen listaus näkymät
+30.9.2013	1	DES	Oskari,Niko	Userskillien suunnittelua
+30.9.2013	3	OTH	Juho	Kysymys ominaisuus irc bottiin ja sivuille.
+30.9.2013	3.5	OTH	Taina	Perusteiden opettelua
+30.9.2013	1	IMP	Niko	UserSkillien refaktorointi
+30.9.2013	0.1	OTH	Juho	testi
+30.9.2013	3	IMP	Juho,Taina	Populate ominaisuus, parikoodausta
+30.9.2013	3	IMP	Masi	Fronttia

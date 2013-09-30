@@ -1,10 +1,97 @@
-$(function() {
-  moment.lang('fi', {
-    week: {
-      dow: 1
-    }
+var categories = {
+  'DOC': 'Documentation',
+  'REQ': 'Requirements',
+  'DES': 'Design',
+  'IMP': 'Implementation',
+  'TEST': 'Testing',
+  'MEET': 'Meetings',
+  'TEA': 'Teaching',
+  'OTH': 'Other'
+};
+var users = ['Juho', 'Jussi', 'Masi', 'Niko', 'Oskari', 'Taina'];
+
+var tasks = [];
+var weeks = {};
+var totals = {};
+var hoursByCat = {};
+
+var questions = {};
+
+function displayWeeks() {
+  var el = $('.table-weeks').html('');
+
+  $('<thead>').html(_.template('<tr><th>Viikot</th><% _.each(users, function (name) { %><th><%= name %></th><% }); %></tr>', {users: users})).appendTo(el);
+
+  $('<tbody>').html(_.template(
+    '<% _.each(weeks, function (week) { %><tr>' +
+    '<td>Viikko <%= week[0] %></td>' +
+    '<% _.each(users, function (name) { %><td><%= (week[1][name] || 0) %></td><% }); %>' +
+    '</tr><% }); %>', {weeks: _.sortBy(_.pairs(weeks), 0), users: users})).appendTo(el);
+
+  $('<tfoot>').html(_.template(
+    '<tr><td>Koko projekti</td>' +
+    '<% _.each(users, function (name) { %><td><%= totals[name] %></td><% }); %>' +
+    '</tr>', {totals: totals, users: users})).appendTo(el);
+}
+
+function displayCategories() {
+  var el = $('.table-categories').html('');
+  $('<thead>').html(_.template('<tr><th>Kategoriat</th><% _.each(_.pairs(hoursByCat), function (c) { %><th><%= c[0] %></th><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
+  $('<tbody>').html(_.template('<tr><td></td><% _.each(_.pairs(hoursByCat), function (c) { %><td><%= c[1] %></td><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
+}
+
+function displayHours(filter, sort, inverse) {
+  filter = filter || {};
+  sort = sort || 'date';
+
+  var sorting = inverse ? 'sort-desc' : 'sort-asc';
+  var foreach = inverse ? _.eachRight : _.each;
+
+  $('.table-hours .sort').removeClass('sort-asc sort-desc').addClass('sort-inactive');
+  $('.table-hours .sort[data-sort="' + sort + '"]').removeClass('sort-inactive').addClass(sorting);
+
+
+  var filtered = _.filter(tasks, function (task) {
+    return !filter.participants || _.indexOf(task.participants, filter.participants) !== -1;
   });
 
+  var sorted = _.sortBy(filtered, sort);
+
+  $('.table-hours tbody').html(_.template(
+    '<% foreach(sorted, function (task) { %><tr>' +
+    '<td><%= task.date.format(\'D.M.YYYY\') %></td>' +
+    '<td><%= task.duration %>h</td>' +
+    '<td><abbr title="<%= task.category %>"><%= categories[task.category] %></abbr></td>' +
+    '<td><% if (task.participants.length === users.length) { %><abbr title="<%= task.participants %>">Kaikki</abbr><% } else { %><%= task.participants %><% } %></td>' +
+    '<td><%= task.summary %></td>' +
+    '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
+
+  var total = _.reduce(filtered, function (result, task) {
+    return result + (task.duration * task.participants.length);
+  }, 0);
+  $('.table-hours .total-hours').html(_.template('<%= total %>h', {total: total}));
+}
+
+function displayUsers() {
+  $('.dropdown-users ul').html(_.template('<% _.each(users, function (name) { %><li><a href="#"><%= name %></a></li><% }); %>', {users: users}));
+
+  $('.dropdown-users ul a').bind('click', function (e) {
+    e.preventDefault();
+    displayHours({'participants': $(this).text()});
+  });
+}
+
+function displayQuestions() {
+  $('.table-questions tbody').html(_.template(
+    '<% _.each(_.pairs(questions), function (q) { %><tr>' +
+    '<td class="id"><%= q[0] %></td>' +
+    '<td><strong>Kysymys:</strong> <%= q[1].question %>' +
+    '<% if (q[1].answer) { %><strong>Vastaus:</strong> <%= q[1].answer %><% } %></td>' +
+    '</tr><% }); %>'
+  ));
+}
+
+$(function() {
   $("a[href^=http]").attr("target", "_blank");
 
   $('body').scrollspy({
@@ -14,8 +101,7 @@ $(function() {
 
   // Smooth(er) jumping to anchors:
   $("a[href*=#]").bind("click", function(e) {
-    var el = $(this);
-    var t = el.attr("href");
+    var t = $(this).attr("href");
     var target = $('a[name="' + t.substr(1) + '"]');
     if (target.length === 0) return true;
 
@@ -28,129 +114,89 @@ $(function() {
     });
     return false;
   });
-
-  var categories = {
-    'DOC': 'Documentation',
-    'REQ': 'Requirements',
-    'DES': 'Design',
-    'IMP': 'Implementation',
-    'TEST': 'Testing',
-    'MEET': 'Meetings',
-    'TEA': 'Teaching',
-    'OTH': 'Other'
-  };
-  var users = ['Juho', 'Masi', 'Oskari', 'Niko', 'Taina', 'Jussi'];
-
-  var el = $('.table-hours tbody');
-  var tasks = [];
-  var weeks = {};
-  var totals = {};
-  $.get('hours.tsv', function (data, status) {
-    data.split('\n').forEach(function (line) {
-      if (line === '') return;
-
-      var c = line.split('\t');
-      var date = moment(c[0], 'D.M.YYYY');
-
-      var week = date.format('YYYY-w');
-      var participants = c[3].split(',');
-      var duration = c[1];
-
-      tasks.push({
-        date: date,
-        duration: duration,
-        category: c[2],
-        participants: participants,
-        summary: c[4]
-      });
-
-      if (!_.has(weeks, week)) weeks[week] = {};
-
-      participants.forEach(function (user) {
-        totals[user] = (totals[user] || 0) + parseFloat(duration);
-        weeks[week][user] = (weeks[week][user] || 0) + parseFloat(duration);
-      });
-    });
-    displayHours(undefined, undefined, true);
-
-    var r = '';
-    for (var week in weeks) {
-      var d = weeks[week];
-      r += '<tr><td>Viikko ' + week + '</td>';
-      r += '<td>' + d['Juho'] + '</td>';
-      r += '<td>' + d['Jussi'] + '</td>';
-      r += '<td>' + d['Masi'] + '</td>';
-      r += '<td>' + d['Niko'] + '</td>';
-      r += '<td>' + d['Oskari'] + '</td>';
-      r += '<td>' + d['Taina'] + '</td>';
-      r += '</tr>';
-    }
-    $('.table-weeks tbody').html(r);
-    $('.table-weeks tfoot').html('<tr><td>Koko projekti</td><td>' + totals['Juho'] + '</td><td>' + totals['Jussi'] + '</td><td>' + totals['Masi'] + '</td>      <td>' + totals['Niko'] + '</td><td>' + totals['Oskari'] + '</td><td>' + totals['Taina'] + '</td></tr>');
-  });
-
-  function displayHours(filter, sort, inverse) {
-    filter = filter || {};
-    sort = sort || 'date';
-
-    $('.table-hours .sort').removeClass('sort-asc sort-desc').addClass('sort-inactive');
-    var sorting = 'sort-asc';
-    if (inverse) {
-      sorting = 'sort-desc';
-    }
-    $('.table-hours .sort[data-sort="' + sort + '"]').removeClass('sort-inactive').addClass(sorting);
-
-    tasks = _.sortBy(tasks, sort);
-
-    var totalHours = 0;
-    var r = '';
-    for (var i = 0; i < tasks.length; ++i) {
-      var task = tasks[i];
-      if (inverse) {
-        task = tasks[tasks.length - i - 1];
-      }
-      if (filter.participants) {
-        if (_.indexOf(task.participants, filter.participants) === -1) {
-          continue;
-        }
-      }
-
-      totalHours += parseFloat(task.duration);
-
-      var date = task.date.format('D.M.YYYY');
-      var participants = task.participants.join(', ');
-      if (task.participants.length === 6) {
-        participants = '<abbr title="' + participants + '">Kaikki</abbr>';
-      }
-      var category = '<abbr title="' + task.category + '">' + categories[task.category] + '</abbr>';
-
-      r += '<tr><td>' + date + '</td><td>' + task.duration + 'h</td><td>' + category + '</td><td>' + participants + '</td><td>' + task.summary + '</td></tr>';
-    }
-    el.html(r);
-    $('.table-hours .total-hours').html(totalHours + 'h');
+  function notEmptyLine(line) {
+    return line !== '';
   }
 
-  var r = '';
-  users.forEach(function (user) {
-    r += '<li><a href="#">' + user + '</a></li>';
-  });
-  $('.dropdown-users ul').html(r);
-  $('.dropdown-users ul a').bind('click', function (e) {
-    e.preventDefault();
-    var el = $(this);
-    var user = $(this).text();
-    displayHours({'participants': user});
+  $.get('hours.tsv', function (data, status) {
+    var lines = _.filter(data.split('\n'), notEmptyLine);
+
+    tasks = _.map(lines, function (line) {
+      console.log(line);
+      var c = line.split('\t');
+      return {
+        date: moment(c[0], 'D.M.YYYY'),
+        duration: parseFloat(c[1]),
+        category: c[2],
+        participants: c[3].split(','),
+        summary: c[4]
+      };
+    });
+
+    weeks = _.reduce(tasks, function (result, task, key) {
+      var week = task.date.format('YYYY-W');
+
+      if (!_.has(result, week)) result[week] = {};
+
+      _.each(task.participants, function (name) {
+        result[week][name] = (result[week][name] || 0) + task.duration;
+      });
+
+      return result;
+    }, {});
+
+    totals = _.reduce(tasks, function (result, task, key) {
+      _.each(task.participants, function (name) {
+        result[name] = (result[name] || 0) + task.duration;
+      });
+
+      return result;
+    }, {});
+
+    hoursByCat = _.reduce(tasks, function (result, task, key) {
+      result[task.category] = (result[task.category] || 0) + (task.duration * task.participants.length);
+      return result;
+    }, {});
+
+    displayHours(undefined, undefined, true);
+    displayWeeks();
+    displayCategories();
   });
 
+  $.get('questions.tsv', function (data) {
+    var lines = _.filter(data.split('\n'), notEmptyLine);
+    var raw = _.map(lines, function (line) {
+      var c = line.split('\t');
+      return {
+        type: c[0],
+        id: c[1],
+        text: c[2]
+      };
+    });
+
+    questions = _.reduce(raw, function (result, val) {
+      if (!_.has(result, val.id)) result[val.id] = {};
+
+      if (val.type === 'ask') {
+        result[val.id].question = val.text;
+      } else if (val.type === 'ans') {
+        result[val.id].answer = val.text;
+      }
+      return result;
+    }, {});
+
+    displayQuestions();
+  });
+
+  displayUsers();
+
   $('.table-hours .sort').each(function () {
-    var el = $(this);
-    var inverse = false;
-    el.bind('click', function (e) {
+    var inverse = true;
+    $(this).bind('click', function (e) {
       e.preventDefault();
-      var sort = $(this).data('sort');
-      console.log(sort, inverse);
+
       inverse = !inverse;
-      displayHours(null, sort, inverse);
+      displayHours(null, $(this).data('sort'), inverse);
       return false;
     });
   });
