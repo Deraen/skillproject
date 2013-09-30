@@ -1,5 +1,2 @@
 ask	1	Pitäisikö taitojen kategoriat korvata tageilla
-ask	1	onko tänään hyvä fiilis?
-ans	on tänään hyvä fiilis!ask	NaN	onko tänään hyvä fiilis?
-ask	2	onko tänään hyvä fiilis?
-ans	on tänään hyvä fiilis!ask	3	Kuka vois hoitaa graafikon hommia?
+ask	3	Kuka vois hoitaa graafikon hommia?
