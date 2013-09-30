@@ -72,7 +72,7 @@ module.exports = function (grunt) {
       dist2: {
         expand: true,
         src: [
-          'hours.tsv'
+          '*.tsv'
         ],
         dest: '<%= yeoman.dist %>/'
       },
