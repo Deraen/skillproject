@@ -4,3 +4,4 @@ ask	3	Minkä näköinen listaus tehdään taidoille käyttäjän profiilisivulle
 ask	4	Minkä näköinen listaus tehdään taidoille käyttäjän profiilisivulle?
 ask	5	Onko tämä seittemän?
 ans	1	Kyllä
+ans	3	Ei.
