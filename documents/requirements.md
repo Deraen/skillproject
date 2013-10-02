@@ -175,7 +175,7 @@ In this Chapter you will describe the quality requirements of your product and t
 
 
 # Avoimet kysymykset
-- tähän jotain avoimia kysymyksiä ajan mittaan
+- lisensointi
 
 Are there things that still need to be checked with the customer? Functional requirements that are at status “maybe”? Things depending on user studies?
 
