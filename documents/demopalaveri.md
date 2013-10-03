@@ -1,0 +1,28 @@
+# Palaveri, 3.10.2013
+
+- Kokemuksen taso myös kk, ehkä niin että voi käsin syöttää projektin/taidon yhteyteen (ei toimi luotettavasti autom. projektin kestosta varmaan)
+- Kokemukset /kommentit, liittyen taitoon/taitoihin ja projektiin
+- http://sijinjoseph.com/programmer-competency-matrix/
+- Henkilön vapaa kuvaus (profiiliin)
+- Koulutus/certificaatit/irralliset kurssit
+  - Yhteys henkilön taitoon ja kurssiin tms
+    - "Taidon referenssi"
+- CV generointi
+  - ennen pdf tulostusta joku muokkaus (ilman että muokkaukset jää talteen)
+    - taitojen "pyöristys"
+    - kuvauksen hionta
+    - jatkokehitys: (ei kovin tärkeä) muokatuista cv snapshotit
+      - käyttäjä tallentaa pdf itselleen siltä varalta että tarvii cv  uudelleen
+- osaamisen tavoite (kehityskeskustelu, ensivuonna tätä voisi osata paremmin)
+  - tavoitteena olla mukana x projektissa
+  - tavoiteena käydä kurssilla
+  - voisi olla avoin kenttä
+  - tavoitteet monesti luokkaa "pyritään hankkimaan lisää osaamista backend tekniikoista"
+- tavoitteet firman tasolle (jatkokehitys?)
+  - tarvittaisiin jatkossa 50 php osaajaa
+  - 3v päästä tehdään asiaa x
+- projekti-käyttäjä
+  - kokemus automaattisesti
+    - projektin alusta / siitä kun henkilö liittyi projektiin
+  - tai aikaväli käsin
+  - tai kesto käsin

@@ -13,18 +13,31 @@ var users = ['Juho', 'Jussi', 'Masi', 'Niko', 'Oskari', 'Taina'];
 var tasks = [];
 var weeks = {};
 var totals = {};
+var hoursByCat = {};
+
+var questions = {};
 
 function displayWeeks() {
-  $('.table-weeks tbody').html(_.template(
+  var el = $('.table-weeks').html('');
+
+  $('<thead>').html(_.template('<tr><th>Viikot</th><% _.each(users, function (name) { %><th><%= name %></th><% }); %></tr>', {users: users})).appendTo(el);
+
+  $('<tbody>').html(_.template(
     '<% _.each(weeks, function (week) { %><tr>' +
     '<td>Viikko <%= week[0] %></td>' +
     '<% _.each(users, function (name) { %><td><%= (week[1][name] || 0) %></td><% }); %>' +
-    '</tr><% }); %>', {weeks: _.sortBy(_.pairs(weeks), 0), users: users}));
+    '</tr><% }); %>', {weeks: _.sortBy(_.pairs(weeks), 0), users: users})).appendTo(el);
 
-  $('.table-weeks tfoot').html(_.template(
+  $('<tfoot>').html(_.template(
     '<tr><td>Koko projekti</td>' +
     '<% _.each(users, function (name) { %><td><%= totals[name] %></td><% }); %>' +
-    '</tr>', {totals: totals, users: users}));
+    '</tr>', {totals: totals, users: users})).appendTo(el);
+}
+
+function displayCategories() {
+  var el = $('.table-categories').html('');
+  $('<thead>').html(_.template('<tr><th>Kategoriat</th><% _.each(_.pairs(hoursByCat), function (c) { %><th><%= c[0] %></th><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
+  $('<tbody>').html(_.template('<tr><td></td><% _.each(_.pairs(hoursByCat), function (c) { %><td><%= c[1] %></td><% }); %></tr>', {hoursByCat: hoursByCat})).appendTo(el);
 }
 
 function displayHours(filter, sort, inverse) {
@@ -54,7 +67,7 @@ function displayHours(filter, sort, inverse) {
     '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
 
   var total = _.reduce(filtered, function (result, task) {
-    return result + task.duration;
+    return result + (task.duration * task.participants.length);
   }, 0);
   $('.table-hours .total-hours').html(_.template('<%= total %>h', {total: total}));
 }
@@ -66,6 +79,16 @@ function displayUsers() {
     e.preventDefault();
     displayHours({'participants': $(this).text()});
   });
+}
+
+function displayQuestions() {
+  $('.table-questions tbody').html(_.template(
+    '<% _.each(_.pairs(questions), function (q) { %><tr>' +
+    '<td class="id"><%= q[0] %></td>' +
+    '<td><strong>Kysymys:</strong> <%= q[1].question %>' +
+    '<% if (q[1].answer) { %><strong>Vastaus:</strong> <%= q[1].answer %><% } %></td>' +
+    '</tr><% }); %>'
+  ));
 }
 
 $(function() {
@@ -91,13 +114,15 @@ $(function() {
     });
     return false;
   });
+  function notEmptyLine(line) {
+    return line !== '';
+  }
 
   $.get('hours.tsv', function (data, status) {
-    var lines = _.filter(data.split('\n'), function (line) {
-      return line !== '';
-    });
+    var lines = _.filter(data.split('\n'), notEmptyLine);
 
     tasks = _.map(lines, function (line) {
+      console.log(line);
       var c = line.split('\t');
       return {
         date: moment(c[0], 'D.M.YYYY'),
@@ -128,8 +153,39 @@ $(function() {
       return result;
     }, {});
 
+    hoursByCat = _.reduce(tasks, function (result, task, key) {
+      result[task.category] = (result[task.category] || 0) + (task.duration * task.participants.length);
+      return result;
+    }, {});
+
     displayHours(undefined, undefined, true);
     displayWeeks();
+    displayCategories();
+  });
+
+  $.get('questions.tsv', function (data) {
+    var lines = _.filter(data.split('\n'), notEmptyLine);
+    var raw = _.map(lines, function (line) {
+      var c = line.split('\t');
+      return {
+        type: c[0],
+        id: c[1],
+        text: c[2]
+      };
+    });
+
+    questions = _.reduce(raw, function (result, val) {
+      if (!_.has(result, val.id)) result[val.id] = {};
+
+      if (val.type === 'ask') {
+        result[val.id].question = val.text;
+      } else if (val.type === 'ans') {
+        result[val.id].answer = val.text;
+      }
+      return result;
+    }, {});
+
+    displayQuestions();
   });
 
   displayUsers();

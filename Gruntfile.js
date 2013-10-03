@@ -64,21 +64,22 @@ module.exports = function (grunt) {
           'components/bootstrap/js/{scrollspy,dropdown}.js',
           'components/lodash/dist/lodash.js',
           'components/moment/moment.js',
-          'components/bootstrap/fonts/*'
+          'components/bootstrap/fonts/*',
+          'temp/**/*'
         ],
         dest: '<%= yeoman.dist %>/'
       },
       dist2: {
         expand: true,
         src: [
-          'hours.tsv'
+          '*.tsv'
         ],
         dest: '<%= yeoman.dist %>/'
       },
       server: {
         expand: true,
         src: [
-          'hours.tsv'
+          '*.tsv'
         ],
         dest: '.tmp'
       }

@@ -45,8 +45,9 @@
           <li><a href="#techs">Tekniikat</a></li>
           <li><a href="#people">Henkilöt</a></li>
           <li><a href="#hours">Tunnit</a></li>
-          <li><a href="#issues">Ongelmat</a></li>
+          <li><a href="#questions">Kysymykset</a></li>
           <li><a href="#highlights">Project Highlights</a></li>
+          <li><a href="#documentation">Dokumentit</a></li>
         </ul>
       </div>
     </div>
@@ -77,9 +78,9 @@
 
         <div class="col-sm-4">
           <h3>PROJEKTIN HALLINTA</h3>
-          <h4>Kanban?</h4>
+          <h4>Kanban</h4>
           <ul class="techs-list">
-            <li>Agilezen? Trello?</li>
+            <li>Agilezen</li>
             <li>GitHub</li>
             <li>IRC</li>
           </ul>
@@ -90,8 +91,9 @@
           <h4>Rest</h4>
           <ul class="techs-list">
             <li>NodeJS</li>
-            <li>MongoDB</li>
+            <li>Express</li>
             <li>Mongoose</li>
+            <li>MongoDB</li>
           </ul>
         </div>
 
@@ -173,6 +175,12 @@
       <div class="row">
         <h2>TUNNIT</h2>
         <div class="col-sm-12">
+          <table class="table table-weeks">
+          </table>
+
+          <table class="table table-categories">
+          </table>
+
           <table class="table table-hours">
             <thead>
               <tr>
@@ -200,50 +208,52 @@
               </tr>
             </tfoot>
           </table>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <table class="table table-weeks">
+  <a name="questions"></a>
+  <section id="questions">
+    <div class="container">
+      <div class="row">
+        <h2>KYSYMYKSET</h2>
+        <div class="col-sm-12">
+          <ul class="nav nav-tabs questions-filters">
+            <li class="active"><a href="#" data-filter="open">Avoimet</a></li>
+            <li><a href="#" data-filter="all">Kaikki</a></li>
+          </ul>
+          <table class="table table-questions">
             <thead>
               <tr>
-                <th>Viikot</th>
-                <th>Juho</th>
-                <th>Jussi</th>
-                <th>Masi</th>
-                <th>Niko</th>
-                <th>Oskari</th>
-                <th>Taina</th>
+                <th>ID</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
             </tbody>
-            <tfoot>
-            </tfoot>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-  <a name="issues"></a>
-  <section id="issues">
-    <div class="container">
-      <div class="row">
-        <h2>ONGELMAT</h2>
-        <div class="col-sm-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Date raised</th>
-                <th>Date solved</th>
-                <th>Participants</th>
-                <th>Summary</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
+  <a name="documentation"></a>
+  <section id="documentation">
+  <div class="container">
+    <div class="row">
+      <h2>DOKUMENTIT</h2>
+      <div class="col-sm-12">
+        <p>Yleisiä hyväksi todettuja lähteitä tiedolle liittyen käytettäviin tekniikoihin</p>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Mozilla, JavaScript objektit</a>, ylipäätään ne {key: "value"} jutut.</li>
+          <li><a href="http://lodash.com/docs">Lodash Api</a>, mm. Object ja Array käsitelyyn.</li>
+          <li><a href="https://github.com/caolan/async">Node-Async</a>, samoja juttuja kuin Lodashissa mutta hyödyllinen kun tarvitsee tietää esim. koska each:n kanssa kutsuttu iterator kaikille taulukon arvoille.</li>
+          <li><a href="http://angular-ui.github.io/bootstrap/">Angular-bootstrap</a>, käytetään normaalin Bootstrap JavaScriptin sijaan tätä versiota mikä ei tarvitse JQueryä (vähemmän lataamista).</li>
+        </ul>
       </div>
     </div>
+  </div>
   </section>
 
   <a name="highlights"></a>
@@ -253,7 +263,7 @@
       <h2>PROJECT HIGHLIGHTS</h2>
       <div class="col-sm-12">
         <b><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko37_project_highlights">Viikko 37</a></b>
-		<b><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko38_project_highlights">Viikko 38</a></b>
+        <b><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko38_project_highlights">Viikko 38</a></b>
       </div>
     </div>
   </div>
@@ -262,7 +272,7 @@
   <footer>
       <div class="container">
         <div class="row">
-          <p>&copy; Foo</p>
+          <p>&copy; Mahtiprojektiryhmä</p>
         </div>
       </div>
   </footer>
