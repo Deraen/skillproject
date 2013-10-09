@@ -139,38 +139,38 @@ If user interface design is critical for your system, briefly sketch the main vi
 
 
 
-#  Quality goals -- Laatutavoitteet ???
-- tavoitteet jaetaan seuraaviin kategorioihin:
-	- käytettävyys, suorituskyky, luotettavuus, tietoturva, jatkokehitettävyys, ylläpito, toiminnallisuudet
+#  Quality goals -- Laatuvaatimukset
+Järjestelmän tärkeimmät laatuvaatimukset ja -tavoitteet on esitelty seuraavissa aliluvuissa.
 
-In this Chapter you will describe the quality requirements of your product and their associated goals. You should describe the quality requirements that are valid for YOUR product – each product has different emphasis on quality aspects. Remove those goals that do not apply for your product and add goals, if necessary (i.e.. maintainability, portability)
-
+(In this Chapter you will describe the quality requirements of your product and their associated goals. You should describe the quality requirements that are valid for YOUR product – each product has different emphasis on quality aspects. Remove those goals that do not apply for your product and add goals, if necessary (i.e.. maintainability, portability))
 
 
 ##  Käytettävyys
-- responsiivinen
-- käytettävyystestit vastaavalla käyttäjäryhmällä
+Palvelun tulee olla helposti käytettävä ja nopeasti opittava. Käyttäjillä oletetaan olevan perustaidot tietotekniikasta, joten aivan perusasioita palvelussa ei tarvitse opastaa. Niiden tulee olla intuitiivisesti ymmärrettävissä. Tavallisimmista ratkaisuista poikkeaviin toimintoihin liitetään ohjetoiminto.
+Verkkosovelluksesta tehdään responsiivinen, jotta käyttökokemus on miellyttävä tietokoneen lisäksi myös muilla laitteilla, kuten älypuhelimilla ja tableteilla.
+Käytettävyyttä mitataan käytettävyystesteillä. Testiryhmänä toimii palvelun loppukäyttäjiä vastaava käyttäjäryhmä. Tavoitteena on saada palvelu tilaan, jossa kaikki käyttäjätesteissä ilmenneet vakavat ongelmat on korjattu. Lisäksi tavoitteena on, että vähintään 80% testiryhmästä pitää palvelun käyttöä helppona ja nopeana.
 
 ##  Suorituskyky
-- lyhyet vasteajat (jokin numeerinen arvo)
-	-> sivujen lataamiset
-	-> responsiiviset ominaisuudet
+Sivujen latautumisen vasteajan tulee olla enintään 0,1 sekuntia, jolloin käyttäjä kokee toiminnon välittömäksi. Hakutoiminnoissa vasteaika on enintään 1,0 sekunti. Tiedon yhteenkerääminen graafien piirtoa varten ei ole reaaliaikaista, vaan tiedot päivittyvät joka yö. Palvelun käytön oletetaan keskittyvän työaikaan, kello 6.00 ja 18.00 välille.
+Goforella on tällä hetkellä noin 60 työntekijää, mutta se on kasvava yritys. Täten samanaikaisia käyttäjiä tulee voida olla 100 henkilöa kerrallaan. Kapasiteettia tulisi voida kasvattaa tarvittaessa.
 
 ##  Luotettavuus
-- muutokset tallentuvat varmasti järjestelmään
-- käyttäjä ei pysty rikkomaan tietokantaa
+Järjestelmän tulee olla luotettava etenkin oikean tiedon säilymisen kannalta. Kaikkien käyttäjän tekemien muutosten täytyy tallentua järjestelmään. Käyttäjälle on ilmoitettava, jos tieto ei tallentunut onnistuneesti ja mahdollistettava uusi tallentamisyritys ilman, että jo kirjoitettu mutta vielä tallentamaton tieto katoaa. Käyttäjältä on kysyttävä, haluaako hän tallentaa uudet tiedot, jos hän on poistumassa sivulta ilman onnistunutta tallennusta.
+Käyttäjä ei voi rikkoa tietokantaa. Käyttäjä ei myöskään vahingossa saa poistaa tietoa. Etenkin isoissa kokonaisuuksissa, kuten taito tai henkilön profiili, tulee varmistaa, että tieto todella halutaan poistaa.
+Järjestelmän käyttäjät ovat Goforen työntekijöitä, joten heidän oletetaan olevan hyväntahtoisia järjestelmää käyttäessään. Oletetaan siis, että kukaan ei tahallaan esimerkiksi poista tietoa, jota ei kuulu poistaa, tai lisää väärää tietoa.
+Sähkökatkoksen, laitevian tai muun yllättävän syyn seurauksena tietokannan data ei saa kadota lopullisesti.
 
 ##  Tietoturva
-- järjestelmään pitää kirjautua päästäkseen sisältöön käsiksi tms.
-- tietokantaan pääsy ainoastaan kirjautuneella käyttäjällä
+Järjestelmään pitää rekisteröityä ja olla kirjautunut, jotta tietoja pääsee näkemään ja muokkaamaan. Tietojen viimeisimmästä muokkaajasta jää jälki.
+Järjestelmää pääsee käyttämään vain Goforen työntekijät.
 
 ##  Ylläpito ja jatkokehitys
-- koodin luettavuus ja modulaarisuus
-- kattava dokumentaatio
-- lisäominaisuudet huomioitu jo perusominaisuuksien suunnittelu- ja implementointivaiheissa
+Jatkokehityksen ja koodin ylläpidon helpottamiseksi tuotteen koodin tulee olla luettavaa ja modulaarisesti kehitetty. Lisäominaisuudet on huomioitu jo perusominaisuuksien suunnittelu- ja implementointivaiheissa, jotta niiden lisääminen myöhemmin olisi kohtuullisen helppoa.
+Nykyinen arkkitehtuuri, toiminnallisuus ja jatkokehitysajatukset on kuvattu dokumentaatiossa kattavasti, niin että uusikin työryhmä kykenisi jatkamaan projektia sujuvasti.
+Järjestelmän datan ylläpitoa voi tehdä kuka tahansa kirjautunut käyttäjä.
 
 ##  Toiminnallisuudet
-- kaikki perustoiminnallisuudet on implementoitu (joitain alkuperäisiä lisäominaisuuksia nostettu jo perusominaisuuksiin suunnittelun alkuvaiheissa)
+Kun tuote on valmis, vähintään kaikki perustoiminnallisuudet on implementoitu ja niiden on testattu toimivan oikein sekä asiakkaan odottamalla tavalla. Joitain ensimmäisen vaatimuslistauksen lisäominaisuuksia on jo nostettu perusominaisuuksiin suunnittelun alkuvaiheissa (katso luku Järjestelmävaatimukset).
 
 
 
