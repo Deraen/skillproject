@@ -126,10 +126,60 @@ What assumptions are made of the system.
 	
 - käyttötapauksia !!
 
+Nimi: Rekisteröityminen
+Tuloehdot: Käyttäjällä on pääsy järjestelmän verkkosivulle.
+Kuvaus: Käyttäjä menee järjestelmän pääsivulle. Hän painaa "Rekisteröidy"-linkkiä, josta aukeaa rekisteröitymissivu. Käyttäjä syöttää sähköpostiosoitteensa, nimensä ja salasanan. Käyttäjä painaa "Rekisteröidy"-nappia. Järjestelmä ilmoittaa, että tunnukset on luotu.
+Poikkeukset: Annetulla sähköpostilla on jo luotu tunnukset. Järjestelmä ilmoittaa tästä.
+Lopputulos: Käyttäjällä on palveluun tunnukset, joilla hän voi jatkossa kirjautua sisään.
+
+Nimi: Kirjautuminen
+Tuloehdot: Käyttäjällä on tunnukset järjestelmään.
+Kuvaus: Käyttäjä menee mille tahansa järjestelmän sivulle ja kirjautumispalkki on näkyvissä. Käyttäjä kirjoittaa sähköpostiosoitteensa ja salasanansa kenttiin ja painaa "Kirjaudu"-nappia.
+Poikkeukset: Käyttäjän antamaa sähköpostia ei ole tietokannassa. Järjestelmä ilmoittaa, että sähköpostilla ei ole olemassa tunnuksia.
+Salasana ei vastaa olemassaolevaa, annettua sähköpostiosoitetta. Järjestelmä ilmoittaa, että salasana on väärä.
+Lopputulos: Käyttäjä on kirjautunut sisään ja voi selata ja muokata tietoja.
+
+Nimi: Taidon lisääminen
+Tuloehdot: Käyttäjä on kirjautunut järjestelmään.
+Kuvaus: Käyttäjä menee sivulle, jolla taidot listataan. Käyttäjä painaa "Lisää taito" -nappia, jolloin hän pääsee lomakkeeseen. Hän täyttää taidon logon urlin, nimen, kuvauksen ja lisää kategoriatageja, jotka kertovat, minkä tyyppisestä taidosta on kyse. Käyttäjä painaa "Lisää"-nappia ja järjestelmä kertoo, että uusi taito lisättiin onnistuneesti.
+Poikkeukset: Vastaava taito on jo olemassa. Järjestelmä ehdottaa, että käyttäjän tekemät muutokset yhdistetään jo olemassa olevan taidon kanssa.
+Lopputulos: Käyttäjän luoma taito on tallennettuna järjestelmään. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
+
+Nimi: Taitojen selaaminen ja muokkaaminen
+Tuloehdot: Käyttäjä on kirjautunut järjestelmään. Taitoja on lisätty.
+Kuvaus: Käyttäjä menee sivulle, jolla taidot on listattuna. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla, ja pääsee taitonäkymään. Käyttäjä näkee yleisien taitoon liittyvien tietojen lisäksi oman kokumuksensa ja kiinnostuksensa kyseisen taidon suhteen. Hän haluaa muokata taidon kuvausta, joten hän menee muokkaustilaan, muokkaa tekstiä ja tallentaa muutokset. Lisäksi hän haluaa lisätä taidon itselleen opittavaksi. Hän muokkaa kiinnostus-kohtaan arvon ja tallentaa muutoksen.
+Poikkeukset: Käyttäjä poistuu sivulta tallentamatta muutoksia. Järjestelmä kysyy, haluaisiko käyttäjä tallentaa tiedot.
+Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelmä ilmoittaa tästä.
+Lopputulos: Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana. Käyttäjälle lisätty taito näkyy myös hänen profiilissaan.
+
+Nimi: Profiilin muokkaaminen
+Tuloehdot: Käyttäjä on kirjautunut järjestelmään.
+Kuvaus: Käyttäjä valitsee millä tahansa sivulla kirjautumispalkista oman profiilisivunsa. Käyttäjä näkee perustietoja itsestään, taitonsa, kokemuksensa ja projektinsa. Käyttäjä huomaa perustiedoissaan virheen, menee muokkaustilaan, korjaa sen ja tallentaa. Käyttäjä haluaa lisätä itselleen taidon. Hän kirjoittaa taitohakukenttään halutun taidon nimen, ja painaa nappulaa, joka lisää taidon hänelle. Sen jälkeen hän voi muokata osaamis- ja kiinnostustasojaan taidon suhteen.
+Poikkeukset: Jonkun tiedon tallentaminen ei onnistunut.
+Lopputulos: Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
+
+Nimi: Henkilöhaku taitojen perusteella
+Tuloehdot: Käyttäjä on kirjautunut järjestelmään.
+Kuvaus: Projektipäällikkö (joka on järjestelmässä peruskäyttäjä niin kuin kaikki) haluaa löytää projektiinsa tiettyä taitoa osaavan henkilön. Hän menee haku-toimintoon ja kirjoittaa hakukenttään taidon ja valitsee sen kriteeriksi. Lisäksi hän merkkaa, että hakee henkilöitä. Hän haluaa erityisesti henkilön, jolla ei ole paljoa kokemusta taidosta, mutta on suuri kiinnostus oppia se, joten hän tekee sen mukaiset säädöt hakuun. Haku tarjoaa heti ehdotuksia, kun käyttäjä lisäilee hakukriteerejä. Projektipäällikkö haluaa tarkastella parhaimpia osumia tarkemmin ja painaa osumaa nähdäkseen kyseisen henkilön profiilisivulla olevia tietoja.
+Poikkeukset: Käyttäjä kirjoittaa taidon eri tavalla kuin se on tallennettuna järjestelmään. Haku tarjoaa samankaltaisia taitoja, joista käyttäjä voi valita oikean.
+Lopputulos: Käyttäjä on löytänyt kriteeriensä mukaan parhaan ehdokkaan projektiin.
+
+Nimi: Yrityksen osaamisen tarkastelu
+Tuloehdot: Käyttäjä on kirjautunut järjestelmään.
+Kuvaus: Käyttäjä haluaa nähdä kuinka paljon yrityksessä on tietyn taidon osaavia ja kuinka moni haluaa oppia sitä. Hän hakee taidon haulla tai listauksesta ja menee taidon sivulle. Sieltä hän voi valita taidon statistiikat näkyviin. Käyttäjä haluaa myös nähdä mitä kaikkia taitoja koko yrityksessä on ja missä suhteessa. Hän menee statistiikka-sivulle ja valitsee haluamansa tilaston. Käyttäjä näkee datan diagrammeina tai graafeina.
+Poikkeukset: -
+Lopputulos: Käyttäjä näkee haluamansa tiedon selkeässä muodossa.
+
+Nimi: 
+Tuloehdot: 
+Kuvaus: 
+Poikkeukset: 
+Lopputulos:
 
 In this Chapter you will describe the high level functional requirements of your product. Requirements are described so that the reader will understand what needs to be implemented, what the product does and so that backlog can be mapped to requirements. It is not necessary to describe functions in such a detailed level that someone else would actually be able to implement them based on this document. The detail must be such though, that you as the developers and the customer will able to form a common understanding of what needs to be developed.
 
 Requirements/functions should be described using, e.g. use cases, user stories or scenarios. Use sections for different types of functions.
+
 
 # User interface -- Käyttöliittymä
 - Masi, ota koppi
