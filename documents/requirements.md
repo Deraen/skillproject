@@ -21,6 +21,12 @@ author:
   studentNumber: 218197
 - name: Jussi Tuurinkoski
   studentNumber: 211594
+references:
+- id: scrumVisionPattern
+  title: Scrum vision pattern
+  URL: https://sites.google.com/a/scrumplop.org/published-patterns/value-stream-pattern-language/vision
+  issued:
+    year: 2013
 ---
 
 # Versiohistoria {.unnumbered}
@@ -37,6 +43,8 @@ author:
 0.3         9.10.2013   Taina           Laatuvaativuusmäärittelyjä
 
 0.3.1       10.10.2013  Taina           Käyttötapauksia
+
+1.0         11.11.2013  Juho            Korjattu ulkoasua, lopullinen palautus.
 ----------  ----------  --------------  ---------------------------------------
 
 # Määritelmät ja lyhenteet {.unnumbered}
