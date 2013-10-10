@@ -1,11 +1,26 @@
 ---
-title: 'Tietotekniikan projektityö, Ryhmä 4 - Vaatimusmäärittely'
-author:
-- name: Juho Teperi
-  email: juho.teperi@tut.fi
-- name: jdsaffsd
-  email: dsfsdf
+school: Tampereen Teknillinen Yliopisto
+faculty: Tietotekniikan laitos
+course: TIE-13100 Tietotekniikan projektityö
+projectShort: 'HOHT'
 project: 'Henkilöstön osaamisen hallinnan työkalu'
+document: 'Vaatimusmäärittely'
+group: 'Mahtiprojekti'
+groupNumber: '4'
+version: 1.0
+author:
+- name: Niko Junkala
+  studentNumber: 211479
+- name: Masi Kajander
+  studentNumber: 205870
+- name: Taina Peltonen
+  studentNumber: 211419
+- name: Oskari Ruutiainen
+  studentNumber: 205347
+- name: Juho Teperi
+  studentNumber: 218197
+- name: Jussi Tuurinkoski
+  studentNumber: 211594
 ---
 
 # Määritelmät ja lyhenteet {.unnumbered}

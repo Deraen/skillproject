@@ -1,0 +1,116 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$a4paper]{$documentclass$}
+
+\usepackage[$if(lang)$$lang$,$endif$]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{longtable}
+\usepackage{fixltx2e} % provides \textsubscript
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\usepackage[utf8]{inputenc}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05}         % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2ex plus .1ex minus .1ex}
+\setlength{\voffset}{-1in}
+\setlength{\topmargin}{10mm}
+\setlength{\headheight}{10mm}
+\setlength{\headsep}{19mm}
+\setlength{\textheight}{219mm}
+\setlength{\footskip}{21.3mm}
+\setlength{\hoffset}{-1in}
+\setlength{\oddsidemargin}{32mm}
+\setlength{\textwidth}{145mm}
+\addtolength{\belowcaptionskip}{+3mm}
+
+\pagestyle{fancy}
+
+\newcommand{\headfoot}{
+  \lhead{$projectShort$}
+  \chead{$document$}
+  \rhead{Versio $version$}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\thepage / \pageref{LastPage}}
+}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \headfoot
+}
+
+\headfoot
+
+\renewcommand{\maketitle}{\begin{titlepage}%
+  \vspace*{-0.2cm}
+  $school$\\
+  $faculty$\\
+  $course$\\
+  \par
+  \vspace*{7cm}
+  \begin{center}
+    \LARGE{\textbf{$group$ ($groupNumber$)\\}}
+    \vspace{0.5cm}
+    \fontsize{32pt}{1}{\textbf{$project$\\}}
+    \vspace{0.5cm}
+    \LARGE{\textbf{$document$\\}}
+  \end{center}
+  \vfill
+  %%Kansilehden alareunan tiedot
+  \hfill\begin{tabular}[t]{ll}
+    $for(author)$
+    $author.studentNumber$ & $author.name$\\
+    $endfor$
+  \end{tabular}
+\end{titlepage}}
+
+\begin{document}
+\maketitle
+\newpage
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+$if(toc)$
+{
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+\newpage
+}
+$endif$
+
+$body$
+
+$if(natbib)$
+$if(biblio-files)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$biblio-files$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}
