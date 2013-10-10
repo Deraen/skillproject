@@ -1,6 +1,6 @@
 SOURCES=requirements.md
 OUTPUT=$(addprefix pdf/,$(SOURCES:.md=.pdf))
-EXTENSIONS="yaml_metadata_block+header_attributes"
+EXTENSIONS="yaml_metadata_block+header_attributes+multiline_tables"
 
 compile: clean $(OUTPUT)
 

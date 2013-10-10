@@ -23,6 +23,22 @@ author:
   studentNumber: 211594
 ---
 
+# Versiohistoria {.unnumbered}
+
+----------  ----------  --------------  ---------------------------------------
+    Versio  Päiväys     Tekijä          Kuvaus
+----------  ----------  --------------  ---------------------------------------
+0.1         2.10.2013   Juho            Dokumentin pohja
+
+0.2         2.10.2013   Jussi           Otsikoita ja ranskalaisia viivoja
+
+0.2.1       2.10.2013   Jussi           Lisätty kysymys
+
+0.3         9.10.2013   Taina           Laatuvaativuusmäärittelyjä
+
+0.3.1       10.10.2013  Taina           Käyttötapauksia
+----------  ----------  --------------  ---------------------------------------
+
 # Määritelmät ja lyhenteet {.unnumbered}
 
 - HOHT - Heinkilöstön osaamisen hallinnan työkalu

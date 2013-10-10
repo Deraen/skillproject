@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{titlesec}
 
 \usepackage[sc]{mathpazo}
 \linespread{1.05}         % Palatino needs more leading (space between lines)
@@ -25,13 +26,16 @@
 \setlength{\voffset}{-1in}
 \setlength{\topmargin}{10mm}
 \setlength{\headheight}{10mm}
-\setlength{\headsep}{19mm}
-\setlength{\textheight}{219mm}
-\setlength{\footskip}{21.3mm}
+\setlength{\headsep}{10mm}
+\setlength{\textheight}{238mm}
+\setlength{\footskip}{11.3mm}
 \setlength{\hoffset}{-1in}
 \setlength{\oddsidemargin}{32mm}
 \setlength{\textwidth}{145mm}
 \addtolength{\belowcaptionskip}{+3mm}
+
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter}{20pt}{\Huge\bfseries}[\hrule]
+\titlespacing{\chapter}{0pt}{0pt}{40pt}
 
 \pagestyle{fancy}
 
