@@ -181,11 +181,55 @@ In this Chapter you will describe the high level functional requirements of your
 Requirements/functions should be described using, e.g. use cases, user stories or scenarios. Use sections for different types of functions.
 
 
-# User interface -- Käyttöliittymä
-- Masi, ota koppi
-- näkymät ja niiden luonnokset
 
-If user interface design is critical for your system, briefly sketch the main views/states here. Use example pictures of views, menus and dialogs, if possible and appropriate. Use subchapters for different views. Also describe the transitions between the views and the needed interactions for that. The description should be at the level that the reader will have an idea what the user interface will contain, what general design solutions are used and why, and that the team can create prototypes based on it. It should not go to such level of detail that the UI could be fully implemented based on the description.
+# User interface -- Käyttöliittymä
+Koska lopputuote on web-palvelu, käyttöliittymä on siinä hyvin olennainen osa. Palvelu toteutetaan yhden sivun sovelluksena, jossa kaikki lataukset tapahtuvat selaimen pysyessä samalla sivulla. Tässä kappaleessa käydään läpi ensin käyttöliittymän yleiset piirteet, sitten kirjautumattoman käyttäjän näkymän ja lopuksi varsinaisessa käytössä vastaan tulevat näkymät, joissa käyttäjä on kirjautuneena.
+
+## Yleisesti
+Joka näkymässä on kiinteänä osana sivun ylälaidassa valikkopalkki. Sen vasemmassa laidassa on päätason navigaatio ja oikeassa laidassa kirjautuminen ja rekisteröitymissivulle vievä linkki. Jos käyttäjä on kirjautuneena, oikealla näytetään sen merkiksi käyttäjänimi, jota klikkaamalla saa auki käyttäjään liittyvät toiminnot kuten profiilisivun avaaminen ja uloskirjautuminen.
+
+
+## Kirjautumattoman etusivu
+Sivulla näytetään selkeitä pienennettyjä kuvakaappauksia palvelun käytetyimmistä ominaisuuksista, siten että ne ovat välittömästi tottuneiden käyttäjien tunnistettavissa. Lisäksi sivulla on suurikokoinen otsikko, joka kertoo palvelun nimen, ja sen alla lyhyt kuvaus palvelun käyttötarkoituksista, jotta ensi kertaa sivulla vieraileva käyttäjä tajuaa, minne on saapunut.
+![Etusivu sisäänkirjautumattoman käyttäjän näkökulmasta](/ui_pics/frontpage_loggedout.png)
+
+## Rekisteröityminen
+Rekisteröitymissivu on askeettinen sisältäen pelkästään lomakkeen tietojen syöttämistä varten. Lomakkeessa kysytään vain aivan minimaaliset perustiedot kuten sähköpostiosoite, nimi ja haluttu salasana. Lomakkeen kentät näyttävät käyttäjälle reaaliajassa tiedon siitä, onko niihin syötetty validia tietoa vaihtamalla taustavärikseen punaista tai virheää asianmukaisesti ja tarjoamalla tooltipin siitä, mikä on vialla. Rekisteröitymisen onnistuttua käyttäjä ohjataan takaisin kirjautumattoman etusivulle, jossa kiitetään rekisteröitymisestä ja kehoitetaan kirjautumaan.
+![Rekisteröitymissivu](/ui_pics/register.png)
+
+
+## Kirjautuneen etusivu
+Kirjautuneelle käyttäjälle etusivu ei tarjoa juurikaan informaatiota, vaan toimii ponnahduslautana eri toimintoihin. Siellä on suurin kuvakkein varustettuna koko navigaatio mahdollisine alakohtineen.
+![Etusivu sisäänkirjautuneen käyttäjän näkökulmasta](/ui_pics/frontpage_loggedin.png)
+
+## Profiilisivu
+Käyttäjäprofiili on järjestelmän keskeisin sivu. Se yrittää olla mahdollisimman analoginen Goforella käytettävän CV-mallin kanssa, jotta käyttäjät osaisivat etsiä tietoa heti oikeasta paikasta. Sen ylälaidassa näytetään käyttäjän määrittämä profiilikuva, jonka vieressä on käyttäjän nimi pääotsikkona ja sen alla toiminimike. Näiden alla on käyttäjän vapaa kuvaus itsestään.
+
+Valtaosa sivusta koostuu taulukoista, joissa on listattuna käyttäjän osaamista ja sen konkretisointia. Ensin listataan käyttäjän projektikokemus ja projekteissa käyttämät teknologiat, sitten työhistoria, koulutus, sertifikaatit, teknologiaosaaminen ja lopuksi kielitaito. Osaamisessa ja kielitaidossa on esitettynä myös osaamistaso, kokemus ja käyttäjän mielenkiinto taitoa kohtaan.
+
+Kaikille käyttäjän osaamisille on suora muokkaus- ja poistomahdollisuus profiilisivulla.
+![Profiilisivu](/ui_pics/profile.png)
+
+## Taitojen listaus
+Näkymä kuuluu palvelun käytetyimpien sivujen joukkoon. Siellä on heti ensimmäisenä vapaa hakukenttä, josta palveluun syötettyjä taitoja voi suodattaa näkyviin halutuilla kriteereillä. Hakupalkissa on myös nappula, josta saa kehittyneet hakutoiminnot ponnahtamaan esiin ja piiloon. Kehittyneessä haussa on esillä useampia kenttiä ja ne muokkaavat varsinaisen hakupalkin tekstin sisältöä vastaamaan niistä luotua yhteistä hakuehtoa.
+
+Hakupalkin alla on nappi, josta saa uuden taidon lisäämisen lomakkeen esiin ja piiloon. Syöttämällä siihen taidon ja painamalla lisäämisnappia uusi taito on syötetty järjestelmään ja näkyy taitojen taulukkolistauksessa, mikäli hakukriteerit sen sallivat.
+
+Pohjimmaisena sivulla on listaus järjestelmään syötetyistä taidoista. Mikäli hakukenttään on syötetty jotain, taulukkolistaus näyttää vain hakukriteerit täyttävät taidot. Listauksessa taidoista näytetään niihin liitetty logo, nimi, tagit ja vapaa tekstikuvaus. Kunkin taidon nimi toimii linkkinä yksittäisen taidon sivulle. Taulukko on järjestettävissä kunkin sarakkeen suhteen.
+![Taitojen listaussivu](/ui_pics/skill_list.png)
+
+## Yksittäinen taito
+Taitoa tarkastellessa siitä näytetään käyttäjän profiilisivun kaltaisesti ylhäällä logo ja otsikkona sen nimi. Taidon kuvaus on kokonaisuudessaan näiden alla, ja sen alla on nappi, josta taidon voi lisätä omaan osaamiseensa. Kun taito on lisätty käyttäjälle, tämä tälle näkyy lomake, jolla hän voi taitosivulta käsin muuttaa omaa suhdettaan taitoon: esimerkiksi numeroarvoisesti osaamista ja mielenkiintoa. Käyttäjällä on lisäksi nappi, josta hän voi ottaa taidon pois omasta osaamisestaan.
+![Yksittäisen taidon sivu](/ui_pics/skill.png)
+
+## Projektien listaus
+Projektilista on hyvin samankaltainen kuin osaamislista. Ylhäällä on hakukenttä, josta saa napilla kehittyneen haun esiin. Haun alla on mahdollisuus ponnauttaa projektinlisäyslomake esiin. Alimpana on taulukkolistaus hakukriteerit täyttävistä projekteista alkamis- ja loppumisajankohtineen sekä kuvauksineen. Projektin nimi toimii linkkinä yksittäisen projektin sivulle.
+![Proektien listaussivu](/ui_pics/project_list.png)
+
+## Yksittäinen projekti
+Projektisivulla on projektin nimen alla lueteltu määritelmätyylisesti sen määrämuotoiset tiedot: alkamis- ja loppumisajankohta sekä kuvaus. Näiden jälkeen on taulukko, jossa listataan kaikki projektissa mukana olleet käyttäjät ja heidän projektissa käyttämänsä teknologiat. Lopuksi on taulukkolistaus projektin teknologioista ja vapaa kuvaus niiden käytöstä projektissa. Kaikista taitojen nimistä pääsee taitosivuille ja käyttäjien nimistä käyttäjäprofiileihin.
+![Yksittäisen projektin sivu](/ui_pics/project.png)
+
 
 
 
@@ -198,7 +242,7 @@ Järjestelmän tärkeimmät laatuvaatimukset ja -tavoitteet on esitelty seuraavi
 ##  Käytettävyys
 Palvelun tulee olla helposti käytettävä ja nopeasti opittava. Käyttäjillä oletetaan olevan perustaidot tietotekniikasta, joten aivan perusasioita palvelussa ei tarvitse opastaa. Niiden tulee olla intuitiivisesti ymmärrettävissä. Tavallisimmista ratkaisuista poikkeaviin toimintoihin liitetään ohjetoiminto.
 Verkkosovelluksesta tehdään responsiivinen, jotta käyttökokemus on miellyttävä tietokoneen lisäksi myös muilla laitteilla, kuten älypuhelimilla ja tableteilla.
-Käytettävyyttä mitataan käytettävyystesteillä. Testiryhmänä toimii palvelun loppukäyttäjiä vastaava käyttäjäryhmä. Tavoitteena on saada palvelu tilaan, jossa kaikki käyttäjätesteissä ilmenneet vakavat ongelmat on korjattu. Lisäksi tavoitteena on, että vähintään 80% testiryhmästä pitää palvelun käyttöä helppona ja nopeana.
+Käytettävyyttä mitataan käytettävyystesteillä. Testiryhmänä toimii palvelun loppukäyttäjiä vastaava käyttäjäryhmä. Tavoitteena on saada palvelu tilaan, jossa kaikki käyttäjätesteissä ilmenneet vakavat ongelmat on korjattu. Lisäksi tavoitteena on, että vähintään 80 % testiryhmästä pitää palvelun käyttöä helppona ja nopeana.
 
 ##  Suorituskyky
 Sivujen latautumisen vasteajan tulee olla enintään 0,1 sekuntia, jolloin käyttäjä kokee toiminnon välittömäksi. Hakutoiminnoissa vasteaika on enintään 1,0 sekunti. Tiedon yhteenkerääminen graafien piirtoa varten ei ole reaaliaikaista, vaan tiedot päivittyvät joka yö. Palvelun käytön oletetaan keskittyvän työaikaan, kello 6.00 ja 18.00 välille.
