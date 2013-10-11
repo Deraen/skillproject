@@ -78,6 +78,9 @@
   \end{tabular}
 \end{titlepage}}
 
+\let\orgincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\orgincludegraphics[width=145mm,height=228mm,keepaspectratio,#1]{#2}}
+
 \begin{document}
 \maketitle
 \newpage
