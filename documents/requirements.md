@@ -21,12 +21,6 @@ author:
   studentNumber: 218197
 - name: Jussi Tuurinkoski
   studentNumber: 211594
-references:
-- id: scrumVisionPattern
-  title: Scrum vision pattern
-  URL: https://sites.google.com/a/scrumplop.org/published-patterns/value-stream-pattern-language/vision
-  issued:
-    year: 2013
 ---
 
 # Versiohistoria {.unnumbered}
@@ -44,6 +38,8 @@ references:
 
 0.3.1       10.10.2013  Taina           Käyttötapauksia
 
+0.4         11.11.2013  Jussi           Kirjoitettu dokumentti
+
 1.0         11.11.2013  Juho            Korjattu ulkoasua, lopullinen palautus.
 ----------  ----------  --------------  ---------------------------------------
 
@@ -59,13 +55,13 @@ references:
 Tämän dokumentin tarkoitus on määritellä sovellukselta vaaditut toiminnallisuudet ja niiden prioriteetit. Vaatimusmäärittely on kohdistettu projektityöryhmän lisäksi muille sidosryhmille, joita ovat asiakas Gofore sekä Tietotekniikan projektityön kurssihenkilökunta. Vaatimuksessa esiintyvien määrittelyjen lähtökohdat ovat asiakkaan tarjoama perus- ja lisäominaisuuksien vaatimuslista sekä tapaamisten yhteydessä käydyt keskustelut. Tämän vuoksi dokumentti sisältää jo pidemmälle vietyjä määrittelyjä, jotka vastaavat osittain jo tehtyjä suunnitteluratkaisuja.
 
 ## Tuote
-Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, mikä on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen sekä resursoinnin apuvälineenä. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla. 
+Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, mikä on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen sekä resursoinnin apuvälineenä. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
 
 
 #  Yleinen kuvaus
 
 ## Toiminnallisuudet
-Sovellus jakautuu kolmeen pääkokonaisuuteen: henkilöön (oma profiili), taitoon (esim. ohjelmointikieli, urheilulaji jne.) ja projektiin (sisältää mm. henkilöitä ja taitoja). Henkilö voi lisätä itselleen uusia taitoja ja muokata kiinnostusta, kokemusta ja omaa taitotasoaan kyseisessä taidossa. Lisäksi henkilö voi liittää itsensä projekteihin, jotka kartuttavat henkilön kokemusta esimerkiksi jonkin projektissa käytetyn taidon suhteen. Järjestelmästä voi hakea henkilöitä, taitoja ja projekteja. Henkilöitä voidaan myös selata tietyn taidon tai projektin mukaan. Sovellus käyttää henkilökohtaista autentikointia, eikä tietokannan sisältöä pääse käsittelemään tai hakuja suorittamaan ilman kirjautumista. 
+Sovellus jakautuu kolmeen pääkokonaisuuteen: henkilöön (oma profiili), taitoon (esim. ohjelmointikieli, urheilulaji jne.) ja projektiin (sisältää mm. henkilöitä ja taitoja). Henkilö voi lisätä itselleen uusia taitoja ja muokata kiinnostusta, kokemusta ja omaa taitotasoaan kyseisessä taidossa. Lisäksi henkilö voi liittää itsensä projekteihin, jotka kartuttavat henkilön kokemusta esimerkiksi jonkin projektissa käytetyn taidon suhteen. Järjestelmästä voi hakea henkilöitä, taitoja ja projekteja. Henkilöitä voidaan myös selata tietyn taidon tai projektin mukaan. Sovellus käyttää henkilökohtaista autentikointia, eikä tietokannan sisältöä pääse käsittelemään tai hakuja suorittamaan ilman kirjautumista.
 
 ## Käyttäjät
 Loppukäyttäjinä toimivat Goforen työntekijät. Yrityksen henkilöstön koulutustaustan huomioonottaen voidaan olettaa, että kyseinen käyttäjäkunta koostuu kokeneista tietokoneen käyttäjistä. Järjestelmässä ei ole erikseen eri käyttäjäryhmiä, mutta tämän mahdollisuus on huomioitu jatkokehitysajatuksissa ja perustoiminnallisuuksien suunnitteluvaiheessa. Järjestelmän odotettu keskimääräinen käyttöaste viikossa on noin 0-5 tuntia käyttäjää kohden.
@@ -79,54 +75,68 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
 
 ## Lista vaadituista ominaisuuksista
 
-###Perusominaisuudet 
+###Perusominaisuudet
 - Järjestelmässä on autentikointi; käyttäjät tekevät henkilökohtaisen käyttäjätunnuksen ja kirjautuvat sillä järjestelmään.
 - Kerrallaan sisään kirjautuneiden käyttäjien lukumäärä ei ole rajattu.
 - Kaikilla käyttäjillä on samat oikeudet tehdä muutoksia järjestelmään.
 - Kaikista muutoksista jää lokimerkintä, mistä ilmenee ainakin muutoksen tehnyt käyttäjätunnus.
 - Käyttöliittymän tulee olla responsiivinen, mikä vaikuttaa erityisesti hakutoiminnon luonteeseen.
 - Henkilön profiiliin liittyvät toiminnallisuudet:
-	- Taitojen lisääminen omaan profiiliin ja vastaavasti niiden poistaminen profiilista.
-	- Taitoihin liittyviin mittareihin (taitotaso [1-5], kiinnostus [1-5] ja kokemus [kk]) voi tehdä muutoksia omalta profiilisivulta.
-	- Henkilön profiilissa on vapaamuotoinen, muokattava "oma kuvaus" -kenttä.
-	- Henkilö voi liittää itsensä projektiin, muokata omaa assosiaatiotaan (esim. rooli, kuormitusaste) projektin välillä sekä poistaa itsensä projektista.
-	- Henkilö voi lisätä itselleen profiilikuvan, muokata sitä ja poistaa sen
-	- Taidon kokemusmäärä (kk) on mahdollista päivittää automaattisesti projektin kautta (projekti-henkilö-taito -assosiaatio)
-	- Henkilö voi poistaa oman profiilinsa järjestelmästä.
+  - Taitojen lisääminen omaan profiiliin ja vastaavasti niiden poistaminen profiilista.
+  - Taitoihin liittyviin mittareihin (taitotaso [1-5], kiinnostus [1-5] ja kokemus [kk]) voi tehdä muutoksia omalta profiilisivulta.
+  - Henkilön profiilissa on vapaamuotoinen, muokattava "oma kuvaus" -kenttä.
+  - Henkilö voi liittää itsensä projektiin, muokata omaa assosiaatiotaan (esim. rooli, kuormitusaste) projektin välillä sekä poistaa itsensä projektista.
+  - Henkilö voi lisätä itselleen profiilikuvan, muokata sitä ja poistaa sen
+  - Taidon kokemusmäärä (kk) on mahdollista päivittää automaattisesti projektin kautta (projekti-henkilö-taito -assosiaatio)
+
+  - Henkilö voi poistaa oman profiilinsa järjestelmästä.
 - Taitoon liittyyvät toiminnallisuudet:
- 	- Taidolla on nimi ja joukko kyseiseen taitoon liittyviä tageja (esim. ohjelmointikieli, urheilulaji jne.).
- 	- Kuka tahansa voi lisätä järjestelmään uuden taidon, muokata olemassa olevia taitoja tai poistaa taidon järjestelmästä.
- 	- Yksittäistä taitoa voi kommentoida tarkoituksena jakaa omia kokemuksia tai muuta hyödyllistä tietoa muiden käyttäjien kesken.
- 	- Yksittäisen taidon tiedoista näkee projektit ja henkilöt, joilla on yhteys taitoon (taito liitetty projektiin, henkilö lisännyt taidon omaan profiiliinsa). 
+   - Taidolla on nimi ja joukko kyseiseen taitoon liittyviä tageja (esim. ohjelmointikieli, urheilulaji jne.).
+   - Kuka tahansa voi lisätä järjestelmään uuden taidon, muokata olemassa olevia taitoja tai poistaa taidon järjestelmästä.
+   - Yksittäistä taitoa voi kommentoida tarkoituksena jakaa omia kokemuksia tai muuta hyödyllistä tietoa muiden käyttäjien kesken.
+   - Yksittäisen taidon tiedoista näkee projektit ja henkilöt, joilla on yhteys taitoon (taito liitetty projektiin, henkilö lisännyt taidon omaan profiiliinsa).
 - Projektiin liittyvät toiminnallisuudet:
-	- Kuka tahansa voi luoda uuden projektin, muokata projektin tilaa ja poistaa projektin.
-	- Projektilla on nimi ja listat henkilöistä ja taidoista.
-		- Yksittäisen projektin tiedoista näkee henkilöt ja taidot, jotka on liitetty kyseiseen projektiin. 	
-	- Projektilla on alku- ja loppupäivämäärä ja/tai tila (projektin vaihe).
+
+  - Kuka tahansa voi luoda uuden projektin, muokata projektin tilaa ja poistaa projektin.
+  - Projektilla on nimi ja listat henkilöistä ja taidoista.
+
+    - Yksittäisen projektin tiedoista näkee henkilöt ja taidot, jotka on liitetty kyseiseen projektiin.
+
+  - Projektilla on alku- ja loppupäivämäärä ja/tai tila (projektin vaihe).
 - Haku:
-	- Järjestelmästä voi hakea henkilöitä, projekteja ja taitoja
-	- Hakutuloksia pystyy järjestämään eri attribuuttien mukaan
-	- Haussa hyödynnetään tageja tulosten rajaamisessa sekä hakusanan automaattista täydennystä
+  - Järjestelmästä voi hakea henkilöitä, projekteja ja taitoja
+  - Hakutuloksia pystyy järjestämään eri attribuuttien mukaan
+  - Haussa hyödynnetään tageja tulosten rajaamisessa sekä hakusanan automaattista täydennystä
+
 - Tietokannan ylläpitämää tietoa ja statistiikkaa voi tarkastella visuaalisesti graafien ja taulukoiden avulla.
 
 ###Lisäominaisuudet:
 - Taitoihin liittyen toteutetaan Merge-toiminto, jonka avulla taitoja voidaan yhdistää saman kokonaisuuden alle.
-	- Tarve tälle voi olla esimerkiksi kirjoitusvirhe taidon nimessä sitä lisättäessä tietokantaan.
+
+  - Tarve tälle voi olla esimerkiksi kirjoitusvirhe taidon nimessä sitä lisättäessä tietokantaan.
 - Henkilö voi lisätä, muokata ja poistaa suoritettuja koulutuksia, kursseja ja sertifikaatteja.
-	- Koulutuksilla, kursseilla ja sertifikaateilla voi olla yhteys järjestelmässä oleviin taitoihinn tai projekteihin.
+
+  - Koulutuksilla, kursseilla ja sertifikaateilla voi olla yhteys järjestelmässä oleviin taitoihinn tai projekteihin.
+
 - Henkilö voi täydentää omaa työhistoriaansa (aiemmat työpaikat, muut ulkoiset ja itsenäiset projektit).
 - Omasta profiilista voi generoida Goforen sisäistä mallia mukaileva CV PDF-formaatissa.
+
 - Generoitua CV:tä voi muokata ennen sen tulostamista tai tiedostoon tallentamista.
-	- Muokkauksia ei tallenneta henkilön profiiliin.
+
+  - Muokkauksia ei tallenneta henkilön profiiliin.
+
 - Henkilö voi asettaa itselleen tavoitteen tietyn taidon kehityksessä.
-	- Tavoite voi olla taitotason arvon (1-5) korottaminen, kokemuksen hankkiminen (kk) tai osallistuminen projektiin tai koulutukseen, jossa kyseistä taitoa hyödynnetään.
-	
+
+  - Tavoite voi olla taitotason arvon (1-5) korottaminen, kokemuksen hankkiminen (kk) tai osallistuminen projektiin tai koulutukseen, jossa kyseistä taitoa hyödynnetään.
+
 ###Jatkokehitysajatukset:
 - Tavoitteet yhtiön tasolla
-	- Esim. tietyn taidon osaajia tarvittaisiin vuoteen x mennessä n kappaletta.
+
+  - Esim. tietyn taidon osaajia tarvittaisiin vuoteen x mennessä n kappaletta.
 - HOHT integroituu muihin Goforen käyttämiin järjestlemiin.
+
 - Eri käyttäjäryhmien implementointi
-	
+
 ## Käyttötapaukset
 **Nimi:** Rekisteröityminen
 
@@ -139,7 +149,9 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
 **Lopputulos:** Käyttäjällä on palveluun tunnukset, joilla hän voi jatkossa kirjautua sisään.
 
 
+
 ----------
+
 
 
 **Nimi:** Kirjautuminen
@@ -154,7 +166,9 @@ Salasana ei vastaa olemassaolevaa, annettua sähköpostiosoitetta. Järjestelmä
 **Lopputulos:** Käyttäjä on kirjautunut sisään ja voi selata ja muokata tietoja.
 
 
+
 ----------
+
 
 
 **Nimi:** Taidon lisääminen
@@ -168,7 +182,9 @@ Salasana ei vastaa olemassaolevaa, annettua sähköpostiosoitetta. Järjestelmä
 **Lopputulos:** Käyttäjän luoma taito on tallennettuna järjestelmään. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
 
 
+
 ----------
+
 
 
 **Nimi:** Taitojen selaaminen ja muokkaaminen
@@ -183,7 +199,9 @@ Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelm
 **Lopputulos:** Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana. Käyttäjälle lisätty taito näkyy myös hänen profiilissaan.
 
 
+
 ----------
+
 
 
 **Nimi:** Profiilin muokkaaminen
@@ -197,7 +215,9 @@ Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelm
 **Lopputulos:** Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
 
 
+
 ----------
+
 
 
 **Nimi:** Henkilöhaku taitojen perusteella
@@ -211,7 +231,9 @@ Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelm
 **Lopputulos:** Käyttäjä on löytänyt kriteeriensä mukaan parhaan ehdokkaan projektiin.
 
 
+
 ----------
+
 
 
 **Nimi:** Yrityksen osaamisen tarkastelu
@@ -223,6 +245,7 @@ Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelm
 **Poikkeukset:** -
 
 **Lopputulos:** Käyttäjä näkee haluamansa tiedon selkeässä muodossa.
+
 
 
 ----------
@@ -307,10 +330,10 @@ Kun tuote on valmis, vähintään kaikki perustoiminnallisuudet on implementoitu
 
 # Avoimet kysymykset
 - Projektin ja henkilön välisen assosiaation sisältämä tieto
-	- Esiin tulleet ajatukset: henkilön kuormitusaste (tunteina viikossa?), rooli projektissa
+  - Esiin tulleet ajatukset: henkilön kuormitusaste (tunteina viikossa?), rooli projektissa
 - Missä muodossa ja mitä dataa tulee pystyä tarkastelemaan visuaalisten graafien kautta?
 - Lisäominaisuus, osaamisen tavoitteen määrittely:
-	- Taitoon liittyvien arvojen nostaminen? Avoin kommenttikenttä tavoitteille?
+  - Taitoon liittyvien arvojen nostaminen? Avoin kommenttikenttä tavoitteille?
 
 
 # Lähteet
