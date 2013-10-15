@@ -1,0 +1,14 @@
+- Deraen kertoo vähän javascriptistä
+- Parempi formaatti Goforelle pdf:än sijaan
+- Avoin avoin ja avoin
+- Poistamista ei saa tehdä
+- Adminrooli siivoamisille
+- Projekteille pidemmät aikavälit. (Uudet projektit joissa assosiaatiot toisiin
+  tai aikavälioliot projekteille)
+- Alkuperäinen tiiminkasaamistoiminto lisäominaisuuksiin
+- CV layout templatet ehkä?
+- "järjestlemiin"
+- Mahdollinen taso nolla (ei ollenkaan kokemusta)
+- PlanMill integrointi
+- Kuormitusaste ei ole tärkeä
+- Julkinen serveri pyörimään mille deplyataan
