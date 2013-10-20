@@ -46,7 +46,7 @@ author:
 # Määritelmät ja lyhenteet {.unnumbered}
 
 HOHT
-:   Heinkilöstön osaamisen hallinnan työkalu
+:   Henkilöstön osaamisen hallinnan työkalu
 
 
 #  Johdanto
@@ -55,7 +55,7 @@ HOHT
 Tämän dokumentin tarkoitus on määritellä sovellukselta vaaditut toiminnallisuudet ja niiden prioriteetit. Vaatimusmäärittely on kohdistettu projektityöryhmän lisäksi muille sidosryhmille, joita ovat asiakas Gofore sekä Tietotekniikan projektityön kurssihenkilökunta. Vaatimuksessa esiintyvien määrittelyjen lähtökohdat ovat asiakkaan tarjoama perus- ja lisäominaisuuksien vaatimuslista sekä tapaamisten yhteydessä käydyt keskustelut. Tämän vuoksi dokumentti sisältää jo pidemmälle vietyjä määrittelyjä, jotka vastaavat osittain jo tehtyjä suunnitteluratkaisuja.
 
 ## Tuote
-Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, mikä on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen sekä resursoinnin apuvälineenä. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
+Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, joka on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen sekä resursoinnin apuvälineenä. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
 
 
 #  Yleinen kuvaus
@@ -85,7 +85,7 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
     - Taitojen lisääminen omaan profiiliin ja vastaavasti niiden poistaminen profiilista.
     - Taitoihin liittyviin mittareihin (taitotaso [1-5], kiinnostus [1-5] ja kokemus [kk]) voi tehdä muutoksia omalta profiilisivulta.
     - Henkilön profiilissa on vapaamuotoinen, muokattava "oma kuvaus" -kenttä.
-    - Henkilö voi liittää itsensä projektiin, muokata omaa assosiaatiotaan (esim. rooli, kuormitusaste) projektin välillä sekä poistaa itsensä projektista.
+    - Henkilö voi liittää itsensä projektiin, muokata omaa assosiaatiotaan (esim. rooli) projektin välillä sekä poistaa itsensä projektista.
     - Henkilö voi lisätä itselleen profiilikuvan, muokata sitä ja poistaa sen
     - Taidon kokemusmäärä (kk) on mahdollista päivittää automaattisesti projektin kautta (projekti-henkilö-taito -assosiaatio)
     - Henkilö voi poistaa oman profiilinsa järjestelmästä.
@@ -120,7 +120,7 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
 ### Jatkokehitysajatukset
 - Tavoitteet yhtiön tasolla
     - Esim. tietyn taidon osaajia tarvittaisiin vuoteen x mennessä n kappaletta.
-- HOHT integroituu muihin Goforen käyttämiin järjestlemiin.
+- HOHT integroituu muihin Goforen käyttämiin järjestelmiin.
 - Eri käyttäjäryhmien implementointi
 
 
@@ -168,10 +168,10 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Käyttäjä menee sivulle, jolla taidot listataan. Käyttäjä painaa "Lisää taito" -nappia, jolloin hän pääsee lomakkeeseen. Hän täyttää taidon logon urlin, nimen, kuvauksen ja lisää kategoriatageja, jotka kertovat, minkä tyyppisestä taidosta on kyse. Käyttäjä painaa "Lisää"-nappia ja järjestelmä kertoo, että uusi taito lisättiin onnistuneesti.
+:   Käyttäjä menee sivulle, jolla taidot listataan. Käyttäjä painaa lisää taito -nappia, jolloin esiin tulee lomake. Hän täyttää taidon logon urlin, nimen, kuvauksen ja lisää kategoriatageja, jotka kertovat, minkä tyyppisestä taidosta on kyse. Käyttäjä painaa lisää-nappia ja järjestelmä kertoo, että uusi taito lisättiin onnistuneesti.
 
 Poikkeukset
-:   Vastaava taito on jo olemassa. Järjestelmä ehdottaa, että käyttäjän tekemät muutokset yhdistetään jo olemassa olevan taidon kanssa.
+:   Vastaava taito on jo olemassa. Järjestelmä ehdottaa, että käyttäjän tekemät muutokset yhdistetään jo olemassa olevan taidon kanssa (lisäominaisuus).
 
 Lopputulos
 :   Käyttäjän luoma taito on tallennettuna järjestelmään. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
@@ -185,11 +185,10 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään. Taitoja on lisätty.
 
 Kuvaus
-:   Käyttäjä menee sivulle, jolla taidot on listattuna. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla, ja pääsee taitonäkymään. Käyttäjä näkee yleisien taitoon liittyvien tietojen lisäksi oman kokumuksensa ja kiinnostuksensa kyseisen taidon suhteen. Hän haluaa muokata taidon kuvausta, joten hän menee muokkaustilaan, muokkaa tekstiä ja tallentaa muutokset. Lisäksi hän haluaa lisätä taidon itselleen opittavaksi. Hän muokkaa kiinnostus-kohtaan arvon ja tallentaa muutoksen.
+:   Käyttäjä menee sivulle, jolla taidot on listattuna. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla, ja pääsee taitonäkymään. Käyttäjä näkee yleisien taitoon liittyvien tietojen lisäksi oman kokemuksensa ja kiinnostuksensa kyseisen taidon suhteen, jos taito on hänelle lisätty. Nyt hänellä ei kuitenkaan ole vielä kyseistä taitoa, joten sen sijaan näkyy nappi, josta taidon voi lisätä. Hän haluaa muokata taidon kuvausta, joten hän menee muokkaustilaan, muokkaa tekstiä ja tallentaa muutokset. Lisäksi hän haluaa lisätä taidon itselleen opittavaksi. Hän painaa lisää itselle -nappia ja saa muokattavaksi taidon tasotiedot. Hän muokkaa kiinnostus-kohtaan arvon ja tallentaa taidon. Osaamis-kohtaan jää oletusarvo nolla, joka tarkoittaa, että käyttäjällä ei ole osaamista taidosta.
 
 Poikkeukset
 :   Käyttäjä poistuu sivulta tallentamatta muutoksia. Järjestelmä kysyy, haluaisiko käyttäjä tallentaa tiedot.
-Käyttäjällä on jo kyseinen taito yrittäessään lisätä sitä. Järjestelmä ilmoittaa tästä.
 
 Lopputulos
 :   Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana. Käyttäjälle lisätty taito näkyy myös hänen profiilissaan.
@@ -203,13 +202,13 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Käyttäjä valitsee millä tahansa sivulla kirjautumispalkista oman profiilisivunsa. Käyttäjä näkee perustietoja itsestään, taitonsa, kokemuksensa ja projektinsa. Käyttäjä huomaa perustiedoissaan virheen, menee muokkaustilaan, korjaa sen ja tallentaa. Käyttäjä haluaa lisätä itselleen taidon. Hän kirjoittaa taitohakukenttään halutun taidon nimen, ja painaa nappulaa, joka lisää taidon hänelle. Sen jälkeen hän voi muokata osaamis- ja kiinnostustasojaan taidon suhteen.
+:   Käyttäjä valitsee millä tahansa sivulla kirjautumispalkista oman profiilisivunsa. Käyttäjä näkee perustietoja itsestään, taitonsa, kokemuksensa ja projektinsa. Käyttäjä huomaa perustiedoissaan virheen, menee muokkaustilaan, korjaa sen ja tallentaa. Lisäksi hän huomaa, että hänen erään taitonsa osaamistaso kaipaa päivitystä. Hän muuttaa vetolaatikosta taidon tasoksi "3":n tilalle "4". Käyttäjä ei myöskään mielellään haluaisi enää käyttää erästä vanhentuneeksi kokemaansa teknologiaa, joten hän muuttaa sen kiinnostustasoksi "1" samanlaisesta vetolaatikosta.
 
 Poikkeukset
 :   Jonkun tiedon tallentaminen ei onnistunut.
 
 Lopputulos
-:   Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana.
+:   Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy tietojen viimeisimpänä muokkaajana jokaisen muutetun tiedon kohdalla.
 
 ----------
 
@@ -220,7 +219,7 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Projektipäällikkö (joka on järjestelmässä peruskäyttäjä niin kuin kaikki) haluaa löytää projektiinsa tiettyä taitoa osaavan henkilön. Hän menee haku-toimintoon ja kirjoittaa hakukenttään taidon ja valitsee sen kriteeriksi. Lisäksi hän merkkaa, että hakee henkilöitä. Hän haluaa erityisesti henkilön, jolla ei ole paljoa kokemusta taidosta, mutta on suuri kiinnostus oppia se, joten hän tekee sen mukaiset säädöt hakuun. Haku tarjoaa heti ehdotuksia, kun käyttäjä lisäilee hakukriteerejä. Projektipäällikkö haluaa tarkastella parhaimpia osumia tarkemmin ja painaa osumaa nähdäkseen kyseisen henkilön profiilisivulla olevia tietoja.
+:   Projektipäällikkö (joka on järjestelmässä peruskäyttäjä niin kuin kaikki) haluaa löytää projektiinsa tiettyä taitoa osaavan henkilön. Hän menee Käyttäjät-sivulle, jolla listataan käyttäjiä. Sivun alussa on hakukenttä, johon hän kirjoittaa taidon ja valitsee sen kriteeriksi. Hän haluaa erityisesti henkilön, jolla ei ole paljoa kokemusta taidosta, mutta on suuri kiinnostus oppia se, joten hän tekee sen mukaiset säädöt hakuun. Haku tarjoaa heti ehdotuksia, kun käyttäjä lisäilee hakukriteerejä. Projektipäällikkö haluaa tarkastella parhaimpia osumia tarkemmin ja painaa osumaa nähdäkseen kyseisen henkilön profiilisivulla olevia tietoja. Hän vertailee eri ehdokkaita ja lopulta valitsee tehtävään sopivimman henkilön.
 
 Poikkeukset
 :   Käyttäjä kirjoittaa taidon eri tavalla kuin se on tallennettuna järjestelmään. Haku tarjoaa samankaltaisia taitoja, joista käyttäjä voi valita oikean.
@@ -237,7 +236,7 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Käyttäjä haluaa nähdä kuinka paljon yrityksessä on tietyn taidon osaavia ja kuinka moni haluaa oppia sitä. Hän hakee taidon haulla tai listauksesta ja menee taidon sivulle. Sieltä hän voi valita taidon statistiikat näkyviin. Käyttäjä haluaa myös nähdä mitä kaikkia taitoja koko yrityksessä on ja missä suhteessa. Hän menee statistiikka-sivulle ja valitsee haluamansa tilaston. Käyttäjä näkee datan diagrammeina tai graafeina.
+:   Käyttäjä haluaa nähdä kuinka paljon yrityksessä on tietyn taidon osaavia ja kuinka moni haluaa oppia sitä. Hän hakee taidon haulla tai listauksesta ja menee taidon sivulle. Sieltä hän voi valita taidon statistiikat näkyviin. Käyttäjä haluaa myös nähdä mitä kaikkia taitoja koko yrityksessä on ja missä suhteessa. Hän menee yleiselle statistiikka-sivulle ja valitsee haluamansa tilaston. Käyttäjä näkee datan diagrammeina tai graafeina.
 
 Poikkeukset
 :   -
@@ -245,6 +244,39 @@ Poikkeukset
 Lopputulos
 :   Käyttäjä näkee haluamansa tiedon selkeässä muodossa.
 
+----------
+
+Nimi
+:   Projekti
+
+Tuloehdot
+:   Käyttäjä on kirjautunut järjestelmään.
+
+Kuvaus
+:   Käyttäjä haluaa luoda uuden projektin. Hän menee Projektit-sivulle, lisää uuden projektin ja täyttää sen perustiedot. Hän haluaa tarkastella, keitä henkilöitä on ollut aikaisemmissa samanlaisissa projekteissa mukana. Hän syöttää projektilistaussivun hakuun teknologiat, joita uudessa projektissa käytetään. Hakutuloksina hän näkee projekteja, joissa on käytetty näitä teknologioita. Hän painaa yhden projektin kohdalta, jolloin hän pääsee projektisivulle ja näkee kaikki tiedot kyseisestä projektista, kuten projektiin osallistuneet henkilöt. Hän haluaa tarkastella erästä henkilöä tarkemmin ja painaa tämän nimen kohdalla päästäkseen tämän profiiliin. Käyttäjä toteaa, että haluaa henkilön myös uuteen projektiinsa mukaan. Käyttäjä menee juuri luomansa projektin sivulle ja painaa lisää henkilö -nappia, jolloin hän voi hakea nimellä kyseisen henkilön projektiin.
+
+Poikkeukset
+:   -
+
+Lopputulos
+:   Uusi projekti on luotu annetuilla tiedoilla.
+
+----------
+
+Nimi
+:   Kokemus
+
+Tuloehdot
+:   Käyttäjä on kirjautunut järjestelmään.
+
+Kuvaus
+:   Käyttäjällä on lisättynä taito, johon hän ei ole lisännyt kokemustaan kuukausina kyseisestä taidosta. Hänellä ei äkkiseltään ole mielikuvaa, kuinka paljon hän on taitoa käyttänyt. Käyttäjä painaa laske kokemus -nappia, jolloin järjestelmä laskee yhteen kaikki käyttäjän projektien kestot, joissa kyseinen taito on ollut käytössä ja tarjoaa sitä kuukausina arvoksi kokemuskenttään. Käyttäjä tietää, että on edellisessäkin työpaikassa käyttänyt taitoa jonkun verran, mutta niitä projekteja hän ei viitsi erikseen lisätä järjestelmään, joten hän lisää manuaalisesti järjestelmän laskemaan kokemusmäärään vielä 12 kuukautta. 
+
+Poikkeukset
+:   -
+
+Lopputulos
+:   Käyttäjän taidon kokemusmäärä on päivitetty.
 
 #  Käyttöliittymä
 Koska lopputuote on web-palvelu, käyttöliittymä on siinä hyvin olennainen osa. Palvelu toteutetaan yhden sivun sovelluksena, jossa kaikki lataukset tapahtuvat selaimen pysyessä samalla sivulla. Tässä kappaleessa käydään läpi ensin käyttöliittymän yleiset piirteet, sitten kirjautumattoman käyttäjän näkymän ja lopuksi varsinaisessa käytössä vastaan tulevat näkymät, joissa käyttäjä on kirjautuneena.
@@ -258,7 +290,7 @@ Sivulla näytetään selkeitä pienennettyjä kuvakaappauksia palvelun käytetyi
 ![Etusivu sisäänkirjautumattoman käyttäjän näkökulmasta](ui_pics/frontpage_loggedout.png)
 
 ## Rekisteröityminen
-Rekisteröitymissivu on askeettinen sisältäen pelkästään lomakkeen tietojen syöttämistä varten. Lomakkeessa kysytään vain aivan minimaaliset perustiedot kuten sähköpostiosoite, nimi ja haluttu salasana. Lomakkeen kentät näyttävät käyttäjälle reaaliajassa tiedon siitä, onko niihin syötetty validia tietoa vaihtamalla taustavärikseen punaista tai virheää asianmukaisesti ja tarjoamalla tooltipin siitä, mikä on vialla. Rekisteröitymisen onnistuttua käyttäjä ohjataan takaisin kirjautumattoman etusivulle, jossa kiitetään rekisteröitymisestä ja kehoitetaan kirjautumaan.
+Rekisteröitymissivu on askeettinen sisältäen pelkästään lomakkeen tietojen syöttämistä varten. Lomakkeessa kysytään vain aivan minimaaliset perustiedot kuten sähköpostiosoite, nimi ja haluttu salasana. Lomakkeen kentät näyttävät käyttäjälle reaaliajassa tiedon siitä, onko niihin syötetty validia tietoa vaihtamalla taustavärikseen punaista tai vihreää asianmukaisesti ja tarjoamalla tooltipin siitä, mikä on vialla. Rekisteröitymisen onnistuttua käyttäjä ohjataan takaisin kirjautumattoman etusivulle, jossa kiitetään rekisteröitymisestä ja kehoitetaan kirjautumaan.
 
 ![Rekisteröitymissivu](ui_pics/register.png)
 
@@ -286,14 +318,14 @@ Pohjimmaisena sivulla on listaus järjestelmään syötetyistä taidoista. Mikä
 ![Taitojen listaussivu](ui_pics/skill_list.png)
 
 ## Yksittäinen taito
-Taitoa tarkastellessa siitä näytetään käyttäjän profiilisivun kaltaisesti ylhäällä logo ja otsikkona sen nimi. Taidon kuvaus on kokonaisuudessaan näiden alla, ja sen alla on nappi, josta taidon voi lisätä omaan osaamiseensa. Kun taito on lisätty käyttäjälle, tämä tälle näkyy lomake, jolla hän voi taitosivulta käsin muuttaa omaa suhdettaan taitoon: esimerkiksi numeroarvoisesti osaamista ja mielenkiintoa. Käyttäjällä on lisäksi nappi, josta hän voi ottaa taidon pois omasta osaamisestaan.
+Taitoa tarkastellessa siitä näytetään käyttäjän profiilisivun kaltaisesti ylhäällä logo ja otsikkona sen nimi. Taidon kuvaus on kokonaisuudessaan näiden alla, ja sen alla on nappi, josta taidon voi lisätä omaan osaamiseensa. Kun taito on lisätty käyttäjälle, tälle näkyy lomake, jolla hän voi taitosivulta käsin muuttaa omaa suhdettaan taitoon: esimerkiksi numeroarvoisesti osaamista ja mielenkiintoa. Käyttäjällä on lisäksi nappi, josta hän voi ottaa taidon pois omasta osaamisestaan.
 
 ![Yksittäisen taidon sivu](ui_pics/skill.png)
 
 ## Projektien listaus
 Projektilista on hyvin samankaltainen kuin osaamislista. Ylhäällä on hakukenttä, josta saa napilla kehittyneen haun esiin. Haun alla on mahdollisuus ponnauttaa projektinlisäyslomake esiin. Alimpana on taulukkolistaus hakukriteerit täyttävistä projekteista alkamis- ja loppumisajankohtineen sekä kuvauksineen. Projektin nimi toimii linkkinä yksittäisen projektin sivulle.
 
-![Proektien listaussivu](ui_pics/project_list.png)
+![Projektien listaussivu](ui_pics/project_list.png)
 
 ## Yksittäinen projekti
 Projektisivulla on projektin nimen alla lueteltu määritelmätyylisesti sen määrämuotoiset tiedot: alkamis- ja loppumisajankohta sekä kuvaus. Näiden jälkeen on taulukko, jossa listataan kaikki projektissa mukana olleet käyttäjät ja heidän projektissa käyttämänsä teknologiat. Lopuksi on taulukkolistaus projektin teknologioista ja vapaa kuvaus niiden käytöstä projektissa. Kaikista taitojen nimistä pääsee taitosivuille ja käyttäjien nimistä käyttäjäprofiileihin.
