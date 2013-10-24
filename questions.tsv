@@ -5,3 +5,7 @@ ask	4	Minkä näköinen listaus tehdään taidoille käyttäjän profiilisivulle
 ask	5	Onko tämä seittemän?
 ans	1	Kyllä
 ans	3	Ei.
+ask	6	Monesko tämä on
+ask	7	Monesko tämä on
+ans	6	Oikein
+ans	7	Oikein
