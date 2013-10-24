@@ -93,7 +93,7 @@ function displayQuestions(filter) {
 
   $('.table-questions tbody').html(_.template(
     '<% _.each(_.pairs(filtered), function (q) { %><tr>' +
-    '<td class="id"><%= q[0] %></td>' +
+    '<td class="id"><%= q[1].id %></td>' +
     '<td><strong>Kysymys:</strong> <%= q[1].ask %>' +
     '<% if (q[1].ans) { %><br/><strong>Vastaus:</strong> <%= q[1].ans %><% } %></td>' +
     '</tr><% }); %>', {filtered: filtered}
@@ -185,6 +185,7 @@ $(function() {
     questions = _.reduce(raw, function (result, val) {
       if (!_.has(result, val.id)) result[val.id] = {};
 
+      result[val.id].id = val.id;
       result[val.id][val.type] = val.text;
       return result;
     }, {});
