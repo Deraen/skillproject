@@ -81,13 +81,22 @@ function displayUsers() {
   });
 }
 
-function displayQuestions() {
+function displayQuestions(filter) {
+  filter = filter || 'open';
+
+  var filtered = _.filter(questions, function(question) {
+    return filter == "all" || !_.has(question, 'ans');
+  });
+
+  $('.questions-filters li').removeClass('active');
+  $('.questions-filters a[data-filter="' + filter + '"]').parent('li').addClass('active');
+
   $('.table-questions tbody').html(_.template(
-    '<% _.each(_.pairs(questions), function (q) { %><tr>' +
+    '<% _.each(_.pairs(filtered), function (q) { %><tr>' +
     '<td class="id"><%= q[0] %></td>' +
-    '<td><strong>Kysymys:</strong> <%= q[1].question %>' +
-    '<% if (q[1].answer) { %><strong>Vastaus:</strong> <%= q[1].answer %><% } %></td>' +
-    '</tr><% }); %>'
+    '<td><strong>Kysymys:</strong> <%= q[1].ask %>' +
+    '<% if (q[1].ans) { %><br/><strong>Vastaus:</strong> <%= q[1].ans %><% } %></td>' +
+    '</tr><% }); %>', {filtered: filtered}
   ));
 }
 
@@ -122,7 +131,6 @@ $(function() {
     var lines = _.filter(data.split('\n'), notEmptyLine);
 
     tasks = _.map(lines, function (line) {
-      console.log(line);
       var c = line.split('\t');
       return {
         date: moment(c[0], 'D.M.YYYY'),
@@ -177,11 +185,7 @@ $(function() {
     questions = _.reduce(raw, function (result, val) {
       if (!_.has(result, val.id)) result[val.id] = {};
 
-      if (val.type === 'ask') {
-        result[val.id].question = val.text;
-      } else if (val.type === 'ans') {
-        result[val.id].answer = val.text;
-      }
+      result[val.id][val.type] = val.text;
       return result;
     }, {});
 
@@ -199,5 +203,12 @@ $(function() {
       displayHours(null, $(this).data('sort'), inverse);
       return false;
     });
+  });
+
+  $('.questions-filters a').click(function (e) {
+    e.preventDefault();
+
+    displayQuestions($(this).data('filter'));
+    return false;
   });
 });
