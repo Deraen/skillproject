@@ -136,7 +136,8 @@ Kuvaus
 :   Käyttäjä menee järjestelmän pääsivulle. Hän painaa "Rekisteröidy"-linkkiä, josta aukeaa rekisteröitymissivu. Käyttäjä syöttää sähköpostiosoitteensa, nimensä ja salasanan. Käyttäjä painaa "Rekisteröidy"-nappia. Järjestelmä ilmoittaa, että tunnukset on luotu.
 
 Poikkeukset
-:   Annetulla sähköpostilla on jo luotu tunnukset. Järjestelmä ilmoittaa tästä.
+:   Annetulla sähköpostilla on jo luotu tunnukset. 
+:   Sähköposti tai salasana ei läpäise validointia.
 
 Lopputulos
 :   Käyttäjällä on palveluun tunnukset, joilla hän voi jatkossa kirjautua sisään.
@@ -150,14 +151,14 @@ Tuloehdot
 :   Käyttäjällä on tunnukset järjestelmään.
 
 Kuvaus
-:   Käyttäjä menee mille tahansa järjestelmän sivulle ja kirjautumispalkki on näkyvissä. Käyttäjä kirjoittaa sähköpostiosoitteensa ja salasanansa kenttiin ja painaa "Kirjaudu"-nappia.
+:   Käyttäjä menee järjestelmän etusivulle, ja kirjautumispalkki on näkyvissä. Käyttäjä kirjoittaa sähköpostiosoitteensa ja salasanansa kenttiin ja painaa "Kirjaudu"-nappia.
 
 Poikkeukset
 :   Käyttäjän antamaa sähköpostia ei ole tietokannassa. Järjestelmä ilmoittaa, että sähköpostilla ei ole olemassa tunnuksia.
 :   Salasana ei vastaa olemassaolevaa, annettua sähköpostiosoitetta. Järjestelmä ilmoittaa, että salasana on väärä.
 
 Lopputulos
-:   Käyttäjä on kirjautunut sisään ja voi selata ja muokata tietoja.
+:   Käyttäjä on kirjautunut sisään.
 
 ----------
 
@@ -168,7 +169,7 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Käyttäjä menee sivulle, jolla taidot listataan. Käyttäjä painaa lisää taito -nappia, jolloin esiin tulee lomake. Hän täyttää taidon logon urlin, nimen, kuvauksen ja lisää kategoriatageja, jotka kertovat, minkä tyyppisestä taidosta on kyse. Käyttäjä painaa lisää-nappia ja järjestelmä kertoo, että uusi taito lisättiin onnistuneesti.
+:   Käyttäjä menee "Taidot"-sivulle. Käyttäjä painaa "Lisää taito" -nappia, jolloin esiin tulee lomake. Hän täyttää taidon logon URL:n, nimen, kuvauksen ja lisää kategoriatageja, jotka kertovat, minkä tyyppisestä taidosta on kyse. Käyttäjä painaa "Lisää"-nappia ja järjestelmä kertoo, että uusi taito lisättiin onnistuneesti.
 
 Poikkeukset
 :   Vastaava taito on jo olemassa. Järjestelmä ehdottaa, että käyttäjän tekemät muutokset yhdistetään jo olemassa olevan taidon kanssa (lisäominaisuus).
@@ -185,13 +186,13 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään. Taitoja on lisätty.
 
 Kuvaus
-:   Käyttäjä menee sivulle, jolla taidot on listattuna. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla, ja pääsee taitonäkymään. Käyttäjä näkee yleisien taitoon liittyvien tietojen lisäksi oman kokemuksensa ja kiinnostuksensa kyseisen taidon suhteen, jos taito on hänelle lisätty. Nyt hänellä ei kuitenkaan ole vielä kyseistä taitoa, joten sen sijaan näkyy nappi, josta taidon voi lisätä. Hän haluaa muokata taidon kuvausta, joten hän menee muokkaustilaan, muokkaa tekstiä ja tallentaa muutokset. Lisäksi hän haluaa lisätä taidon itselleen opittavaksi. Hän painaa lisää itselle -nappia ja saa muokattavaksi taidon tasotiedot. Hän muokkaa kiinnostus-kohtaan arvon ja tallentaa taidon. Osaamis-kohtaan jää oletusarvo nolla, joka tarkoittaa, että käyttäjällä ei ole osaamista taidosta.
+:   Käyttäjä menee "Taidot"-sivulle. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla ja pääsee taitonäkymään. Käyttäjä näkee taidon yleisen kuvauksen, listan taidon omaavista käyttäjistä ja listan projekteista, joihin taito on linkitetty. Lisäksi näkymässä on painike, jonka avulla käyttäjä voi lisätä taidon omaan profiiliinsa. Hän haluaa muokata taidon kuvausta, joten hän menee muokkaustilaan, muokkaa tekstikentän tietoja ja tallentaa muutokset. Lisäksi hän haluaa lisätä taidon omaan profiiliinsa. Hän painaa "Lisää profiiliin"-nappia ja saa muokattavaksi taidon taso-, kiinnostus- ja kokemustiedot. Hän muokkaa kenttien arvoja ja tallentaa taidon. Tyhjäksi jätetty kenttä alustaa arvoksi nollan (0). 
 
 Poikkeukset
 :   Käyttäjä poistuu sivulta tallentamatta muutoksia. Järjestelmä kysyy, haluaisiko käyttäjä tallentaa tiedot.
 
 Lopputulos
-:   Muutokset ovat tallessa järjestelmässä. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana. Käyttäjälle lisätty taito näkyy myös hänen profiilissaan.
+:   Muutokset on tallennettu järjestelmään. Käyttäjän sähköposti näkyy taidon viimeisimpänä muokkaajana. Käyttäjälle lisätty taito näkyy hänen profiilissaan.
 
 ----------
 
@@ -202,7 +203,7 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Käyttäjä valitsee millä tahansa sivulla kirjautumispalkista oman profiilisivunsa. Käyttäjä näkee perustietoja itsestään, taitonsa, kokemuksensa ja projektinsa. Käyttäjä huomaa perustiedoissaan virheen, menee muokkaustilaan, korjaa sen ja tallentaa. Lisäksi hän huomaa, että hänen erään taitonsa osaamistaso kaipaa päivitystä. Hän muuttaa vetolaatikosta taidon tasoksi "3":n tilalle "4". Käyttäjä ei myöskään mielellään haluaisi enää käyttää erästä vanhentuneeksi kokemaansa teknologiaa, joten hän muuttaa sen kiinnostustasoksi "1" samanlaisesta vetolaatikosta.
+:   Käyttäjä valitsee millä tahansa sivulla navigointipalkista oman profiilisivunsa. Käyttäjä näkee oman profiilikuvansa ja välilehdet "Omat tiedot", "Taidot" ja "Projektit", joista "Omat tiedot" ovat oletuksena aktiivisena. Käyttäjä huomaa perustiedoissaan virheen, menee muokkaustilaan, korjaa sen ja tallentaa. Lisäksi hän huomaa, että hänen erään taitonsa osaamistaso kaipaa päivitystä. Hän muuttaa taidon tason vastaamaan oikeaa arvoa. Käyttäjä ei myöskään haluaisi enää käyttää erästä vanhentuneeksi kokemaansa teknologiaa, joten hän muuttaa sen kiinnostustasoksi pienemmän arvon.
 
 Poikkeukset
 :   Jonkun tiedon tallentaminen ei onnistunut.
@@ -219,10 +220,11 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
 
 Kuvaus
-:   Projektipäällikkö (joka on järjestelmässä peruskäyttäjä niin kuin kaikki) haluaa löytää projektiinsa tiettyä taitoa osaavan henkilön. Hän menee Käyttäjät-sivulle, jolla listataan käyttäjiä. Sivun alussa on hakukenttä, johon hän kirjoittaa taidon ja valitsee sen kriteeriksi. Hän haluaa erityisesti henkilön, jolla ei ole paljoa kokemusta taidosta, mutta on suuri kiinnostus oppia se, joten hän tekee sen mukaiset säädöt hakuun. Haku tarjoaa heti ehdotuksia, kun käyttäjä lisäilee hakukriteerejä. Projektipäällikkö haluaa tarkastella parhaimpia osumia tarkemmin ja painaa osumaa nähdäkseen kyseisen henkilön profiilisivulla olevia tietoja. Hän vertailee eri ehdokkaita ja lopulta valitsee tehtävään sopivimman henkilön.
+:   Projektipäällikkö haluaa löytää projektiinsa tiettyä taitoa osaavan henkilön. Hän menee "Taidot"-sivulle, jossa on listattuna järjestelmästä löytyvät taidot. Sivun alussa on rajauskenttä, johon hän kirjoittaa taidon. Rajauksen tuloksista klikataan taidon yleisnäkymään. Käyttäjä haluaa löytää erityisesti henkilön, jolla ei ole paljoa kokemusta taidosta, mutta on kiinnostusta oppia sitä. Taidon sivulla on listaus siihen linkitetyistä käyttäjistä, josta ilmenee kunkin käyttäjän osaaminen. Käyttäjä vertailee eri ehdokkaita ja lopulta valitsee tehtävään sopivimman henkilön.
 
 Poikkeukset
-:   Käyttäjä kirjoittaa taidon eri tavalla kuin se on tallennettuna järjestelmään. Haku tarjoaa samankaltaisia taitoja, joista käyttäjä voi valita oikean.
+:   Haettua taitoa ei ole lisätty järjstelmään.
+:   Yksikään käyttäjä ei ole lisännyt taitoa omaan profiiliinsa.
 
 Lopputulos
 :   Käyttäjä on löytänyt kriteeriensä mukaan parhaan ehdokkaan projektiin.
@@ -230,13 +232,14 @@ Lopputulos
 ----------
 
 Nimi
-:   Yrityksen osaamisen tarkastelu
+:   Ryhmän osaamisen tarkastelu
 
 Tuloehdot
-:   Käyttäjä on kirjautunut järjestelmään.
+:   Käyttäjä on kirjautunut järjestelmään. 
+:   Käyttäjällä on lisättynä henkilöitä ryhmään.
 
 Kuvaus
-:   Käyttäjä haluaa nähdä kuinka paljon yrityksessä on tietyn taidon osaavia ja kuinka moni haluaa oppia sitä. Hän hakee taidon haulla tai listauksesta ja menee taidon sivulle. Sieltä hän voi valita taidon statistiikat näkyviin. Käyttäjä haluaa myös nähdä mitä kaikkia taitoja koko yrityksessä on ja missä suhteessa. Hän menee yleiselle statistiikka-sivulle ja valitsee haluamansa tilaston. Käyttäjä näkee datan diagrammeina tai graafeina.
+:   -
 
 Poikkeukset
 :   -
@@ -247,7 +250,7 @@ Lopputulos
 ----------
 
 Nimi
-:   Projekti
+:   Projektin lisääminen
 
 Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään.
