@@ -2,10 +2,10 @@
   "name": "skillwebsite",
   "version": "0.0.0",
   "dependencies": {
-    "html5shiv": "~3.6.2",
-    "bootstrap": "~3.0.0",
-    "moment": "~2.2.1",
-    "lodash": "~2.0.0"
+    "html5shiv": "~3.7.0",
+    "bootstrap": "~3.0.1",
+    "moment": "~2.4.0",
+    "lodash": "~2.2.1"
   },
   "devDependencies": {}
 }
