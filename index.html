@@ -41,13 +41,17 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#project">Projekti</a></li>
-          <li><a href="#techs">Tekniikat</a></li>
-          <li><a href="#people">Henkilöt</a></li>
-		  <li><a href="#documentation">Dokumentit</a></li>
-          <li><a href="#highlights">Project Highlights</a></li>
-		  <li><a href="#links">Linkit</a></li>
-		  <li><a href="#questions">Kysymykset</a></li>
+          <li class="active dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projekti <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#project">Projekti</a></li>
+              <li><a href="#techs">Tekniikat</a></li>
+              <li><a href="#people">Henkilöt</a></li>
+            </ul>
+          </li>
+          <li><a href="#documentation">Dokumentit</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#questions">Kysymykset</a></li>
           <li><a href="#hours">Tunnit</a></li>
         </ul>
       </div>
@@ -113,6 +117,18 @@
             <li>Grunt</li>
             <li>Mocha</li>
             <li>Heroku</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <p>Yleisiä hyväksi todettuja lähteitä tiedolle liittyen käytettäviin tekniikoihin</p>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Mozilla, JavaScript objektit</a>, ylipäätään ne {key: "value"} jutut.</li>
+            <li><a href="http://lodash.com/docs">Lodash Api</a>, mm. Object ja Array käsitelyyn.</li>
+            <li><a href="https://github.com/caolan/async">Node-Async</a>, samoja juttuja kuin Lodashissa mutta hyödyllinen kun tarvitsee tietää esim. koska each:n kanssa kutsuttu iterator kaikille taulukon arvoille.</li>
+            <li><a href="http://angular-ui.github.io/bootstrap/">Angular-bootstrap</a>, käytetään normaalin Bootstrap JavaScriptin sijaan tätä versiota mikä ei tarvitse JQueryä (vähemmän lataamista).</li>
           </ul>
         </div>
       </div>
@@ -201,42 +217,24 @@
   <section id="highlights">
   <div class="container">
     <div class="row">
-      <h2>PROJECT HIGHLIGHTS</h2>
+      <h2>HIGHLIGHTS</h2>
       <div class="col-sm-12">
-	  <p>Projektin viikkokatsaukset</p>
-		<ul>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko37_project_highlights">Project Highlights - Viikko 37</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko38_project_highlights">Project Highlights - Viikko 38</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko39_project_highlights">Project Highlights - Viikko 39</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko40_project_highlights">Project Highlights - Viikko 40</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko41_project_highlights">Project Highlights - Viikko 41</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko42_project_highlights">Project Highlights - Viikko 42</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko43_project_highlights">Project Highlights - Viikko 43</a></b>
-			<li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko44_project_highlights">Project Highlights - Viikko 44</a></b>
-		</ul>
-	 </div>
+    <p>Projektin viikkokatsaukset</p>
+    <ul>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko37_project_highlights">Project Highlights - Viikko 37</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko38_project_highlights">Project Highlights - Viikko 38</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko39_project_highlights">Project Highlights - Viikko 39</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko40_project_highlights">Project Highlights - Viikko 40</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko41_project_highlights">Project Highlights - Viikko 41</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko42_project_highlights">Project Highlights - Viikko 42</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko43_project_highlights">Project Highlights - Viikko 43</a></b>
+      <li><a href="http://www.students.tut.fi/~tuurinkj/ryhma4_viikko44_project_highlights">Project Highlights - Viikko 44</a></b>
+    </ul>
+   </div>
     </div>
   </div>
   </section>
-  
-  <a name="links"></a>
-  <section id="links">
-  <div class="container">
-    <div class="row">
-      <h2>LINKIT</h2>
-      <div class="col-sm-12">
-        <p>Yleisiä hyväksi todettuja lähteitä tiedolle liittyen käytettäviin tekniikoihin</p>
-        <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Mozilla, JavaScript objektit</a>, ylipäätään ne {key: "value"} jutut.</li>
-          <li><a href="http://lodash.com/docs">Lodash Api</a>, mm. Object ja Array käsitelyyn.</li>
-          <li><a href="https://github.com/caolan/async">Node-Async</a>, samoja juttuja kuin Lodashissa mutta hyödyllinen kun tarvitsee tietää esim. koska each:n kanssa kutsuttu iterator kaikille taulukon arvoille.</li>
-          <li><a href="http://angular-ui.github.io/bootstrap/">Angular-bootstrap</a>, käytetään normaalin Bootstrap JavaScriptin sijaan tätä versiota mikä ei tarvitse JQueryä (vähemmän lataamista).</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  </section>
-  
+
   <a name="questions"></a>
   <section id="questions">
     <div class="container">
@@ -268,39 +266,40 @@
       <div class="row">
         <h2>TUNNIT</h2>
         <div class="col-sm-12">
-          <table class="table table-weeks">
-          </table>
+          <ul class="nav nav-tabs" id="hourTabs">
+            <li class="active"><a href="#weeks" data-toggle="tab">Viikot</a></li>
+            <li><a href="#all" data-toggle="tab">Näytä yksittäiset tapahtumat</a></li>
+          </ul>
 
-          <table class="table table-categories">
-          </table>
+          <div class="tab-content">
+            <div class="tab-pane active" id="weeks">
+              <table class="table table-weeks">
+              </table>
 
-          <table class="table table-hours">
-            <thead>
-              <tr>
-                <th>Päivä <a href="#" class="sort" data-sort="date"></a></th>
-                <th>Kesto <a href="#" class="sort" data-sort="duration"></a></th>
-                <th>Kategoria <a href="#" class="sort" data-sort="category"></a></th>
-                <th>
-                  <div class="dropdown dropdown-users">
-                    <a href="#" data-toggle="dropdown">Osallisina <b class="caret"></b></a>
-                    <ul class="dropdown-menu"></ul>
-                  </div>
-                </th>
-                <th>Kuvaus</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Yhteensä</td>
-                <td class="total-hours"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tfoot>
-          </table>
+              <table class="table table-categories">
+              </table>
+            </div>
+            <div class="tab-pane" id="all">
+              <table class="table table-hours">
+                <thead>
+                  <tr>
+                    <th>Päivä <a href="#" class="sort" data-sort="date"></a></th>
+                    <th>Kesto <a href="#" class="sort" data-sort="duration"></a></th>
+                    <th>Kategoria <a href="#" class="sort" data-sort="category"></a></th>
+                    <th>
+                      <div class="dropdown dropdown-users">
+                        <a href="#" data-toggle="dropdown">Osallisina <b class="caret"></b></a>
+                        <ul class="dropdown-menu"></ul>
+                      </div>
+                    </th>
+                    <th>Kuvaus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -317,6 +316,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script src="components/bootstrap/js/scrollspy.js"></script>
   <script src="components/bootstrap/js/dropdown.js"></script>
+  <script src="components/bootstrap/js/tab.js"></script>
   <script src="components/lodash/dist/lodash.js"></script>
   <script src="components/moment/moment.js"></script>
   <script src="scripts/main.js"></script>
