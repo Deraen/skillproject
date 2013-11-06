@@ -1,8 +1,5 @@
-/* global require, module */
-var path = require('path');
-
 module.exports = function (grunt) {
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt);
 
   var yeomanConfig = {
     app: 'public',
@@ -55,6 +52,12 @@ module.exports = function (grunt) {
     clean: {
       dist: ['<%= yeoman.dist %>']
     },
+    useminPrepare: {
+      html: '<%= yeoman.app %>/index.html'
+    },
+    usemin: {
+      html: '<%= yeoman.dist %>/**/*.html'
+    },
     copy: {
       dist: {
         expand: true,
@@ -63,10 +66,6 @@ module.exports = function (grunt) {
           'CNAME',
           '**/*.{html,txt,css,js,svg,png,jpg}',
           '!components/**/*',
-          'components/html5shiv/dist/html5shiv.js',
-          'components/bootstrap/js/{scrollspy,dropdown}.js',
-          'components/lodash/dist/lodash.js',
-          'components/moment/moment.js',
           'components/bootstrap/fonts/*',
           'temp/**/*'
         ],
@@ -105,8 +104,12 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'less:dist',
+    'useminPrepare',
+    'concat',
+    'uglify',
     'copy:dist',
-    'copy:dist2'
+    'copy:dist2',
+    'usemin',
   ]);
 
   grunt.registerTask('deploy', [
