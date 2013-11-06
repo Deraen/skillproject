@@ -8,7 +8,7 @@ var categories = {
   'TEA': 'Teaching',
   'OTH': 'Other'
 };
-var users = ['Juho', 'Jussi', 'Masi', 'Niko', 'Oskari', 'Taina'];
+var users = ['Juho', 'Jussi', 'Masi', 'Niko', 'Oskari', 'Taina', 'Yhteensä'];
 
 var tasks = [];
 var weeks = {};
@@ -62,14 +62,9 @@ function displayHours(filter, sort, inverse) {
     '<td><%= task.date.format(\'D.M.YYYY\') %></td>' +
     '<td><%= task.duration %>h</td>' +
     '<td><abbr title="<%= task.category %>"><%= categories[task.category] %></abbr></td>' +
-    '<td><% if (task.participants.length === users.length) { %><abbr title="<%= task.participants %>">Kaikki</abbr><% } else { %><%= task.participants %><% } %></td>' +
+    '<td><% if (task.participants.length === users.length - 1) { %><abbr title="<%= task.participants %>">Kaikki</abbr><% } else { %><%= task.participants %><% } %></td>' +
     '<td><%= task.summary %></td>' +
     '</tr><% }); %>', {sorted: sorted, categories: categories, users: users, foreach: foreach}));
-
-  var total = _.reduce(filtered, function (result, task) {
-    return result + (task.duration * task.participants.length);
-  }, 0);
-  $('.table-hours .total-hours').html(_.template('<%= total %>h', {total: total}));
 }
 
 function displayUsers() {
@@ -104,7 +99,7 @@ $(function() {
   $("a[href^=http]").attr("target", "_blank");
 
   $('body').scrollspy({
-    offset: 50,
+    offset: 150,
     target: '.navbar-default'
   });
 
@@ -148,6 +143,7 @@ $(function() {
 
       _.each(task.participants, function (name) {
         result[week][name] = (result[week][name] || 0) + task.duration;
+        result[week]['Yhteensä'] = (result[week]['Yhteensä'] || 0) + task.duration;
       });
 
       return result;
@@ -156,6 +152,7 @@ $(function() {
     totals = _.reduce(tasks, function (result, task, key) {
       _.each(task.participants, function (name) {
         result[name] = (result[name] || 0) + task.duration;
+        result['Yhteensä'] = (result['Yhteensä'] || 0) + task.duration;
       });
 
       return result;
@@ -211,5 +208,11 @@ $(function() {
 
     displayQuestions($(this).data('filter'));
     return false;
+  });
+
+  $('[data-toggle="tab"]').click(function(e) {
+    // Why is this required? Other click handlers interfering?
+    $(this).tab('show');
+    e.preventDefault();
   });
 });

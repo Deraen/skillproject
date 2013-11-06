@@ -10,7 +10,6 @@
 @teal: #1f9799;
 @orange: #ffbb34;
 @red: #ff3434;
-// @link-color: darken(@orange, 15);
 
 // Small screen / tablet
 @container-tablet:            ((610px + @grid-gutter-width));
@@ -51,7 +50,7 @@ footer {
 
 section {
   .container {
-    padding: 40px 0 40px 0;
+    padding: 100px 0 100px 0;
     border-bottom: 4px solid #cccccc;
   }
   h2 {
@@ -109,39 +108,23 @@ h5 {
   }
 }
 
-.techs {
-  div {
-    // margin-bottom: 20px;
-  }
-}
-
 .techs-list {
   li {
+    .glyphicon-cog();
     list-style: none;
     &:before {
-      content: "\1f527";
-      font-family: 'Glyphicons Halflings';
+      .glyphicon();
       margin-right: 10px;
       font-size: 9px;
     }
   }
 }
 
-a[class^='icon-'] {
-  &:hover {
-    text-decoration: none;
-  }
+.no-underline {
+  text-decoration: none;
 }
-
-.table-hours {
-  thead {
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-}
+a[class^='icon-'] &:hover { .no-underline(); }
+.table-hours thead a:hover { .no-underline(); }
 
 tfoot {
   background: #eee;
@@ -149,19 +132,14 @@ tfoot {
 }
 
 .sort {
-  font-family: 'Glyphicons Halflings';
   color: #ccc;
-  &:before {
-    content: "\e114";
-  }
-  &.sort-asc {
+  .glyphicon();
+  .glyphicon-sort-by-order-alt();
+  &.sort-asc, &.sort-desc {
     color: #222;
   }
   &.sort-desc {
-    &:before {
-      content: "\e113";
-    }
-    color: #222;
+    .glyphicon-sort-by-order();
   }
 }
 

@@ -15,7 +15,10 @@ module.exports = function (grunt) {
     watch: {
       less: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
-        tasks: ['less:server']
+        tasks: ['less:server'],
+        options: {
+          atBegin: true
+        }
       }
     },
     express: {
@@ -93,7 +96,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('server', [
-    'less:server',
     'copy:server',
     'express',
     'open',
