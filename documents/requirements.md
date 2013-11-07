@@ -7,7 +7,7 @@ project: 'Henkilöstön osaamisen hallinnan työkalu'
 document: 'Vaatimusmäärittely'
 group: 'Mahtiprojekti'
 groupNumber: '4'
-version: 1.0
+version: 1.2
 author:
 - name: Niko Junkala
   studentNumber: 211479
@@ -28,21 +28,23 @@ author:
 ----------  ----------  --------------  ---------------------------------------
     Versio  Päiväys     Tekijä          Kuvaus
 ----------  ----------  --------------  ---------------------------------------
-0.1         2.10.2013   Juho            Dokumentin pohja
+0.1         02.10.2013  Teperi          Dokumentin pohja
 
-0.2         2.10.2013   Jussi           Otsikoita ja ranskalaisia viivoja
+0.2         02.10.2013  Tuurinkoski     Otsikoita ja ranskalaisia viivoja
 
-0.2.1       2.10.2013   Jussi           Lisätty kysymys
+0.2.1       02.10.2013  Tuurinkoski     Lisätty kysymys
 
-0.3         9.10.2013   Taina           Laatuvaativuusmäärittelyjä
+0.3         09.10.2013  Peltonen        Laatuvaativuusmäärittelyjä
 
-0.3.1       10.10.2013  Taina           Käyttötapauksia
+0.3.1       10.10.2013  Peltonen        Käyttötapauksia
 
-0.4         11.10.2013  Jussi           Kirjoitettu dokumentti
+0.4         11.10.2013  Tuurinkoski     Kirjoitettu dokumentti
 
-1.0         11.10.2013  Juho            Korjattu ulkoasua, lopullinen palautus.
+1.0         11.10.2013  Teperi          Korjattu ulkoasua, lopullinen palautus.
 
-1.1			1.11.2013	Jussi			Käyttötapausten muokkaamista
+1.1			01.11.2013	Tuurinkoski		Käyttötapausten muokkaamista
+
+1.2			07.11.2013	Tuurinkoski		Muutokset kommenttien pohjalta
 ----------  ----------  --------------  ---------------------------------------
 
 # Määritelmät ja lyhenteet {.unnumbered}
@@ -57,13 +59,13 @@ HOHT
 Tämän dokumentin tarkoitus on määritellä sovellukselta vaaditut toiminnallisuudet ja niiden prioriteetit. Vaatimusmäärittely on kohdistettu projektityöryhmän lisäksi muille sidosryhmille, joita ovat asiakas Gofore sekä Tietotekniikan projektityön kurssihenkilökunta. Vaatimuksessa esiintyvien määrittelyjen lähtökohdat ovat asiakkaan tarjoama perus- ja lisäominaisuuksien vaatimuslista sekä tapaamisten yhteydessä käydyt keskustelut. Tämän vuoksi dokumentti sisältää jo pidemmälle vietyjä määrittelyjä, jotka vastaavat osittain jo tehtyjä suunnitteluratkaisuja.
 
 ## Tuote
-Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, joka on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen sekä resursoinnin apuvälineenä. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
+Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, joka on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
 
 
 #  Yleinen kuvaus
 
 ## Toiminnallisuudet
-Sovellus jakautuu kolmeen pääkokonaisuuteen: henkilöön (oma profiili), taitoon (esim. ohjelmointikieli, urheilulaji jne.) ja projektiin (sisältää mm. henkilöitä ja taitoja). Henkilö voi lisätä itselleen uusia taitoja ja muokata kiinnostusta, kokemusta ja omaa taitotasoaan kyseisessä taidossa. Lisäksi henkilö voi liittää itsensä projekteihin, jotka kartuttavat henkilön kokemusta esimerkiksi jonkin projektissa käytetyn taidon suhteen. Järjestelmästä voi hakea henkilöitä, taitoja ja projekteja. Henkilöitä voidaan myös selata tietyn taidon tai projektin mukaan. Sovellus käyttää henkilökohtaista autentikointia, eikä tietokannan sisältöä pääse käsittelemään tai hakuja suorittamaan ilman kirjautumista.
+Sovellus jakautuu kolmeen pääkokonaisuuteen: henkilöön (oma profiili), taitoon (esim. ohjelmointikieli, urheilulaji jne.) ja projektiin (sisältää mm. henkilöitä ja taitoja). Henkilö voi lisätä itselleen uusia taitoja ja muokata kiinnostusta, kokemusta ja omaa taitotasoaan kyseisessä taidossa. Lisäksi henkilö voi liittää itsensä projekteihin, jotka kartuttavat henkilön kokemusta esimerkiksi jonkin projektissa käytetyn taidon suhteen. Järjestelmästä voi hakea henkilöitä, taitoja ja projekteja. Henkilöitä voidaan myös selata tietyn taidon tai projektin mukaan.  Käyttäjä voi myös muodostaa ryhmiä henkilöistä, tallentaa ryhmiä ja vertailla henkilöiden osaamista ryhmän sisällä. Sovellus käyttää henkilökohtaista autentikointia, eikä tietokannan sisältöä pääse käsittelemään tai hakuja suorittamaan ilman kirjautumista.
 
 ## Käyttäjät
 Loppukäyttäjinä toimivat Goforen työntekijät. Yrityksen henkilöstön koulutustaustan huomioonottaen voidaan olettaa, että kyseinen käyttäjäkunta koostuu kokeneista tietokoneen käyttäjistä. Järjestelmässä ei ole erikseen eri käyttäjäryhmiä, mutta tämän mahdollisuus on huomioitu jatkokehitysajatuksissa ja perustoiminnallisuuksien suunnitteluvaiheessa. Järjestelmän odotettu keskimääräinen käyttöaste viikossa on noin 0-5 tuntia käyttäjää kohden.
@@ -85,15 +87,17 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
 - Käyttöliittymän tulee olla responsiivinen, mikä vaikuttaa erityisesti hakutoiminnon luonteeseen.
 - Henkilön profiiliin liittyvät toiminnallisuudet
     - Taitojen lisääminen omaan profiiliin ja vastaavasti niiden poistaminen profiilista.
-    - Taitoihin liittyviin mittareihin (taitotaso [1-5], kiinnostus [1-5] ja kokemus [kk]) voi tehdä muutoksia omalta profiilisivulta.
+    - Taitoihin liittyviin mittareihin (taitotaso [0-5], kiinnostus [1-5] ja kokemus [kk]) voi tehdä muutoksia omalta profiilisivulta.
     - Henkilön profiilissa on vapaamuotoinen, muokattava "oma kuvaus" -kenttä.
     - Henkilö voi liittää itsensä projektiin, muokata omaa assosiaatiotaan (esim. rooli) projektin välillä sekä poistaa itsensä projektista.
     - Henkilö voi lisätä itselleen profiilikuvan, muokata sitä ja poistaa sen
+    	- Profiilikuvan voi tuoda myös Gravatar-palvelun kautta
     - Taidon kokemusmäärä (kk) on mahdollista päivittää automaattisesti projektin kautta (projekti-henkilö-taito -assosiaatio)
-    - Henkilö voi poistaa oman profiilinsa järjestelmästä.
+    - Henkilö voi poistaa oman profiilinsa järjestelmästä (tiedot jäädytetään, mutta jätetään tietokantaan).
 - Taitoon liittyyvät toiminnallisuudet:
     - Taidolla on nimi ja joukko kyseiseen taitoon liittyviä tageja (esim. ohjelmointikieli, urheilulaji jne.).
     - Kuka tahansa voi lisätä järjestelmään uuden taidon, muokata olemassa olevia taitoja tai poistaa taidon järjestelmästä.
+    	- Poistamisen ehtona on, että taitoa ei ole linkitetty yhteenkään henkilöön tai projektiin.
     - Yksittäistä taitoa voi kommentoida tarkoituksena jakaa omia kokemuksia tai muuta hyödyllistä tietoa muiden käyttäjien kesken.
     - Yksittäisen taidon tiedoista näkee projektit ja henkilöt, joilla on yhteys taitoon (taito liitetty projektiin, henkilö lisännyt taidon omaan profiiliinsa).
 - Projektiin liittyvät toiminnallisuudet:
@@ -105,19 +109,22 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
     - Järjestelmästä voi hakea henkilöitä, projekteja ja taitoja
     - Hakutuloksia pystyy järjestämään eri attribuuttien mukaan
     - Haussa hyödynnetään tageja tulosten rajaamisessa sekä hakusanan automaattista täydennystä
+- Käyttäjä voi muodostaa ryhmiä käyttäjistä ja tallentaa ryhmät.
+- Ryhmien henkilöitä voi vertailla taitojen perusteella keskenään.
 - Tietokannan ylläpitämää tietoa ja statistiikkaa voi tarkastella visuaalisesti graafien ja taulukoiden avulla.
 
 ### Lisäominaisuudet
 - Taitoihin liittyen toteutetaan Merge-toiminto, jonka avulla taitoja voidaan yhdistää saman kokonaisuuden alle.
    - Tarve tälle voi olla esimerkiksi kirjoitusvirhe taidon nimessä sitä lisättäessä tietokantaan.
+- Henkilö voi asettaa itselleen tavoitteen tietyn taidon kehityksessä.
+    - Tavoite voi olla taitotason arvon (1-5) korottaminen, kokemuksen hankkiminen (kk) tai osallistuminen projektiin tai koulutukseen, jossa kyseistä taitoa hyödynnetään.
 - Henkilö voi lisätä, muokata ja poistaa suoritettuja koulutuksia, kursseja ja sertifikaatteja.
     - Koulutuksilla, kursseilla ja sertifikaateilla voi olla yhteys järjestelmässä oleviin taitoihinn tai projekteihin.
 - Henkilö voi täydentää omaa työhistoriaansa (aiemmat työpaikat, muut ulkoiset ja itsenäiset projektit).
 - Omasta profiilista voi generoida Goforen sisäistä mallia mukaileva CV PDF-formaatissa.
 - Generoitua CV:tä voi muokata ennen sen tulostamista tai tiedostoon tallentamista.
     - Muokkauksia ei tallenneta henkilön profiiliin.
-- Henkilö voi asettaa itselleen tavoitteen tietyn taidon kehityksessä.
-    - Tavoite voi olla taitotason arvon (1-5) korottaminen, kokemuksen hankkiminen (kk) tai osallistuminen projektiin tai koulutukseen, jossa kyseistä taitoa hyödynnetään.
+
 
 ### Jatkokehitysajatukset
 - Tavoitteet yhtiön tasolla
@@ -220,7 +227,7 @@ Tuloehdot
 :   Käyttäjä on kirjautunut järjestelmään. Taito(ja) löytyy järjestelmästä.
 
 Kuvaus
-:   Käyttäjä menee "Taidot"-sivulle. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla ja pääsee taitonäkymään. Käyttäjä näkee taidon yleisen kuvauksen, listan taidon omaavista käyttäjistä ja listan projekteista , joihin taito on linkitetty omissa välilehdissään. Lisäksi näkymässä on painike, jonka avulla käyttäjä voi lisätä taidon omaan profiiliinsa, mikäli hänellä ei vielä ole kyseistä taitoa. Hän haluaa kommentoida taitoa omien käyttökokemustensa perusteella. Tämä onnistuu klikkaamalla "Kommentoi"-nappia, joka avaa vapaamuotoisen tekstikentän käyttäjälle. Kirjoitettuaan kommenttinsa, käyttäjä painaa "Tallenna"-nappia, jolloin kommentti tallentuu taitonäkymään. Myöhemmin käyttäjä voi vielä käydä muokkaamassa kommenttia tai poistamassa sen.
+:   Käyttäjä menee "Taidot"-sivulle. Käyttäjä silmäilee, mitä taitoja on olemassa ja haluaa tutustua tarkemmin yhteen. Hän painaa taidon kohdalla ja pääsee taitonäkymään. Käyttäjä näkee taidon yleisen kuvauksen, listan taidon omaavista käyttäjistä ja listan projekteista, joihin taito on linkitetty omissa välilehdissään. Lisäksi näkymässä on painike, jonka avulla käyttäjä voi lisätä taidon omaan profiiliinsa, mikäli hänellä ei vielä ole kyseistä taitoa. Hän haluaa kommentoida taitoa omien käyttökokemustensa perusteella. Tämä onnistuu klikkaamalla "Kommentoi"-nappia, joka avaa vapaamuotoisen tekstikentän käyttäjälle. Kirjoitettuaan kommenttinsa, käyttäjä painaa "Tallenna"-nappia, jolloin kommentti tallentuu taitonäkymään. Myöhemmin käyttäjä voi vielä käydä muokkaamassa kommenttia tai poistamassa sen.
 
 Poikkeukset
 :   -
@@ -287,53 +294,63 @@ Koska lopputuote on web-palvelu, käyttöliittymä on siinä hyvin olennainen os
 Joka näkymässä on kiinteänä osana sivun ylälaidassa valikkopalkki. Sen vasemmassa laidassa on päätason navigaatio ja oikeassa laidassa kirjautuminen ja rekisteröitymissivulle vievä linkki. Jos käyttäjä on kirjautuneena, oikealla näytetään sen merkiksi käyttäjänimi, jota klikkaamalla saa auki käyttäjään liittyvät toiminnot kuten profiilisivun avaaminen ja uloskirjautuminen.
 
 ## Kirjautumattoman etusivu
-Sivulla näytetään selkeitä pienennettyjä kuvakaappauksia palvelun käytetyimmistä ominaisuuksista, siten että ne ovat välittömästi tottuneiden käyttäjien tunnistettavissa. Lisäksi sivulla on suurikokoinen otsikko, joka kertoo palvelun nimen, ja sen alla lyhyt kuvaus palvelun käyttötarkoituksista, jotta ensi kertaa sivulla vieraileva käyttäjä tajuaa, minne on saapunut.
+Sivulla näytetään yläpalkissa ainoastaan palvelun nimi. Näkymässä on kentät sähköpostitunnukselle ja salasanalle sekä napit kirjautumiselle ja uuden tunnuksen rekisteröitymiselle. Työkalun muut valinnat on piilotettu, kunnes käyttäjä on kirjautunut sisään.
 
-![Etusivu sisäänkirjautumattoman käyttäjän näkökulmasta](ui_pics/frontpage_loggedout.png)
+![Etusivu sisäänkirjautumattoman käyttäjän näkökulmasta](ui_pics/frontpage_2.png)
 
 ## Rekisteröityminen
 Rekisteröitymissivu on askeettinen sisältäen pelkästään lomakkeen tietojen syöttämistä varten. Lomakkeessa kysytään vain aivan minimaaliset perustiedot kuten sähköpostiosoite, nimi ja haluttu salasana. Lomakkeen kentät näyttävät käyttäjälle reaaliajassa tiedon siitä, onko niihin syötetty validia tietoa vaihtamalla taustavärikseen punaista tai vihreää asianmukaisesti ja tarjoamalla tooltipin siitä, mikä on vialla. Rekisteröitymisen onnistuttua käyttäjä ohjataan takaisin kirjautumattoman etusivulle, jossa kiitetään rekisteröitymisestä ja kehoitetaan kirjautumaan.
 
-![Rekisteröitymissivu](ui_pics/register.png)
+![Rekisteröitymissivu](ui_pics/register_2.png)
 
 ## Kirjautuneen etusivu
 Kirjautuneelle käyttäjälle etusivu ei tarjoa juurikaan informaatiota, vaan toimii ponnahduslautana eri toimintoihin. Siellä on suurin kuvakkein varustettuna koko navigaatio mahdollisine alakohtineen.
 
-![Etusivu sisäänkirjautuneen käyttäjän näkökulmasta](ui_pics/frontpage_loggedin.png)
+![Etusivu sisäänkirjautuneen käyttäjän näkökulmasta](ui_pics/frontpage_loggedin_2.png)
 
 ## Profiilisivu
 Käyttäjäprofiili on järjestelmän keskeisin sivu. Se yrittää olla mahdollisimman analoginen Goforella käytettävän CV-mallin kanssa, jotta käyttäjät osaisivat etsiä tietoa heti oikeasta paikasta. Sen ylälaidassa näytetään käyttäjän määrittämä profiilikuva, jonka vieressä on käyttäjän nimi pääotsikkona ja sen alla toiminimike. Näiden alla on käyttäjän vapaa kuvaus itsestään.
 
-Valtaosa sivusta koostuu taulukoista, joissa on listattuna käyttäjän osaamista ja sen konkretisointia. Ensin listataan käyttäjän projektikokemus ja projekteissa käyttämät teknologiat, sitten työhistoria, koulutus, sertifikaatit, teknologiaosaaminen ja lopuksi kielitaito. Osaamisessa ja kielitaidossa on esitettynä myös osaamistaso, kokemus ja käyttäjän mielenkiinto taitoa kohtaan.
+Valtaosa sivusta koostuu taulukoista, joissa on listattuna käyttäjän osaamista ja sen konkretisointia. Listaukset on jaettu kategorioidensa mukaisiin välilehtiin. Tämä helpottaa profiilin selaamista ilman edestaikaista rullausta pitkin sivua. Osaamisessa ja kielitaidossa on esitettynä osaamistaso, kokemus (Huom! puuttuu käyttöliittymäkuvasta), tavoite, ja käyttäjän mielenkiinto taitoa kohtaan.
 
 Kaikille käyttäjän osaamisille on suora muokkaus- ja poistomahdollisuus profiilisivulla.
 
-![Profiilisivu](ui_pics/profile.png)
+![Profiilisivu](ui_pics/kayttajan_sivu.png)
 
 ## Taitojen listaus
-Näkymä kuuluu palvelun käytetyimpien sivujen joukkoon. Siellä on heti ensimmäisenä vapaa hakukenttä, josta palveluun syötettyjä taitoja voi suodattaa näkyviin halutuilla kriteereillä. Hakupalkissa on myös nappula, josta saa kehittyneet hakutoiminnot ponnahtamaan esiin ja piiloon. Kehittyneessä haussa on esillä useampia kenttiä ja ne muokkaavat varsinaisen hakupalkin tekstin sisältöä vastaamaan niistä luotua yhteistä hakuehtoa.
+Näkymä kuuluu palvelun käytetyimpien sivujen joukkoon. Siellä on heti ensimmäisenä vapaa rajauskenttä, josta palveluun syötettyjä taitoja voi suodattaa näkyviin halutuilla kriteereillä. 
 
-Hakupalkin alla on nappi, josta saa uuden taidon lisäämisen lomakkeen esiin ja piiloon. Syöttämällä siihen taidon ja painamalla lisäämisnappia uusi taito on syötetty järjestelmään ja näkyy taitojen taulukkolistauksessa, mikäli hakukriteerit sen sallivat.
+Hakupalkin vieressä on nappi, josta saa uuden taidon lisäämisen lomakkeen esiin ja piiloon. Syöttämällä siihen taidon ja painamalla lisäämisnappia uusi taito on syötetty järjestelmään ja näkyy taitojen taulukkolistauksessa, mikäli hakukriteerit sen sallivat.
 
-Pohjimmaisena sivulla on listaus järjestelmään syötetyistä taidoista. Mikäli hakukenttään on syötetty jotain, taulukkolistaus näyttää vain hakukriteerit täyttävät taidot. Listauksessa taidoista näytetään niihin liitetty logo, nimi, tagit ja vapaa tekstikuvaus. Kunkin taidon nimi toimii linkkinä yksittäisen taidon sivulle. Taulukko on järjestettävissä kunkin sarakkeen suhteen.
+Pohjimmaisena sivulla on listaus järjestelmään syötetyistä taidoista. Mikäli rajauskenttään on syötetty jotain, taulukkolistaus näyttää vain kyseiset kriteerit täyttävät taidot. Listauksessa taidoista näytetään niihin liitetty logo, nimi, tagit ja vapaa tekstikuvaus. Kunkin taidon nimi toimii linkkinä yksittäisen taidon sivulle. Taulukko on järjestettävissä kunkin sarakkeen suhteen.
 
-![Taitojen listaussivu](ui_pics/skill_list.png)
+![Taitojen listaussivu](ui_pics/taidot.png)
 
 ## Yksittäinen taito
-Taitoa tarkastellessa siitä näytetään käyttäjän profiilisivun kaltaisesti ylhäällä logo ja otsikkona sen nimi. Taidon kuvaus on kokonaisuudessaan näiden alla, ja sen alla on nappi, josta taidon voi lisätä omaan osaamiseensa. Kun taito on lisätty käyttäjälle, tälle näkyy lomake, jolla hän voi taitosivulta käsin muuttaa omaa suhdettaan taitoon: esimerkiksi numeroarvoisesti osaamista ja mielenkiintoa. Käyttäjällä on lisäksi nappi, josta hän voi ottaa taidon pois omasta osaamisestaan.
+Taitoa tarkastellessa siitä näytetään käyttäjän profiilisivun kaltaisesti ylhäällä logo ja otsikkona sen nimi. Taidon kuvaus on kokonaisuudessaan näiden alla. Sivun oikeassa reunassa, josta taidon voi lisätä omaan osaamiseensa. Kun taito on lisätty käyttäjälle, tälle näkyy lomake, jolla hän voi taitosivulta käsin muuttaa omaa suhdettaan taitoon: esimerkiksi numeroarvoisesti osaamista ja mielenkiintoa. Käyttäjällä on lisäksi nappi, josta hän voi ottaa taidon pois omasta osaamisestaan. Taidon näkymästä voi myös selata taitoon linkitettyjä henkilöitä ja projekteja välilehtien takaa.
 
-![Yksittäisen taidon sivu](ui_pics/skill.png)
+![Yksittäisen taidon sivu](ui_pics/taidon_sivu.png)
 
 ## Projektien listaus
-Projektilista on hyvin samankaltainen kuin osaamislista. Ylhäällä on hakukenttä, josta saa napilla kehittyneen haun esiin. Haun alla on mahdollisuus ponnauttaa projektinlisäyslomake esiin. Alimpana on taulukkolistaus hakukriteerit täyttävistä projekteista alkamis- ja loppumisajankohtineen sekä kuvauksineen. Projektin nimi toimii linkkinä yksittäisen projektin sivulle.
+Projektilista on hyvin samankaltainen kuin osaamislista. Ylhäällä on rajauskenttä, jonka vierestä on mahdollisuus ponnauttaa projektinlisäyslomake esiin. Alimpana on taulukkolistaus kriteerit täyttävistä projekteista alkamis- ja loppumisajankohtineen sekä kuvauksineen. Projektin nimi toimii linkkinä yksittäisen projektin sivulle.
 
-![Projektien listaussivu](ui_pics/project_list.png)
+![Projektien listaussivu](ui_pics/projektit.png)
 
 ## Yksittäinen projekti
-Projektisivulla on projektin nimen alla lueteltu määritelmätyylisesti sen määrämuotoiset tiedot: alkamis- ja loppumisajankohta sekä kuvaus. Näiden jälkeen on taulukko, jossa listataan kaikki projektissa mukana olleet käyttäjät ja heidän projektissa käyttämänsä teknologiat. Lopuksi on taulukkolistaus projektin teknologioista ja vapaa kuvaus niiden käytöstä projektissa. Kaikista taitojen nimistä pääsee taitosivuille ja käyttäjien nimistä käyttäjäprofiileihin.
+Projektisivulla on projektin nimen alla lueteltu määritelmätyylisesti sen määrämuotoiset tiedot: alkamis- ja loppumisajankohta sekä kuvaus. Kuvauksen vieressä on "Osallistujat" ja "Tekniikat" -välilehdet, joissa listataan kaikki projektissa mukana olleet käyttäjät ja heidän projektissa käyttämänsä teknologiat. Kaikista taitojen nimistä pääsee taitosivuille ja käyttäjien nimistä käyttäjäprofiileihin.
 
-![Yksittäisen projektin sivu](ui_pics/project.png)
+![Yksittäisen projektin sivu](ui_pics/projektin_sivu.png)
 
+## Ryhmien listaus
+Ryhmien listaus mukailee taitojen ja projektien listausnäkymiä. Ylälaidassa on tuttu rajauskenttä, jonka vieressä nappi, josta voi lisätä uuden ryhmän. Käyttäjä voi antaa ryhmälle nimen, vapaamuotoisen kuvauksen ja lisätä käyttäjiä rajauskentän avulla. Lomakkeen alareunassa on nappi, jonka avulla ryhmän voi tallentaa järjestelmään. Rajauskentän ja avatun lomakkeen alapuolella näkyy listaus järjestelmästä löytyvistä ryhmistä. Listauksen oikeassa reunassa, kunkin ryhmän kohdalla, on valintapainike, jota painamalla käyttäjä saa kyseisen ryhmän aktiivikseksi ja editoitavaksi. Aktiivinen ryhmä näkyy myös yläpalkissa, käyttäjän pudotusvalikon vasemmalla puolella. Tämän jälkeen hän voi esimerkiksi selata eri käyttäjien profiilisivuja ja lisätä heidät aktiiviseen ryhmään suoraan profiilisivunäkymästä. Ryhmän nimi toimii linkkinä yksittäisen ryhmän näkymään.
+
+![Ryhmien listaussivu](ui_pics/ryhmat.png)
+
+## Yksittäinen ryhmä
+
+Yksittäisen ryhmän sivulla nimen alla on vasemmalla puolella kuvaus ja oikealla puolella ryhmän tekijä. Nimen tasalla, oikeassa reunassa, on valintapainike, jolla ryhmän saa aktiiviseksi. Aktiivinen ryhmä näkyy myös yläpalkissa, käyttäjän pudotusvalikon vasemmalla puolella. Oikeasta reunasta löytyy myös pudotusvalikko, jonka takaa ryhmän voi mm. poistaa järjestelmästä. Kuvauksen ja tekijän alapuolelta avautuu ryhmän jäsenistä koostuva lista. Jäsenten nimet toimivat linkkeinä kunkin omalle profiilsivulle.
+
+![Yksittäisen ryhmän sivu](ui_pics/ryhman_sivu.png)
 
 #  Laatuvaatimukset
 Järjestelmän tärkeimmät laatuvaatimukset ja -tavoitteet on esitelty seuraavissa aliluvuissa.
@@ -354,7 +371,7 @@ Järjestelmän käyttäjät ovat Goforen työntekijöitä, joten heidän oleteta
 Sähkökatkoksen, laitevian tai muun yllättävän syyn seurauksena tietokannan data ei saa kadota lopullisesti.
 
 ##  Tietoturva
-Järjestelmään pitää rekisteröityä ja olla kirjautunut, jotta tietoja pääsee näkemään ja muokkaamaan. Tietojen viimeisimmästä muokkaajasta jää jälki.
+Järjestelmään pitää rekisteröityä ja olla kirjautunut, jotta tietoja pääsee näkemään ja muokkaamaan. Tietojen viimeisimmästä muokkaajasta jää lokimerkintä.
 Järjestelmää pääsee käyttämään vain Goforen työntekijät.
 
 ##  Ylläpito ja jatkokehitys
@@ -365,15 +382,9 @@ Järjestelmän datan ylläpitoa voi tehdä kuka tahansa kirjautunut käyttäjä.
 ##  Toiminnallisuudet
 Kun tuote on valmis, vähintään kaikki perustoiminnallisuudet on implementoitu ja niiden on testattu toimivan oikein sekä asiakkaan odottamalla tavalla. Joitain ensimmäisen vaatimuslistauksen lisäominaisuuksia on jo nostettu perusominaisuuksiin suunnittelun alkuvaiheissa (katso luku Toiminnalliset vaatimukset).
 
-
 # Avoimet kysymykset
-- Projektin ja henkilön välisen assosiaation sisältämä tieto
-    - Esiin tulleet ajatukset: henkilön kuormitusaste (tunteina viikossa?), rooli projektissa
-- Missä muodossa ja mitä dataa tulee pystyä tarkastelemaan visuaalisten graafien kautta?
-- Lisäominaisuus, osaamisen tavoitteen määrittely:
-    - Taitoon liittyvien arvojen nostaminen? Avoin kommenttikenttä tavoitteille?
-
+- Kirjautuneen käyttäjän etusivu?
 
 # Lähteet
 
-1. Gofore - Henkilöstön osaamisen hallinnan työkalu, perusvaatimukset. Saatavilla: http://gofore.com/2013-2014-tietotekniikan-projektityo/
+[1] Gofore - Henkilöstön osaamisen hallinnan työkalu, perusvaatimukset. Viitattu 02.10.2013 Saatavilla: http://gofore.com/2013-2014-tietotekniikan-projektityo/
