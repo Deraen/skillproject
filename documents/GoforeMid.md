@@ -1,16 +1,14 @@
 8.11.2013 Gofore miitti
 =======================
 
-- käytettävyys ottaa kälissä huomioon. Ostoskori, "virtanappulan" näköset jne.
-- Kuvalinkit taidoilla tms. pitää miettiä
-- testausta goforen puolesta oikeassa käytössä kun statistiikka alkaa olla valmis
-- NDA korjausehdotuksilla niin bueno
-- Ei kommentoitavaa vaatimusdokkarista
-- oma profiili kirjautumisen jälkeen
-- jatkokehitysideoita, visiotasolla näkymä mitä on tulossa käyttäjälle (projekteja, tavoitteita, jne.)
-- miten loki toimii
-- profiiliin mitä käyttäjä on tehnyt, globaaliloki näyttää kaiken
-- käyttäjä-taito-projekti vaihtoehtoina, viesti, kellonaika
-- saunaillan aikataulut?
-- pdf-generointi, vois tarjota vaan rajapinnan dataan tai käyttää valmista palikkaa
-- word muotoon jollain keinolla cv data
+- Käyttöliittymän nappuloiden väriin ja nappuloissa esiintyviin kuviin syytä kiinnittää huomiota
+- Taitoon liitettävä kuvan siirtämistä lokaaliin ympäristöön URL:n sijasta syytä miettiä
+- Testausta goforen puolesta oikeassa käytössä kun statistiikka alkaa olla valmis
+- NDA:n korjausehdotukset Salumille tulevalla viikolla
+- Kirjautuneen henkilön etusivu ohjautuu omaan profiiliin
+- Etusivun jatkokehitysideana, visiotasolla näkymä mitä on tulossa käyttäjälle (projekteja, tavoitteita, jne.)
+- Profiiliin mahdollisesti henkilökohtainen loki muutoksista ja erillinen globaali loki erikseen
+- Lokimerkinnän luonne: viesti ja kellonaika
+- Ehdotus Goforelle yhteisestä saunaillasta tai muusta vapaamuotoisesta aktiviteetista
+- PDF-generoinnin osalta tullaan etsimään valmista plug-inia
+- CV-datan mahdollisuutta Word-mutooon kartoitetaan myös
