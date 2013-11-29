@@ -2,12 +2,12 @@
 school: Tampereen Teknillinen Yliopisto
 faculty: Tietotekniikan laitos
 course: TIE-13100 Tietotekniikan projektityö
-projectShort: 'HOHT'
+projectShort: 'HOHTO'
 project: 'Henkilöstön osaamisen hallinnan työkalu'
 document: 'Vaatimusmäärittely'
-group: 'Mahtiprojekti'
+group: 'Mahtirojekti'
 groupNumber: '4'
-version: 1.2
+version: 1.3
 author:
 - name: Niko Junkala
   studentNumber: 211479
@@ -45,6 +45,8 @@ author:
 1.1			01.11.2013	Tuurinkoski		Käyttötapausten muokkaamista
 
 1.2			07.11.2013	Tuurinkoski		Muutokset kommenttien pohjalta
+
+1.3			29.11.2013	Tuurinkoski		Päivityksiä yleiseen kuvaukseen
 ----------  ----------  --------------  ---------------------------------------
 
 # Määritelmät ja lyhenteet {.unnumbered}
@@ -56,10 +58,10 @@ HOHT
 #  Johdanto
 
 ## Tarkoitus ja laajuus
-Tämän dokumentin tarkoitus on määritellä sovellukselta vaaditut toiminnallisuudet ja niiden prioriteetit. Vaatimusmäärittely on kohdistettu projektityöryhmän lisäksi muille sidosryhmille, joita ovat asiakas Gofore sekä Tietotekniikan projektityön kurssihenkilökunta. Vaatimuksessa esiintyvien määrittelyjen lähtökohdat ovat asiakkaan tarjoama perus- ja lisäominaisuuksien vaatimuslista sekä tapaamisten yhteydessä käydyt keskustelut. Tämän vuoksi dokumentti sisältää jo pidemmälle vietyjä määrittelyjä, jotka vastaavat osittain jo tehtyjä suunnitteluratkaisuja.
+Tämän dokumentin tarkoitus on määritellä sovellukselta vaaditut toiminnallisuudet ja niiden prioriteetit. Vaatimusmäärittely on kohdistettu projektityöryhmän lisäksi muille sidosryhmille, joita ovat asiakas Gofore sekä Tietotekniikan projektityön kurssihenkilökunta. Vaatimuksessa esiintyvien määrittelyjen lähtökohdat ovat asiakkaan tarjoama perus- ja lisäominaisuuksien vaatimuslista sekä tapaamisten yhteydessä käydyt keskustelut. 
 
 ## Tuote
-Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, joka on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen. HOHT tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
+Tuote kulkee projektivaiheessa nimellä Henkilöstön osaamisen hallinnan työkalu, joka on asiakkaan tarjoama nimi palvelulle ja on myöhemmin lyhennetty projektityöryhmän toimesta dokumentaatioissa nimeen viittaamisen helpottamiseksi HOHT:ksi. Marraskuun aikana tuotteelle on annettu julkaisunimeksi HOHTO. Tuotteen tarkoitus on palvella henkilöstön henkilökohtaisen osaamisen kehityksen työkaluna, mutta sitä tulee myös pystyä käyttämään liiketoiminnan tukemiseen. HOHTO tulee Goforen sisäiseen käyttöön. Tuote on itsenäinen web-sovellus, jonka tietokanta ja tuotantoympäristö tulevat olemaan asiakkaan omilla palvelimilla.
 
 
 #  Yleinen kuvaus
@@ -71,7 +73,7 @@ Sovellus jakautuu kolmeen pääkokonaisuuteen: henkilöön (oma profiili), taito
 Loppukäyttäjinä toimivat Goforen työntekijät. Yrityksen henkilöstön koulutustaustan huomioonottaen voidaan olettaa, että kyseinen käyttäjäkunta koostuu kokeneista tietokoneen käyttäjistä. Järjestelmässä ei ole erikseen eri käyttäjäryhmiä, mutta tämän mahdollisuus on huomioitu jatkokehitysajatuksissa ja perustoiminnallisuuksien suunnitteluvaiheessa. Järjestelmän odotettu keskimääräinen käyttöaste viikossa on noin 0-5 tuntia käyttäjää kohden.
 
 ## Ympäristö ja suunnittelurajoitteet
-HOHT on verkkoyhteyden yli toimiva web-sovellus, jota käytetään Internet-selaimella. Tuettuja selaimia ovat Mozilla Firefox, Opera, Google Chrome sekä Internet Explorer 9.0 ja sitä uudemmat versiot. Työpöytäselainten lisäksi käyttöliittymässä ja suorituskyvyssä tulee ottaa huomioon tabletit, älypuhelimet ja muut mobiililaitteet. Toteutuksessa käytetään moderneja web-tekniikoita, kuten JavaScriptiä. Tietokanta toteutetaan MongoDB:llä.
+HOHTO on verkkoyhteyden yli toimiva web-sovellus, jota käytetään Internet-selaimella. Tuettuja selaimia ovat Mozilla Firefox, Opera, Google Chrome sekä Internet Explorer 9.0 ja sitä uudemmat versiot. Työpöytäselainten lisäksi käyttöliittymässä ja suorituskyvyssä tulee ottaa huomioon tabletit, älypuhelimet ja muut mobiililaitteet. Toteutuksessa käytetään moderneja web-tekniikoita, kuten JavaScriptiä. Tietokanta toteutetaan MongoDB:llä.
 
 
 #  Toiminnalliset vaatimukset
@@ -129,7 +131,7 @@ Toiminnallisuudet jaetaan vaatimusmäärittelyssä kolmeen kategoriaan: pakollis
 ### Jatkokehitysajatukset
 - Tavoitteet yhtiön tasolla
     - Esim. tietyn taidon osaajia tarvittaisiin vuoteen x mennessä n kappaletta.
-- HOHT integroituu muihin Goforen käyttämiin järjestelmiin.
+- HOHTO integroituu muihin Goforen käyttämiin järjestelmiin.
 - Eri käyttäjäryhmien implementointi
 
 
@@ -382,8 +384,6 @@ Järjestelmän datan ylläpitoa voi tehdä kuka tahansa kirjautunut käyttäjä.
 ##  Toiminnallisuudet
 Kun tuote on valmis, vähintään kaikki perustoiminnallisuudet on implementoitu ja niiden on testattu toimivan oikein sekä asiakkaan odottamalla tavalla. Joitain ensimmäisen vaatimuslistauksen lisäominaisuuksia on jo nostettu perusominaisuuksiin suunnittelun alkuvaiheissa (katso luku Toiminnalliset vaatimukset).
 
-# Avoimet kysymykset
-- Kirjautuneen käyttäjän etusivu?
 
 # Lähteet
 
