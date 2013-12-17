@@ -1,0 +1,77 @@
+Testilaitteen speksit
+
+ 1) matkapuhelin
+ 2) tietokone
+ 3) tablet
+ selain (ja versio):
+
+
+Mieti vastauksia antaessa ainakin seruaavia asioita: 
+ Oliko näkymässä...
+ a) puutteita
+ b) liikaa toiminnallisuutta (mitä?)
+ c) asioita, joita et ymmärtänyt
+ d) asioita, jotka voisi toteuttaa tai esittää toisin (miten?)
+ 
+
+1. Näkymät
+
+1.1. Kirjautuminen
+
+a) rekisteröitymissivu
+
+b) kirjautumissivu
+
+c) kirjautuneen etusivu
+
+
+1.2. Käyttäjät
+
+a) listaus
+
+b) profiilisivu
+
+
+1.3. Taidot
+
+a) listaus
+
+b) taidon sivu
+
+
+1.4. Projektit
+
+a) listaus
+
+b) projektin sivu
+
+
+1.5. Ryhmät
+
+a) listaus
+
+b) ryhmän sivu
+
+
+1.6. Järjestelmäloki
+
+a) lokilistaus
+
+
+2. Visuaalinen ilme?
+
+ 1) joo
+ 2) ei
+ 3) en tiedä
+ vapaa kommentti:
+
+
+3. Ilmentyneet bugit (ohjeet ja vaiheet uudelleentoteuttamiseen)
+
+
+4. Minkälainen fiilinki jäi HOHTO-palvelusta?
+
+ 1) ei jääny
+ 2) ihan jees
+ 3) jotain muuta
+ 4) hohtava
