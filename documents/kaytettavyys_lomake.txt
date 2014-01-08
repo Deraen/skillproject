@@ -1,0 +1,76 @@
+Näytön ja selaimen tiedot:
+
+a) Näytön koko?
+
+b) Käytetty resoluutio?
+
+c) Käytetty selain ja versionumero?
+
+
+Mieti vastauksia antaessa ainakin seruaavia asioita: 
+ Oliko näkymässä...
+ a) puutteita
+ b) liikaa toiminnallisuutta (mitä?)
+ c) asioita, joita et ymmärtänyt
+ d) asioita, jotka voisi toteuttaa tai esittää toisin (miten?)
+ 
+
+1. Näkymät
+
+1.1. Kirjautuminen
+
+a) rekisteröitymissivu
+
+b) kirjautumissivu
+
+
+1.2. Käyttäjät
+
+a) listaus
+
+b) profiilisivu
+
+
+1.3. Taidot
+
+a) listaus
+
+b) taidon sivu
+
+
+1.4. Projektit
+
+a) listaus
+
+b) projektin sivu
+
+
+1.5. Ryhmät
+
+a) listaus
+
+b) ryhmän sivu
+
+
+1.6. Järjestelmäloki
+
+a) lokilistaus
+
+
+1.7.
+
+a) tagien ja...
+
+b) roolien yhdistämisnäkymä
+
+
+
+2. Vapaa kommentti (liittyen esim. navigointiin, visuaaliseen ilmeeseen,
+                    tiettyyn toiminnallisuuteen jne.)
+
+
+
+3. Ilmentyneet bugit (ohjeet ja vaiheet uudelleentoteuttamiseen)
+
+
+
