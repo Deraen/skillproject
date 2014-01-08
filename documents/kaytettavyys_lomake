@@ -1,9 +1,10 @@
-Testilaitteen speksit
+Näytön ja selaimen tiedot:
 
- 1) matkapuhelin
- 2) tietokone
- 3) tablet
- selain (ja versio):
+a) Näytön koko?
+
+b) Käytetty resoluutio?
+
+c) Käytetty selain ja versionumero?
 
 
 Mieti vastauksia antaessa ainakin seruaavia asioita: 
@@ -21,8 +22,6 @@ Mieti vastauksia antaessa ainakin seruaavia asioita:
 a) rekisteröitymissivu
 
 b) kirjautumissivu
-
-c) kirjautuneen etusivu
 
 
 1.2. Käyttäjät
@@ -58,20 +57,20 @@ b) ryhmän sivu
 a) lokilistaus
 
 
-2. Visuaalinen ilme?
+1.7.
 
- 1) joo
- 2) ei
- 3) en tiedä
- vapaa kommentti:
+a) tagien ja...
+
+b) roolien yhdistämisnäkymä
+
+
+
+2. Vapaa kommentti (liittyen esim. navigointiin, visuaaliseen ilmeeseen,
+                    tiettyyn toiminnallisuuteen jne.)
+
 
 
 3. Ilmentyneet bugit (ohjeet ja vaiheet uudelleentoteuttamiseen)
 
 
-4. Minkälainen fiilinki jäi HOHTO-palvelusta?
 
- 1) ei jääny
- 2) ihan jees
- 3) jotain muuta
- 4) hohtava
