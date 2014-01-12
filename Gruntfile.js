@@ -74,7 +74,8 @@ module.exports = function (grunt) {
       dist2: {
         expand: true,
         src: [
-          '*.tsv'
+          '*.tsv',
+          'documents/**/*.{png,PNG}',
         ],
         dest: '<%= yeoman.dist %>/'
       },
