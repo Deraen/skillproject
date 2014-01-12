@@ -91,7 +91,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           src: 'documents/**/*.md',
-          dest: '<%= yeoman.dist %>/documents',
+          dest: '<%= yeoman.dist %>/',
           ext: '.html',
         }],
       },
