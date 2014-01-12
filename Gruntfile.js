@@ -86,6 +86,16 @@ module.exports = function (grunt) {
         dest: '.tmp'
       }
     },
+    markdown: {
+      all: {
+        files: [{
+          expand: true,
+          src: 'documents/**/*.md',
+          dest: '<%= yeoman.dist %>/documents',
+          ext: '.html',
+        }],
+      },
+    },
     'gh-pages': {
       options: {
         base: '<%= yeoman.dist %>/'
@@ -107,6 +117,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concat',
     'uglify',
+    'markdown',
     'copy:dist',
     'copy:dist2',
     'usemin',
