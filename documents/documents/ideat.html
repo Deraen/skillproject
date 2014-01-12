@@ -1,0 +1,247 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="k-yt-nn-n-asioita">Käytännön asioita</h1>
+<h1 id="pakolliset">Pakolliset</h1>
+<h4 id="haku-johon-voi-sy-tt-hakuehdon-tai-valita-vaihtoehdoista-jonka-perusteella-j-rjestelm-palauttaa-henkil-t-joilla-on-aiheeseen-liittyv-relevanttia-osaamista-esim-hakuehto-liferay-palauttaa-henkil-t-joilla-on-liferay-osaamista-">Haku, johon voi syöttää hakuehdon (tai valita vaihtoehdoista) jonka perusteella järjestelmä palauttaa henkilöt, joilla on aiheeseen liittyvää relevanttia osaamista. Esim. hakuehto ”Liferay” palauttaa henkilöt, joilla on Liferay-osaamista.</h4>
+<ul>
+<li>Otetaan huomioon käyttöliittymän suunnittelussa.</li>
+</ul>
+<h4 id="osaamisalueiden-selailu-sama-kuin-edell-mutta-henkil-it-voi-hakea-osaamisia-selailemalla-">Osaamisalueiden selailu, sama kuin edellä, mutta henkilöitä voi hakea osaamisia selailemalla.</h4>
+<ul>
+<li>Triviaalia.</li>
+</ul>
+<h4 id="j-rjestelm-n-voi-sy-tt-uusia-henkil-ita-ja-uusia-osaamisia-">Järjestelmään voi syöttää uusia henkilöita ja uusia osaamisia.</h4>
+<ul>
+<li>Kaikki pystyy luomaan oman tunnuksen ja rekisteröitynyt käyttäjä voi lisätä
+uusia osaamisia. Mahdollisesti LinkedIn-importtaus.</li>
+</ul>
+<h4 id="j-rjestelm-ss-on-autentikointi-">Järjestelmässä on autentikointi.</h4>
+<ul>
+<li>Sisäinen autentikaatio.</li>
+</ul>
+<h4 id="osaamisesta-pit-olla-m-ritelt-vissa-osaamisen-taso-miten-kokemus-kuukausina-tms-ja-osaamisen-tasoja-on-voitava-p-ivitt-">Osaamisesta pitää olla määriteltävissa osaamisen taso (miten? kokemus kuukausina? tms?) ja osaamisen tasoja on voitava päivittää.</h4>
+<ul>
+<li>Oma mielipide omasta osaamisesta 1-5, Oma kiinnostus 1-5?, kokemus
+projekteissa?</li>
+</ul>
+<h4 id="j-rjestelm-k-ytet-n-web-selaimella-">Järjestelmää käytetään Web-selaimella.</h4>
+<ul>
+<li>Pääasiassa tehdään selaimille.</li>
+</ul>
+<h4 id="j-rjestelm-toimii-my-s-mobiililaitteissa-tabletit-puhelimen-selain-">Järjestelmä toimii myös mobiililaitteissa (tabletit, puhelimen selain)</h4>
+<ul>
+<li>Ryhmältä löytyy monenlaisia tabletteja ja puhelimia testausta varten. Nämä
+otetaan huomioon jo suunnitteluvaiheessa.</li>
+</ul>
+<h4 id="projektissa-k-ytet-n-ketter-menetelm-scrum-kanban-">Projektissa käytetään ketterää menetelmää (Scrum, Kanban)</h4>
+<ul>
+<li>Gofore tarjoaa -&gt; Lisenssi AgileZeniin 6kk (174e), muuten trelloa. (Kanban)</li>
+</ul>
+<h4 id="j-rjestelm-st-saa-n-kyviin-koko-yrityksen-teknologiakartan-mit-teknologioita-ja-mink-tasoista-osaamista-firmassa-on-">Järjestelmästä saa näkyviin koko yrityksen teknologiakartan (mitä teknologioita ja minkä tasoista osaamista firmassa on)</h4>
+<ul>
+<li>Taulukko, hienot graafit, mitä muuta?</li>
+</ul>
+<h1 id="optionaaliset">Optionaaliset</h1>
+<h4 id="ty-kalun-toteutuksessa-k-ytet-n-joitakin-seuraavista-teknologioista-scala-play-grails-clojure-node-js-angularjs-handlebars-js-mustache-meteor-ember-js-backbone-js-spray-akka-java-spring-guice">Työkalun toteutuksessa käytetään joitakin seuraavista teknologioista: Scala, Play, Grails, Clojure, Node.js, AngularJS, Handlebars.js, Mustache, Meteor, Ember.js, Backbone.js. Spray, Akka, Java+Spring/Guice</h4>
+<ul>
+<li>MongoDB</li>
+<li>Mongoose, Node, Express</li>
+<li>AngularJS (Bootstrap, LessCss)</li>
+</ul>
+<h4 id="ty-kalun-toteutuksessa-ei-k-ytet-php-t-eik-jboss-ia">Työkalun toteutuksessa ei käytetä PHP:tä eikä JBOSS:ia</h4>
+<ul>
+<li>EI KÄYTETÄ!</li>
+</ul>
+<h4 id="ty-kalu-integroituu-jo-k-yt-ss-oleviin-goforen-j-rjestelmiin-confluence-jira-planmill-jne-">Työkalu integroituu jo käytössä oleviin Goforen järjestelmiin (Confluence, JIRA , PlanMill, jne.).</h4>
+<ul>
+<li>Miten?</li>
+</ul>
+<h4 id="kuka-tahansa-voi-p-ivitt-mit-tahansa-tietoja-kunhan-j-rjestelm-n-j-j-lki-kuka-on-tehnyt-mit-v-hint-n-viimeisin-muokkaaja-">Kuka tahansa voi päivittää mitä tahansa tietoja kunhan järjestelmään jää jälki kuka on tehnyt mitä (vähintään viimeisin muokkaaja).</h4>
+<ul>
+<li>Yksinkertainen muutosloki.</li>
+</ul>
+<h4 id="osaamiseen-voi-liitt-viitteit-projektiin-jossa-osaamista-on-k-ytt-nyt-">Osaamiseen voi liittää viitteitä projektiin, jossa osaamista on käyttänyt.</h4>
+<ul>
+<li>On otettu huomioon suunnittelussa.</li>
+</ul>
+<h4 id="j-rjestelm-ss-on-tallessa-kaikki-henkil-n-cv-hen-liittyv-tieto-">Järjestelmässä on tallessa kaikki henkilön CV:hen liittyvä tieto.</h4>
+<ul>
+<li>Mitä kaikkea muuta haluatte CV:hen?</li>
+</ul>
+<h4 id="j-rjestelm-st-voi-generoida-henkil-n-cv-n-automaattisesti-">Järjestelmästä voi generoida henkilön CV:n automaattisesti.</h4>
+<ul>
+<li>Onnistuu!</li>
+</ul>
+<h4 id="j-rjestelm-n-k-ytt-liittym-on-responsiivinen-">Järjestelmän käyttöliittymä on responsiivinen.</h4>
+<ul>
+<li>Bootsrap on responsiivinen.</li>
+</ul>
+<h4 id="j-rjestelm-ss-on-mahdollisesti-seuraavia-k-sitteit-henkil-osaaminen-teknologia-koulutus-tutkinto-kurssi-projekti-ty-paikka-kiinnostus-">Järjestelmässä on mahdollisesti seuraavia käsitteitä: henkilö, osaaminen, teknologia, koulutus, tutkinto, kurssi, projekti, työpaikka, kiinnostus.</h4>
+<ul>
+<li>Kyllä.</li>
+</ul>
+<h4 id="j-rjestelm-tukee-henkil-st-n-osaamisen-kehitt-mist-kiinnostuksen-kohteiden-kautta-">Järjestelmä tukee henkilöstön osaamisen kehittämistä kiinnostuksen kohteiden kautta.</h4>
+<ul>
+<li>Visualisointi!</li>
+</ul>
+<h4 id="j-rjestem-st-voi-seurata-oman-osaamisen-kehittymist-">Järjestemästä voi seurata oman osaamisen kehittymistä.</h4>
+<ul>
+<li>Visualisointi!</li>
+</ul>
+<h4 id="j-rjestelm-ss-voi-antaa-arvioita-eri-teknologioista-esim-t-t-v-linett-ei-kannata-k-ytt-t-m-on-laadukas-ja-hyv-ksi-havaittu-mihin-soveltuu-jne-mallinnuksena-esim-sanallinen-sek-numeroarviointi-">Järjestelmässä voi antaa arvioita eri teknologioista (esim. tätä välinettä ei kannata käyttää, tämä on laadukas ja hyväksi havaittu, mihin soveltuu, jne.). Mallinnuksena esim. sanallinen sekä numeroarviointi.</h4>
+<ul>
+<li>Muutama kenttä lisää käyttäjän ja teknologian väliseen assosiaatioluokkaan.</li>
+</ul>
+<h4 id="henkil-ihin-voi-liitt-tietoja-projektitkuormituksista-eri-ajanjaksoilla-">Henkilöihin voi liittää tietoja projektitkuormituksista eri ajanjaksoilla.</h4>
+<ul>
+<li>Käyttäjän ja projektin väliseen assosiaatioluokkaan tiedot.</li>
+</ul>
+<h4 id="j-rjestelm-tuottaa-upeita-graafeja-jotka-auttavat-henkil-st-n-osaamisen-hallinnassa-">Järjestelmä tuottaa upeita graafeja, jotka auttavat henkilöstön osaamisen hallinnassa.</h4>
+<ul>
+<li>Ylettömän upeita visuaalisia epilepsiakohtauksen aiheuttavia psykedeelisiä
+tajunnanräjäytyspläjäyksiä!</li>
+</ul>
+<h1 id="k-ytt-tapauksia-l-katso-t-nne-">Käyttötapauksia (älä katso tänne)</h1>
+<ul>
+<li><p>Etsitään projektiin henkilöitä</p>
+<ul>
+<li>Taitojen, kiinnostuksen ja kokemuksen mukaan</li>
+<li>Henkilökohtaisia ominaisuuksia (harrastukset jne.)</li>
+<li>Projektihistorian ylläpitäminen?</li>
+<li>Sosiaaliset suhteet?</li>
+</ul>
+</li>
+<li><p>Taidon ominaisuuksia</p>
+<ul>
+<li>Osaamisen mallintamisen esimerkkejä<ul>
+<li>Vuosina</li>
+<li>Numeerisena</li>
+<li>Vapaamuotoinen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Käyttäjäkunnat</p>
+<ul>
+<li>Projektipäällikkö?</li>
+<li>Muut käyttäjät (omat tiedot)</li>
+</ul>
+</li>
+<li><p>LinkedIn integrointi käyttäjän luontiin</p>
+</li>
+</ul>
+
+  </body>
+</html>
