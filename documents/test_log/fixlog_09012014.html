@@ -232,8 +232,14 @@
 <h3 id="2-4-taidon-arvojen-muokkaaminen-oikeellisilla-sy-tteill-">2.4 Taidon arvojen muokkaaminen oikeellisilla syötteillä</h3>
 <ul>
 <li>epäonnistui</li>
-<li>kokemuksen arvon validointi on virheellinen. maksimiarvoksi on asetettu 5(kk) <a href="test_pics/taidon_arvojen_validointi2.PNG">kuva</a></li>
-<li>virheilmoitus ei katoa, vaikka arvon muuttaa validiksi ja tallentaa tiedot <a href="test_pics/taidon_arvojen_validointi3.PNG">kuva</a></li>
+<li>kokemuksen arvon validointi on virheellinen. maksimiarvoksi on asetettu 5(kk) <a href="test_pics/taidon_arvojen_validointi2.PNG">kuva</a><ul>
+<li>[x] Raja poistettu</li>
+</ul>
+</li>
+<li>virheilmoitus ei katoa, vaikka arvon muuttaa validiksi ja tallentaa tiedot <a href="test_pics/taidon_arvojen_validointi3.PNG">kuva</a><ul>
+<li>[x] korjattu kai</li>
+</ul>
+</li>
 </ul>
 <h3 id="2-5-taidon-poistaminen-profiilisivulta">2.5 Taidon poistaminen profiilisivulta</h3>
 <ul>
@@ -277,7 +283,10 @@
 <h3 id="2-13-projektikokemuksen-kuukausikokemusarvon-muokkaaminen-virheellisill-arvoilla">2.13 Projektikokemuksen kuukausikokemusarvon muokkaaminen virheellisillä arvoilla</h3>
 <ul>
 <li>epäonnistui<ul>
-<li>kentästä puuttuu validointi</li>
+<li>kentästä puuttuu validointi<ul>
+<li>[x] Lisätty</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -288,14 +297,20 @@
 <h3 id="2-15-ty-kokemuksen-lis-minen-ilman-ty-nantajaa">2.15 Työkokemuksen lisääminen ilman työnantajaa</h3>
 <ul>
 <li>epäonnistui, kuten pitääkin, mutta...<ul>
-<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta</li>
+<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta<ul>
+<li>[x] Virhe näytetään nyt</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="2-16-ty-kokemuksen-lis-minen-kun-aloitusp-iv-m-r-lopetusp-iv-m-r-">2.16 Työkokemuksen lisääminen, kun aloituspäivämäärä &gt; lopetuspäivämäärä</h3>
 <ul>
 <li>epäonnistui, kuten pitääkin, mutta...<ul>
-<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta</li>
+<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta<ul>
+<li>[x] Virhe näytetään nyt</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -310,7 +325,10 @@
 <h3 id="2-19-tutkinnon-lis-minen-ilman-tutkinnon-nime-">2.19 Tutkinnon lisääminen ilman tutkinnon nimeä</h3>
 <ul>
 <li>epäonnistui, kuten pitääkin, mutta...<ul>
-<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta</li>
+<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta<ul>
+<li>[x] Virhe näytetään nyt</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -325,14 +343,20 @@
 <h3 id="2-22-koulutuksen-sertifikaatin-lis-minen-ilman-nime-">2.22 Koulutuksen/sertifikaatin lisääminen ilman nimeä</h3>
 <ul>
 <li>epäonnistui, kuten pitääkin, mutta...<ul>
-<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta</li>
+<li>toiminnon suorittaminen on vain estetty ilman virheilmoitusta<ul>
+<li>[x] Virhe näytetään nyt</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="2-23-koulutuksen-sertifikaatin-lis-minen-oikeellisilla-sy-tteill-nimi-pakollinen-aloitusp-iv-m-r-lopetusp-iv-m-r-">2.23 Koulutuksen/sertifikaatin lisääminen oikeellisilla syötteillä (nimi pakollinen, aloituspäivämäärä &lt;= lopetuspäivämäärä)</h3>
 <ul>
 <li>epäonnistui<ul>
-<li>validointi tilanteessa aloituspvm &gt; lopetuspvm toimii, mutta aloituspvm on pakollinen kenttä, mitä sen ei tarvitsisi olla</li>
+<li>validointi tilanteessa aloituspvm &gt; lopetuspvm toimii, mutta aloituspvm on pakollinen kenttä, mitä sen ei tarvitsisi olla<ul>
+<li>[x] Aloituspvm pakollisuus poistettu</li>
+</ul>
+</li>
 <li>nimen pakollisuusehto toimii</li>
 </ul>
 </li>
@@ -343,8 +367,14 @@
 </ul>
 <h3 id="2-25-profiilikohtaisten-lokimerkint-jen-selausn-kym-">2.25 Profiilikohtaisten lokimerkintöjen selausnäkymä</h3>
 <ul>
-<li>projektikokemukseen (UserSkillProject) liittyvät lokimerkinnät eivät näy selkokielisenä</li>
-<li>koulutukseen/sertifikaattiin (Certificate) liittyvät poistamislokimerkinnät eivät näy selkokielisenä</li>
+<li>projektikokemukseen (UserSkillProject) liittyvät lokimerkinnät eivät näy selkokielisenä<ul>
+<li>[x] korjattu</li>
+</ul>
+</li>
+<li>koulutukseen/sertifikaattiin (Certificate) liittyvät poistamislokimerkinnät eivät näy selkokielisenä<ul>
+<li>[x] Näkyvät???</li>
+</ul>
+</li>
 <li>muut lokimerkinnät toimivat hyvin</li>
 </ul>
 <h3 id="2-26-profiilikohtaisten-lokimerkint-jen-rajaaminen">2.26 Profiilikohtaisten lokimerkintöjen rajaaminen</h3>
@@ -400,7 +430,10 @@
 <h3 id="5-1-taidon-nimen-kuvan-tagien-ja-kuvauksen-muokkaaminen">5.1 Taidon nimen, kuvan, tagien ja kuvauksen muokkaaminen</h3>
 <ul>
 <li>onnistui, mutta...<ul>
-<li>kuvan muokkaamisessa samat ongelmat kuin profiilissa (ks. testitapaus 2.1)</li>
+<li>kuvan muokkaamisessa samat ongelmat kuin profiilissa (ks. testitapaus 2.1)<ul>
+<li>[x] eli korjattu</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -418,7 +451,10 @@
 </ul>
 <h3 id="5-5-taidon-lokimerkinn-t">5.5 Taidon lokimerkinnät</h3>
 <ul>
-<li>SkillProject sekä UserSkillProject -tapauksissa lokiviesti ei ole selkokielinen</li>
+<li>SkillProject sekä UserSkillProject -tapauksissa lokiviesti ei ole selkokielinen<ul>
+<li>[x] Korjattu?</li>
+</ul>
+</li>
 <li>muut lokimerkinnät toimivat ongelmitta</li>
 </ul>
 <h3 id="5-6-taidon-1-yhdist-minen-taitoon-2-taidon-1-n-kym-ss-yhdist-toiseen-toiminnon-avulla-">5.6 Taidon 1 yhdistäminen taitoon 2 (taidon 1 näkymässä &quot;Yhdistä toiseen&quot; -toiminnon avulla)</h3>
@@ -491,7 +527,10 @@
 </ul>
 <h3 id="7-8-projektin-lokilistaus">7.8 Projektin lokilistaus</h3>
 <ul>
-<li>UserSkillProject ja SkillProject viestit eivät ole tarpeeksi selkokielisiä</li>
+<li>UserSkillProject ja SkillProject viestit eivät ole tarpeeksi selkokielisiä<ul>
+<li>[x] korjattu</li>
+</ul>
+</li>
 <li>muut lokimerkinnät toimivat oikein</li>
 </ul>
 <h2 id="8-ryhm-listaus">8. Ryhmälistaus</h2>
@@ -499,7 +538,10 @@
 <ul>
 <li>onnistui, mutta...<ul>
 <li>tekijä ei näy ryhmän tiedoissa</li>
-<li>ryhmän osallisia ei pysty lisäämään ryhmää luodessa, vaan vasta, kun ryhmä on tallennettu onnistuneesti</li>
+<li>ryhmän osallisia ei pysty lisäämään ryhmää luodessa, vaan vasta, kun ryhmä on tallennettu onnistuneesti<ul>
+<li>[x] Osallisten lisäys piilotettu uuden ryhmän luonnista</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -558,7 +600,10 @@
 </ul>
 <h3 id="10-2-lokiviestilistaus">10.2 Lokiviestilistaus</h3>
 <ul>
-<li>Certificate, UserSkillProject ja SkillProject -aiheisten viestien selite ei ole tarpeeksi selkokielinen</li>
+<li>Certificate, UserSkillProject ja SkillProject -aiheisten viestien selite ei ole tarpeeksi selkokielinen<ul>
+<li>[x] Pitäisi nyt olla</li>
+</ul>
+</li>
 </ul>
 <h2 id="11-tagien-ja-projektiroolien-hallinta">11. Tagien ja projektiroolien hallinta</h2>
 <h3 id="11-1-tagien-lis-minen">11.1 Tagien lisääminen</h3>

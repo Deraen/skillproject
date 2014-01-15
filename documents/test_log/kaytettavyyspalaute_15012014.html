@@ -1,0 +1,273 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <p>Käytettävyystestauspalautteet (parsittu lista) 15.01.2014</p>
+<h1 id="1-rekister-itymis-ja-kirjautumissivu">1. Rekisteröitymis- ja kirjautumissivu</h1>
+<ul>
+<li>Hyväksyy kaikenlaiset merkkijonot sähköpostiksi<ul>
+<li>[x] Tuotantoonviejä säätää asetukset</li>
+</ul>
+</li>
+<li>Salasana min. 4 merkkiä, ehkä liian löyhä<ul>
+<li>[x] Tuotantoonviejän vastuulla säätää asetukset</li>
+</ul>
+</li>
+<li>Salasanan kelpaamattomuudesta voisi antaa myös paremman virheviestin<ul>
+<li>[x] Niin voisi... ei kerkeä toteuttamaan</li>
+</ul>
+</li>
+<li>Rekisteröityminen onnistui, vaikka toinen salasanakenttä jäi tyhjäksi<ul>
+<li>Edelliseen liittyen, sama onnistui myös salasanan palautuksessa</li>
+</ul>
+</li>
+<li>Virheviesti ei kovin informatiivinen, jos yrittää rekisteröityä jo olemassaolevalla tunnuksella<ul>
+<li>[x] Selkeytetty hieman, mutta edelleen käytännössä näyttää MongoDB virheen suoraan</li>
+</ul>
+</li>
+<li>Salasanan vaihtolomake (linkki) toimii vain ajoittain, ei oikein johdonmukaisuutta<ul>
+<li>[x] Olisikohan kyseessä ollut se että vain viimeisimmät spostin linkki toimii?</li>
+</ul>
+</li>
+<li>&quot;Palauta salasana&quot; -&gt; &quot;Unohtuiko salasana?&quot;</li>
+<li>Salasanan &quot;palautuksen&quot; sivulle ohjeteksti, esim. &quot;Voimme lähettää sähköpostiisi linkin...&quot;<ul>
+<li>[x] Juuri näinhän siinä lukeekin?</li>
+</ul>
+</li>
+<li>&quot;Palauta salasana&quot; sivulle ei ole järkevää antaa &quot;Kirjaudu&quot; ja &quot;Rekisteröidy&quot; linkkejä. käyttäjä on
+tehnyt juuri toimenpiteen valitessaan &quot;Unohtuiko salasana?&quot; ja tähän reagoidan joko lähettämällä
+sähköpostiosoite tai &quot;Peruuta&quot;. Sama pätee rekisteröitymissivulle.<ul>
+<li>[x] Korjattu</li>
+</ul>
+</li>
+<li>Rekisteröityminen ei antanut mitään ilmoitusta. Aukeavan kirjautumissivun yläpuolella tulisi lukea
+tyyliin &quot;Rekisteröinti onnistui. Kirjaudu nyt sisään.&quot; tms</li>
+<li>Salasanan vaihtaminen ei tarjoa vaihtoehtoa &quot;peruuta&quot;<ul>
+<li>[x] Korjattu</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-k-ytt-j-listaus-ja-profiilisivu">2. Käyttäjälistaus ja profiilisivu</h1>
+<ul>
+<li>Kun käyttäjärajaus on tehty, käydään jossain toisessa näkymässä ja
+palataan takaisin, niin rajaus on aktiivisena, mutta itse rajauskentässä
+ei näy rajausehtoa</li>
+<li>Syntymäajan nykyinen arvo ei ole näkyvissä muokkaustilassa</li>
+<li>Kuvaus-kenttä vaatisi otsikon esim. &quot;oma kuvaus&quot;<ul>
+<li>[x] lisätty</li>
+</ul>
+</li>
+<li>Syntymäajan virheilmoitus roikkuu mukana, vaikka virheellisen syötteen
+jälkeen annetaan validi syntymäaika<ul>
+<li>[x] Korjattu</li>
+</ul>
+</li>
+<li>Ohjelma ei anna mitään ohjeistusta sen asian suhteen, että profiiliin
+voi lisätä itselle uuden taidon Taidot-välilehdestä, mutta uutta taitoa
+ei voi lisätä järjestelmään tältä sivulta<ul>
+<li>[x] Autocompletesta voi nyt siirtyä lisäämään uutta taitoa jos haluttua ei löytynyt</li>
+</ul>
+</li>
+<li>&quot;Muokkaa&quot;-nappi on erittäin harhaanjohtava, kun ollaan Taidot- tai Projektit-
+välilehdellä, pitäisikö kenties näyttää vain Perustiedot-välilehdessä?<ul>
+<li>[x] Tämä saa olla.</li>
+</ul>
+</li>
+<li>Osaamisen lisääminen on hieman hämmentävä dropdown-menu. Tyypillisesti tällainen olisi vaikka button
+&quot;Lisää osaamisalue&quot; joka avaisi buttonin tilalle jonkinlaisen valintatyökalun, jonka avulla voi lisätä
+osaamisen tai peruuttaa.<ul>
+<li>[x] Tämä on ominaisuus. Antaa olla, käyttäjän on helppo poistaa vahingossa lisäämänsä taito tms.</li>
+</ul>
+</li>
+<li>Erillinen sivu oman profilinsa muokkausta varten on jokseenkin turha. Varsinkin kun nyt tuossa alussa
+on tuollainen hämmentävä tyhjä harmaa laatikko ja syntympäpäivä tyhjänä. Sen sijaan sivulla voisi olla
+vain suoraan kohdat missä painetaan &quot;lisää kuvaus&quot; ja lisättyjen tietojen yhteydessä olisi mahdollisuus
+niiden muokkaukseen.<ul>
+<li>[?] WTF?</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-taitolistaus-ja-taidon-sivu">3. Taitolistaus ja taidon sivu</h1>
+<ul>
+<li>Peruuta-toiminto tuntuisi nollaavan kaikki kentät sen sijaan, että
+se peruuttaisi vain edelliset muutokset<ul>
+<li>[x] Pitäisi olla korjattu</li>
+</ul>
+</li>
+<li>Rajauksen olisi hyvä olla case insensitive</li>
+<li>Muokkaustilassa pitäisi lukea &quot;Taidon nimi&quot; eikä &quot;Nimi&quot;<ul>
+<li>[?] Miksi?</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-projektilistaus-ja-projektin-sivu">4. Projektilistaus ja projektin sivu</h1>
+<ul>
+<li>&quot;Hae projektista&quot;-tekstikentän ja &quot;Uusi projekti&quot;-napin voisi siirtää
+kauemmas toisistaan, ettei erehdy luulemaan tekstikenttää uuden lisättävän
+projektin nimeksi<ul>
+<li>[x] Toteutettu</li>
+</ul>
+</li>
+<li>Muokkaustilassa pitäisi lukea &quot;Projektin nimi&quot; eikä &quot;Nimi&quot;<ul>
+<li>[?] Miksi?</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-ryhm-listaus-ja-ryhm-n-sivu">5. Ryhmälistaus ja ryhmän sivu</h1>
+<ul>
+<li>Ryhmään ei voi lisätä henkilöitä, ellei ryhmää ole vielä tallennettu<ul>
+<li>[x] Henkilöiden lisäys piiloitettu kunnes on tallennettu</li>
+</ul>
+</li>
+<li>&quot;Valitse&quot;-napin tulisi muuttua ryhmälistausnäkymässä, kun kyseinen ryhmä
+on valittu aktiiviseksi</li>
+<li>Ryhmään voi lisätä henkilöitä myös muokkaustilan ulkopuolella?</li>
+</ul>
+<h1 id="6-tagien-ja-projektiroolien-hallinnointipaneeli">6. Tagien ja projektiroolien hallinnointipaneeli</h1>
+<ul>
+<li>Tagi ja Tagit-sanat pitäisi muuttaa Avainsanaksi, tällä hetkellä käyttöliittymässä on sen
+osalta epäjohdonmukaisuus</li>
+<li>Rooli ja Roolit-sanat pitäisi muuttaa Projektirooliksi</li>
+<li>Avainsanoja ja projektirooleja tulisi pystyä lisäämään järjestelmään
+niiden hallinnointipaneeleista<ul>
+<li>[?] miksi?</li>
+</ul>
+</li>
+</ul>
+<h1 id="7-yleiset-kommentit">7. Yleiset kommentit</h1>
+<ul>
+<li>Murupolku olisi ehkä tarpeellinen</li>
+<li>Päivämäärän syöttäminen tuskallista tämän hetkisellä toteutuksella<ul>
+<li>[?] Mikä toteutus? &quot;Kai se on tuskallista kun ei ole toteutettu&quot;... pitäisi varmaan..</li>
+</ul>
+</li>
+<li>Kapeissa näkymissä taulukoiden otsikkorivien teksti menee päällekäin</li>
+<li>Tagien pyöristysgrafiikat rivittyvät. Miksi grafiikalla? Miksei display:inline-block +
+background-color + border-radius?<ul>
+<li>[x] Lisätty inline-block... kyllä se on border-radius ja background aina ollut</li>
+</ul>
+</li>
+<li>Välillä käytetään napeissa browser localea, jolloin käyttöliittymä on sekä
+suomea että englantia</li>
+<li>Ohjeet joka sivulle!</li>
+<li>Varmistusdialogit taidon, projektin, ryhmän ja käyttäjän poistamiselle</li>
+<li>Hohto-etusivu, Oma nimi - Profiili ja käyttäjähaun kautta omaan nimeen meno vie kaikki
+samalle etusivulle. Hivenen hämmentävää mikä on esim. &quot;Profiili&quot; painikkeen merkitys,
+jos kerta etusivu on täysin sama.<ul>
+<li>[?] Pysyköön nyt niinkuin on</li>
+</ul>
+</li>
+</ul>
+
+  </body>
+</html>
