@@ -7,7 +7,7 @@ project: 'Henkilöstön osaamisen hallinnan työkalu'
 document: 'Vaatimusmäärittely'
 group: 'Mahtirojekti'
 groupNumber: '4'
-version: 1.3
+version: 1.4
 author:
 - name: Niko Junkala
   studentNumber: 211479
