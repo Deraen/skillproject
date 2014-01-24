@@ -1,0 +1,152 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="vikalista">Vikalista</h1>
+<h2 id="1-rekistr-ityminen-ja-kirjautuminen">1. Rekiströityminen ja kirjautuminen</h2>
+<h3 id="1-1-rekister-ityminen">1.1 Rekisteröityminen</h3>
+<ul>
+<li>varmistusteksti &quot;Rekisteröityminen onnistui&quot; voisi olla tarpeellinen</li>
+</ul>
+<h3 id="1-2-rekister-ityminen-jo-kannasta-l-ytyv-ll-s-hk-postiosoittella">1.2 Rekisteröityminen jo kannasta löytyvällä sähköpostiosoittella</h3>
+<ul>
+<li>virheilmoitusta tulisi muuttaa selkokielisemmäksi</li>
+</ul>
+<h2 id="2-k-ytt-j-profiili">2. Käyttäjä profiili</h2>
+<h3 id="2-1-projektikokemuksen-kokemusarvo">2.1 Projektikokemuksen kokemusarvo</h3>
+<ul>
+<li>tieto ei päivity automaattisesti käyttäjän Taito-välilehdellä kyseisen taidon kokemuskenttään</li>
+</ul>
+<h2 id="3-taidon-profiili">3. Taidon profiili</h2>
+<h3 id="3-1-taidon-1-yhdist-minen-taitoon-2-yhdist-toiseen-toiminnon-avulla-">3.1 Taidon 1 yhdistäminen taitoon 2 (&quot;Yhdistä toiseen&quot; -toiminnon avulla)</h3>
+<ul>
+<li>yhdistämistapahtumasta tulisi jäädä lokimerkintä järjestelmälokiin</li>
+</ul>
+<h2 id="4-ryhm-t">4. Ryhmät</h2>
+<h3 id="4-1-ryhm-n-muokkaaminen-kun-se-on-valittu-ryhm-listauksesta-aktiiviseksi-valitse-napilla">4.1 Ryhmän muokkaaminen, kun se on valittu ryhmälistauksesta aktiiviseksi &quot;Valitse&quot;-napilla</h3>
+<ul>
+<li>ylänavigointipalkin ostoskorinäkymässä käyttäjien lukumäärä ei päivity käyttäjiä lisättäessä tai poistettaessa ennenkuin muokkaaminen on lopetettu ja ryhmä valittu uudelleen</li>
+</ul>
+<h2 id="5-yleiset-kommentit-havainnot">5. Yleiset kommentit / havainnot</h2>
+<h3 id="5-1-selaimen-back-toiminnallisuuden-k-ytt-kun-ollaan-muokkaa-tilassa-profiilin-taidon-projektin-tai-ryhm-n-muokkaaminen-">5.1 Selaimen back-toiminnallisuuden käyttö, kun ollaan Muokkaa-tilassa (profiilin, taidon, projektin tai ryhmän muokkaaminen)</h3>
+<ul>
+<li>Profiilin, taidon ja projektin tapauksessa toimii virheellisesti tilanteessa, jossa aktiivinen välilehti on Perustiedot/Kuvaus<ul>
+<li>tässä tapauksessa back-toiminto ei vie Perustiedot/Kuvaus -näkymään vaan edelliseen välilehteen</li>
+<li>vaiheet uudelleentoteuttamiseen: klikataan profiiliin &gt; klikataan Taidot-välilehteen &gt; klikataan Perustiedot-välilehteen &gt; klikataan Muokkaa &gt; klikataan back &gt; lopputuloksena poistutaan muokkaustilasta ja aktiivinen näkymä on Taidot-välilehti</li>
+</ul>
+</li>
+<li>Ryhmän sivulla back-toiminto vie aina ryhmän Jäsenet-välilehteen riippumatta Muokkaa-tilan aikana aktiivisena olevasta välilehdestä</li>
+</ul>
+
+  </body>
+</html>
