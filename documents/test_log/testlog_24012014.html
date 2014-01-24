@@ -1,0 +1,486 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="testausloki-24-01-2014">Testausloki 24.01.2014</h1>
+<p>Heroku-versio: Thu Jan 23 2014 23:08:19 GMT+0200 (EET) (v0.1-113-8368a7b)</p>
+<p>Näytön koko: 23&quot;, Resoluutio: 1920x1080, Selain: Google Chrome versio 31.0.1650.63 m</p>
+<h2 id="1-rekistr-ityminen-ja-kirjautuminen">1. Rekiströityminen ja kirjautuminen</h2>
+<h3 id="1-1-rekister-ityminen">1.1 Rekisteröityminen</h3>
+<ul>
+<li>onnistui, mutta varmistusteksti &quot;Rekisteröityminen onnistui&quot; voisi olla tarpeellinen</li>
+</ul>
+<h3 id="1-2-rekister-ityminen-jo-kannasta-l-ytyv-ll-s-hk-postiosoittella">1.2 Rekisteröityminen jo kannasta löytyvällä sähköpostiosoittella</h3>
+<ul>
+<li>rekisteröityminen evätty, kuten pitääkin</li>
+<li>virheilmoitusta tulisi muuttaa vieläkin selkokielisemmäksi <a href="test_pics/rekisteroityminen_160114.PNG">kuva</a></li>
+</ul>
+<h3 id="1-3-kirjautuminen-v-r-ll-salasanalla">1.3 Kirjautuminen väärällä salasanalla</h3>
+<ul>
+<li>pääsy evätty, kuten pitääkin</li>
+</ul>
+<h3 id="1-4-kirjautuminen-oikealla-salasanalla">1.4 Kirjautuminen oikealla salasanalla</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="1-5-salasanan-palautus">1.5 Salasanan palautus</h3>
+<ul>
+<li>onnistui<ul>
+<li>aiemmin ilmennyttä virhettä (testausloki 09.01.2014) ei pystytty uudelleentoteuttaa</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-6-rekister-ityminen-j-tt-m-ll-kaikki-kent-t-tyhjiksi">1.6 Rekisteröityminen jättämällä kaikki kentät tyhjiksi</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="1-7-salasanan-palautus-osoitteeseen-joka-ei-ole-rekister-itynyt-j-rjestelm-n">1.7 Salasanan palautus osoitteeseen, joka ei ole rekisteröitynyt järjestelmään</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h2 id="2-henkil-n-profiilisivu">2. Henkilön profiilisivu</h2>
+<h3 id="2-1-oman-nimen-kuvan-tittelin-syntym-ajan-ja-kuvauksen-muokkaaminen">2.1 Oman nimen, kuvan, tittelin, syntymäajan ja kuvauksen muokkaaminen</h3>
+<ul>
+<li>nimen muokkaaminen onnistui</li>
+<li>oman kuvan lisääminen levyltä onnistui</li>
+<li>oman kuvan lisääminen URL-linkillä onnistui</li>
+<li>tittelin muokkaaminen onnistui</li>
+<li>syntymäajan muokkaaminen onnistui</li>
+<li>kuvauksen muokkaaminen onnistui</li>
+</ul>
+<h3 id="2-2-taidon-lis-minen-itselle-profiilisivulta">2.2 Taidon lisääminen itselle profiilisivulta</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-3-taidon-arvojen-muokkaaminen-virheellisill-sy-tteill-">2.3 Taidon arvojen muokkaaminen virheellisillä syötteillä</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-4-taidon-arvojen-muokkaaminen-oikeellisilla-sy-tteill-">2.4 Taidon arvojen muokkaaminen oikeellisilla syötteillä</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-5-taidon-poistaminen-profiilisivulta">2.5 Taidon poistaminen profiilisivulta</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-6-kerran-poistetun-taidon-lis-minen-uudestaan-profiiliin-profiilisivulta">2.6 Kerran poistetun taidon lisääminen uudestaan profiiliin profiilisivulta</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-7-yhden-tai-useamman-taidon-tilaston-kym-osaamisen-kiinnostuksen-tai-kokemuksen-mukaan">2.7 Yhden tai useamman taidon tilastonäkymä osaamisen, kiinnostuksen tai kokemuksen mukaan</h3>
+<ul>
+<li>onnistui, kuvaajat näyttivät datan oikein kaikissa tilanteissa (yksi tai useampi taito kerrallaan)</li>
+</ul>
+<h3 id="2-8-projektin-lis-minen-itselle-profiilisivulta">2.8 Projektin lisääminen itselle profiilisivulta</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-9-projektiroolin-lis-minen-ja-poistaminen">2.9 Projektiroolin lisääminen ja poistaminen</h3>
+<ul>
+<li>obbistui</li>
+</ul>
+<h3 id="2-10-projektin-poistaminen-itselt-profiilisivulta">2.10 Projektin poistaminen itseltä profiilisivulta</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-11-projektikokemuksen-lis-minen">2.11 Projektikokemuksen lisääminen</h3>
+<ul>
+<li>virhe: onnistui, mutta jättämällä toisen kentän tyhjäksi virheilmoitus on sekakielinen ja sotkee ulkoasua hieman tarpeettomasti</li>
+<li>virhe: saman projektikokemuksen lisääminen kahteen otteeseen aiheuttaa myös ei-selkokielisen virheilmoituksen</li>
+<li>virhe: virheilmoitus ei myöskään katoa, jos ensimmäisen duplikaatin lisäyskerran jälkeen poistaa alkuperäisen kokemuksen ja lisää lisäyskentässä olevan projektikokemuksen<ul>
+<li>vaiheet uudelleentoteuttamiseen: aseta projektiksi Linux Kernel ja taidoksi Englanti ja lisää projektikokemus &gt; yritä lisätä sama kokemus uudelleen &gt; poista alkuperäinen projektikokemus &gt; lisää sama kokemus uudelleen (valmiina valintakentissä)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-12-projektikokemuksen-kuukausikokemusarvon-muokkaaminen-oikeellisilla-arvoilla">2.12 Projektikokemuksen kuukausikokemusarvon muokkaaminen oikeellisilla arvoilla</h3>
+<ul>
+<li>virhe: onnistui, mutta...<ul>
+<li>tieto ei päivity automaattisesti käyttäjän Taito-välilehdellä kyseisen taidon kokemuskenttään</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-13-projektikokemuksen-kuukausikokemusarvon-muokkaaminen-virheellisill-arvoilla">2.13 Projektikokemuksen kuukausikokemusarvon muokkaaminen virheellisillä arvoilla</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-14-projektikokemuksen-poistaminen">2.14 Projektikokemuksen poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-15-ty-kokemuksen-lis-minen-ilman-ty-nantajaa">2.15 Työkokemuksen lisääminen ilman työnantajaa</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-16-ty-kokemuksen-lis-minen-kun-aloitusp-iv-m-r-lopetusp-iv-m-r-">2.16 Työkokemuksen lisääminen, kun aloituspäivämäärä &gt; lopetuspäivämäärä</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-17-ty-kokemuksen-lis-minen-oikeellisilla-sy-tteill-ty-nantaja-pakollinen-aloitusp-iv-m-r-lopetusp-iv-m-r-">2.17 Työkokemuksen lisääminen oikeellisilla syötteillä (työnantaja pakollinen, aloituspäivämäärä &lt;= lopetuspäivämäärä)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-18-ty-kokemuksen-poistaminen">2.18 Työkokemuksen poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-19-tutkinnon-lis-minen-ilman-tutkinnon-nime-">2.19 Tutkinnon lisääminen ilman tutkinnon nimeä</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-20-tutkinnon-lis-minen-oikeellisilla-sy-tteill-nimi-pakollinen-">2.20 Tutkinnon lisääminen oikeellisilla syötteillä (nimi pakollinen)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-21-tutkinnon-poistaminen">2.21 Tutkinnon poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-22-koulutuksen-sertifikaatin-lis-minen-ilman-nime-">2.22 Koulutuksen/sertifikaatin lisääminen ilman nimeä</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="2-23-koulutuksen-sertifikaatin-lis-minen-oikeellisilla-sy-tteill-nimi-pakollinen-">2.23 Koulutuksen/sertifikaatin lisääminen oikeellisilla syötteillä (nimi pakollinen)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-24-koulutuksen-sertifikaatin-poistaminen">2.24 Koulutuksen/sertifikaatin poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-25-profiilikohtaisten-lokimerkint-jen-selausn-kym-">2.25 Profiilikohtaisten lokimerkintöjen selausnäkymä</h3>
+<ul>
+<li>lokimerkinnät toimivat hyvin</li>
+</ul>
+<h3 id="2-26-profiilikohtaisten-lokimerkint-jen-rajaaminen">2.26 Profiilikohtaisten lokimerkintöjen rajaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-27-peruuta-painike-toimivuus-kaikissa-profiiliin-liittyviss-muokkaustilanteissa">2.27 Peruuta-painike toimivuus kaikissa profiiliin liittyvissä muokkaustilanteissa</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-28-cv-n-json-formaatissa-vienti-omasta-profiilista">2.28 CV:n (JSON-formaatissa) vienti omasta profiilista</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="2-29-uloskirjautuminen">2.29 Uloskirjautuminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="3-k-ytt-j-listaus">3. Käyttäjälistaus</h2>
+<h3 id="3-1-k-ytt-jien-rajaaminen">3.1 Käyttäjien rajaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="3-2-k-ytt-j-nime-klikkaamalla-p-st-n-kyseisen-henkil-n-profiiliin">3.2 Käyttäjänimeä klikkaamalla päästään kyseisen henkilön profiiliin</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="4-taitolistaus">4. Taitolistaus</h2>
+<h3 id="4-1-uuden-taidon-lis-minen-j-rjestelm-n-oikeellisilla-sy-tteill-nimi-pakollinen-">4.1 Uuden taidon lisääminen järjestelmään oikeellisilla syötteillä (nimi pakollinen)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="4-2-uuden-taidon-lis-minen-j-rjestelm-n-virheellisill-sy-tteill-ilman-nime-">4.2 Uuden taidon lisääminen järjestelmään virheellisillä syötteillä (ilman nimeä)</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="4-3-taidon-rajaaminen">4.3 Taidon rajaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="4-4-taidon-nime-klikkaamalla-p-st-n-kyseisen-taidon-sivulle">4.4) Taidon nimeä klikkaamalla päästään kyseisen taidon sivulle</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="5-yksitt-isen-taidon-sivu">5. Yksittäisen taidon sivu</h2>
+<h4 id="5-1-taidon-lis-minen-omaan-profiiliin-lis-itselle-napin-avulla">5.1 Taidon lisääminen omaan profiiliin &quot;Lisää itselle&quot;-napin avulla</h4>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="5-2-taidon-nimen-kuvan-tagien-ja-kuvauksen-muokkaaminen">5.2 Taidon nimen, kuvan, tagien ja kuvauksen muokkaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="5-3-taidon-k-ytt-jien-listaus">5.3 Taidon käyttäjien listaus</h3>
+<ul>
+<li>toimii ongelmitta</li>
+</ul>
+<h3 id="5-4-taidon-projektien-listaus">5.4 Taidon projektien listaus</h3>
+<ul>
+<li>toimii ongelmitta</li>
+</ul>
+<h3 id="5-5-taidon-tilastot">5.5 Taidon tilastot</h3>
+<ul>
+<li>toimii ongelmitta</li>
+</ul>
+<h3 id="5-6-taidon-lokimerkinn-t">5.6 Taidon lokimerkinnät</h3>
+<ul>
+<li>toimii ongelmitta</li>
+</ul>
+<h3 id="5-7-taidon-1-yhdist-minen-taitoon-2-taidon-1-n-kym-ss-yhdist-toiseen-toiminnon-avulla-">5.7 Taidon 1 yhdistäminen taitoon 2 (taidon 1 näkymässä &quot;Yhdistä toiseen&quot; -toiminnon avulla)</h3>
+<ul>
+<li>virhe: onnistui, mutta...<ul>
+<li>yhdistämistapahtumasta tulisi jäädä lokimerkintä järjestelmälokiin</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-8-taidon-poistaminen-j-rjestelm-st-">5.8 Taidon poistaminen järjestelmästä</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="6-projektilistaus">6. Projektilistaus</h2>
+<h3 id="6-1-uuden-projektin-lis-minen-oikeellisilla-sy-tteill-nimi-">6.1 Uuden projektin lisääminen oikeellisilla syötteillä (nimi)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="6-2-uuden-projektin-lis-minen-virheellisill-sy-tteill-ilman-nime-">6.2 Uuden projektin lisääminen virheellisillä syötteillä (ilman nimeä)</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="6-3-projektin-rajaaminen">6.3 Projektin rajaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="6-4-projektin-nime-klikkaamalla-p-st-n-kyseisen-projektin-sivulle">6.4 Projektin nimeä klikkaamalla päästään kyseisen projektin sivulle</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="7-yksitt-isen-projektin-sivu">7. Yksittäisen projektin sivu</h2>
+<h3 id="7-1-projektin-nimen-asiakkaan-alkamis-tai-loppumisp-iv-m-r-n-ja-kuvauksen-muokkaaminen">7.1 Projektin nimen, asiakkaan, alkamis- tai loppumispäivämäärän ja kuvauksen muokkaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-2-henkil-n-lis-minen-projektiin">7.2 Henkilön lisääminen projektiin</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-3-henkil-n-poistaminen-projektista">7.3 Henkilön poistaminen projektista</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-4-henkil-n-projektiroolin-muokkaaminen-projektissa">7.4 Henkilön projektiroolin muokkaaminen projektissa</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-5-taidon-lis-minen-projektiin">7.5 Taidon lisääminen projektiin</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-6-taidon-poistaminen-projektista">7.6 Taidon poistaminen projektista</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-7-taidon-kommentin-lis-minen-ja-muokkaaminen-projektissa">7.7 Taidon kommentin lisääminen ja muokkaaminen projektissa</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="7-8-projektin-lokilistaus">7.8 Projektin lokilistaus</h3>
+<ul>
+<li>lokimerkinnät toimivat oikein</li>
+</ul>
+<h2 id="8-ryhm-listaus">8. Ryhmälistaus</h2>
+<h3 id="8-1-uuden-ryhm-n-lis-minen-oikeellisilla-sy-tteill-nimi-pakollinen-">8.1 Uuden ryhmän lisääminen oikeellisilla syötteillä (nimi pakollinen)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="8-2-uuden-ryhm-n-lis-minen-virheellisill-sy-tteill-ilman-nime-">8.2 Uuden ryhmän lisääminen virheellisillä syötteillä (ilman nimeä)</h3>
+<ul>
+<li>epäonnistui, kuten pitikin</li>
+</ul>
+<h3 id="8-3-ryhmien-rajaaminen-listausn-kym-ss-">8.3 Ryhmien rajaaminen listausnäkymässä</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="8-4-ryhm-n-nime-klikkaamalla-p-st-n-kyseisen-ryhm-n-sivulle">8.4 Ryhmän nimeä klikkaamalla päästään kyseisen ryhmän sivulle</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="9-yksitt-isen-ryhm-n-sivu">9. Yksittäisen ryhmän sivu</h2>
+<h3 id="9-1-ryhm-n-nimen-ja-kuvauksen-muokkaaminen">9.1 Ryhmän nimen ja kuvauksen muokkaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="9-2-henkil-n-lis-minen-ryhm-n-muokkaa-tilassa-vanhentunut-testi-">9.2 Henkilön lisääminen ryhmään Muokkaa-tilassa (VANHENTUNUT TESTI)</h3>
+<h3 id="9-3-henkil-n-lis-minen-ryhm-n-kun-ei-olla-muokkaa-tilassa">9.3 Henkilön lisääminen ryhmään, kun ei olla Muokkaa-tilassa</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="9-4-henkil-n-poistaminen-ryhm-st-">9.4 Henkilön poistaminen ryhmästä</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="9-5-ryhm-n-tilastot">9.5 Ryhmän tilastot</h3>
+<ul>
+<li>toimii virheettömästi</li>
+</ul>
+<h3 id="9-6-ryhm-n-lokimerkinn-t">9.6 Ryhmän lokimerkinnät</h3>
+<ul>
+<li>toimii virheettömästi</li>
+</ul>
+<h3 id="9-7-ryhm-n-poistaminen">9.7 Ryhmän poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="10-j-rjestelm-loki">10. Järjestelmäloki</h2>
+<h3 id="10-1-lokin-rajaaminen">10.1 Lokin rajaaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="10-2-lokiviestilistaus">10.2 Lokiviestilistaus</h3>
+<ul>
+<li>UserGroup-viestit eivät näy tarpeeksi selkokielisenä</li>
+</ul>
+<h2 id="11-avainsanojen-ja-projektiroolien-hallinta">11. Avainsanojen ja projektiroolien hallinta</h2>
+<h3 id="11-1-avainsanojen-lis-minen">11.1 Avainsanojen lisääminen</h3>
+<ul>
+<li>onnistuu taitoa lisättäessä tai muokattaessa</li>
+</ul>
+<h3 id="11-2-projektiroolin-lis-minen">11.2 Projektiroolin lisääminen</h3>
+<ul>
+<li>onnistuu projektia lisättäessä järjestelmään tai omaan profiiliin</li>
+</ul>
+<h3 id="11-3-avainsanan-ja-tai-projektiroolin-poistaminen">11.3 Avainsanan ja/tai projektiroolin poistaminen</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="11-4-valitun-tagin-yhdist-minen-haluttuun-tagiin-yhdist-valitut-t-h-n-nappi-">11.4 Valitun tagin yhdistäminen haluttuun tagiin (Yhdistä valitut tähän -nappi)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h3 id="11-5-valitun-projektiroolin-yhdist-minen-haluttuun-projektirooliin-yhdist-valitut-t-h-n-nappi-">11.5 Valitun projektiroolin yhdistäminen haluttuun projektirooliin (yhdistä valitut tähän -nappi)</h3>
+<ul>
+<li>onnistui</li>
+</ul>
+<h2 id="12-yleiset-kommentit-havainnot">12. Yleiset kommentit / havainnot</h2>
+<h3 id="12-1-taulukkolistaukset">12.1 Taulukkolistaukset</h3>
+<ul>
+<li>virhe: taulukoiden sortaaminen onnistuu, mutta lukuarvoja sisältävien sarakkeiden sortausikoni on väärinpäin</li>
+</ul>
+<h3 id="12-2-selaimen-back-toiminnallisuuden-k-ytt-kun-ollaan-muokkaa-tilassa-profiilin-taidon-projektin-tai-ryhm-n-muokkaaminen-">12.2 Selaimen back-toiminnallisuuden käyttö, kun ollaan Muokkaa-tilassa (profiilin, taidon, projektin tai ryhmän muokkaaminen)</h3>
+<ul>
+<li>virhe: Profiilin, taidon ja projektin tapauksessa toimii virheellisesti tilanteessa, jossa aktiivinen välilehti on Perustiedot/Kuvaus<ul>
+<li>tässä tapauksessa back-toiminto ei vie Perustiedot/Kuvaus -näkymään vaan edelliseen välilehteen </li>
+<li>vaiheet uudelleentoteuttamiseen: klikataan profiiliin &gt; klikataan Taidot-välilehteen &gt; klikataan Perustiedot-välilehteen &gt; klikataan Muokkaa &gt; klikataan back &gt; lopputuloksena poistutaan muokkaustilasta ja aktiivinen näkymä on Taidot-välilehti</li>
+</ul>
+</li>
+<li>virhe: Ryhmän sivulla back-toiminto vie aina ryhmän Jäsenet-välilehteen riippumatta Muokkaa-tilan aikana aktiivisena olevasta välilehdestä</li>
+</ul>
+<h3 id="12-3-yl-navigointipalkin-aktiivisen-ryhm-n-ostoskori-j-senten-lukum-r-ei-p-ivity-teht-ess-muutoksia-ryhm-n-osallistujalistaan-ryhm-n-muokkaustilassa">12.3 Ylänavigointipalkin aktiivisen ryhmän (ostoskori) jäsenten lukumäärä ei päivity tehtäessä muutoksia ryhmän osallistujalistaan ryhmän muokkaustilassa</h3>
+<ul>
+<li>virhe</li>
+</ul>
+
+  </body>
+</html>
