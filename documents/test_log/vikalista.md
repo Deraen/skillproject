@@ -22,15 +22,9 @@
 - yhdistämistapahtumasta tulisi jäädä lokimerkintä järjestelmälokiin
 
 
-##4. Ryhmät
+##4. Yleiset kommentit / havainnot
 
-###4.1 Ryhmän muokkaaminen, kun se on valittu ryhmälistauksesta aktiiviseksi "Valitse"-napilla
-- ylänavigointipalkin ostoskorinäkymässä käyttäjien lukumäärä ei päivity käyttäjiä lisättäessä tai poistettaessa ennenkuin muokkaaminen on lopetettu ja ryhmä valittu uudelleen
-
-
-##5. Yleiset kommentit / havainnot
-
-###5.1 Selaimen back-toiminnallisuuden käyttö, kun ollaan Muokkaa-tilassa (profiilin, taidon, projektin tai ryhmän muokkaaminen)
+###4.1 Selaimen back-toiminnallisuuden käyttö, kun ollaan Muokkaa-tilassa (profiilin, taidon, projektin tai ryhmän muokkaaminen)
 - Profiilin, taidon ja projektin tapauksessa toimii virheellisesti tilanteessa, jossa aktiivinen välilehti on Perustiedot/Kuvaus
   - tässä tapauksessa back-toiminto ei vie Perustiedot/Kuvaus -näkymään vaan edelliseen välilehteen
   - vaiheet uudelleentoteuttamiseen: klikataan profiiliin > klikataan Taidot-välilehteen > klikataan Perustiedot-välilehteen > klikataan Muokkaa > klikataan back > lopputuloksena poistutaan muokkaustilasta ja aktiivinen näkymä on Taidot-välilehti
