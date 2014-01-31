@@ -10,56 +10,116 @@ Tuote toimii websovelluksena ja sitä ei liitetä asiakasyrityksen muihin järje
 
 ## Kolmannen osapuolen komponentit ja lisenssit
 
-### express
+### Backend
+
+#### express
 * versio 3.4.8
 * lisenssi "MIT"
 
-### mongoose
+#### mongoose
 * versio 3.8.4
 * lisenssi "GNU GPL v.2"
 
-### async
+#### async
 * versio 0.2.9
 * lisenssi "MIT"
 
-### lodash
+#### lodash
 * versio 2.4.1
 * lisenssi "MIT"
 
-### newrelic
+#### newrelic
 * versio 1.3.0
 * lisenssi osoitteessa https://raw2.github.com/newrelic/node-newrelic/master/LICENSE
 
-### random-lodash-mixins
+#### random-lodash-mixins
 * versio 0.0.4
 * lisenssi "MIT"
 
-### st
+#### st
 * versio 0.2.3
 * lisenssi "BSD"
 
-### node-schedule
+#### node-schedule
 * versio 0.1.13
 * lisenssi "MIT"
 
-### campaign
+#### campaign
 * versio 1.2.1
 * lisenssi "MIT"
 
-### nodemailer
+#### nodemailer
 * versio 0.6.0
 * lisenssi "MIT"
 
-### moment
+#### moment
 * versio 2.5.1
 * lisenssi "MIT"
 
-### gridfs-stream
+#### gridfs-stream
 * versio 0.4.1
 * lisenssi "MIT"
 
-### connect-busboy
+#### connect-busboy
 * versio 0.0.1
+* lisenssi "MIT"
+
+### Frontend
+
+#### angular
+* versio 1.2.9
+* lisenssi "MIT"
+
+#### angular-cookies
+* versio 1.2.9
+* lisenssi "MIT"
+
+#### moment
+* versio 2.5.1
+* lisenssi "MIT"
+
+#### lodash
+* versio 2.4.1
+* lisenssi "MIT"
+
+#### angular-ui-router
+* versio 0.2.7
+* lisenssi "MIT"
+
+#### random-lodash-mixins
+* versio 0.0.4
+* lisenssi "MIT"
+
+#### bootstrap
+* versio 3.0.3
+* lisenssi "MIT"
+
+#### angular-xeditable
+* versio 0.1.8
+* lisenssi "MIT"
+
+#### angular-i18n
+* versio 1.2.9
+* lisenssi "MIT"
+
+#### selectize
+* versio 0.8.5
+* lisenssi "Apache License v2.0"
+
+#### angular-bootstrap
+* versio 0.10.0
+* lisenssi "MIT"
+
+#### flot
+* versio 0.8.2
+* lisenssi "MIT"
+
+#### ng-file-upload
+* versio 1.2.5
+* lisenssi "MIT"
+
+#### autofill-directive
+* versio ~2.0.0
 * lisenssi "MIT"
 
 ## Rajoitteet
