@@ -14,11 +14,11 @@
 
 | Document | Version | Pages |
 | ---------- | ------ | --------- |
-| Projektisuunnitelma | 1.3 | 15 |
-| Vaatimusmäärittely | 1.4 | 20 |
-| Testausraportti | 1.0 | 8 |
-| Ylläpitodokumentti | 1.0 | 13 |
-| Loppudokumentti | 1.0 | |
+| Project plan | 1.3 | 15 |
+| Requirements spesification | 1.4 | 20 |
+| Test report | 1.0 | 8 |
+| Maintenance Operational Guide | 1.0 | 13 |
+| End document | 1.0 | |
 
 ## Weekly working hours
 | Week | Sum | 
