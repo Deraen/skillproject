@@ -139,3 +139,11 @@ lista dokkareista. /FIXME
 ## IPR
 Tuotteen kaikki oikeudet jäävät molemmille osapuolille, asiakasyritykselle sekä kehittäjille. Molemmat osapuolet saavat jatkokehittää palvelua haluammaan tavalla. Oikeudet on määritelty tarkemmin kehitysryhmän ja asiakasyrityksen välisessä sopimuksessa.
 
+## Koodi
+
+| Missä | Määrä |
+| ----- | ----- |
+| Backend | 3078 |
+| Frontend | 2779 |
+| Template | 1455 |
+| Yhteensä | 7312 |
