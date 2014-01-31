@@ -7,7 +7,7 @@
 | Project | Skillproject |
 | Client | Gofore Oy |
 | Group size | 5 |
-| Project status | Valmistunut ajoissa, toimitus asiakkaalle sovittu |
+| Project status | Finished |
 | Development model | Simplified Kanban |
 | Development technique | JavaScript |
 | Git revisions | 614 |
