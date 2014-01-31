@@ -53,11 +53,16 @@
 | 2014-4 | 91,5 |
 | 2013-5 | 40 |
 
+FIXME lisää kuva hours_by_week.svg
+
 ## Summary of working hours
 |       | MEET | OTH | TEA | IMP | DOC | DES | TEST | ALL |
 | ----- | ---- | --- | --- | --- | --- | --- | ---- | --- |
 | Hours | 271 | 43,75 | 173 | 426,75 | 130 | 5,5 | 36,5 | 1086,5 |
 | %     | 24,94 | 4,03 | 15,92 | 39,28 | 11,97 | 0,51 | 3,36 | 100,00 |
 
+FIXME lisää kuva hours_by_type.svg
 
 ## Code lines
+
+FIXME lisää kuva stats.svg
