@@ -23,5 +23,9 @@
 ## Viikkotyötunnit
 
 ## Työtuntien yhteenveto
+MEET	OTH	TEA	IMP	DOC	DES	TEST	ALL
+271	43,75	173	426,75	119	5,5	36,5	1075,5
+25,20	4,07	16,09	39,68	11,06	0,51	3,39	100,00
+
 
 ## Koodirivit
