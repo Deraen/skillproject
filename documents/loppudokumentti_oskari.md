@@ -141,6 +141,7 @@ Tuotteen kaikki oikeudet jäävät molemmille osapuolille, asiakasyritykselle se
 
 
 # Tilastot
+| ----------- | ------------ |
 | Ryhmän nimi | Mahtirojekti |
 | Projektin nimi | Skillproject |
 | Asiakas | Gofore Oy |
