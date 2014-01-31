@@ -8,7 +8,7 @@
 | Client | Gofore Oy |
 | Group size | 5 |
 | Project status | Valmistunut ajoissa, toimitus asiakkaalle sovittu |
-| Development model | Simplyfied Kanban |
+| Development model | Simplified Kanban |
 | Development technique | JavaScript |
 | Git revisions | 614 |
 
