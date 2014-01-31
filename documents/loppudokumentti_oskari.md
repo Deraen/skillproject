@@ -40,7 +40,7 @@ Tuote toimii websovelluksena ja sitä ei liitetä asiakasyrityksen muihin järje
 
 ### node-schedule
 * versio 0.1.13
-* lisenssi osoitteessa https://github.com/mattpat/node-schedule#license
+* lisenssi "MIT"
 
 ### campaign
 * versio 1.2.1
