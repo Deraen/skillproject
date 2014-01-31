@@ -138,3 +138,24 @@ lista dokkareista. /FIXME
 
 ## IPR
 Tuotteen kaikki oikeudet jäävät molemmille osapuolille, asiakasyritykselle sekä kehittäjille. Molemmat osapuolet saavat jatkokehittää palvelua haluammaan tavalla. Oikeudet on määritelty tarkemmin kehitysryhmän ja asiakasyrityksen välisessä sopimuksessa.
+
+
+# Tilastot
+| Ryhmän nimi | Mahtirojekti |
+| Projektin nimi | Skillproject |
+| Asiakas | Gofore Oy |
+| Ryhmän koko | 5 |
+| Projektin tila | Valmistunut ajoissa, toimitus asiakkaalle sovittu |
+| Toteutustekniikka | JavaScript |
+| Kehitysmalli | Kanban |
+
+| Dokumentti | Versio | Sivumäärä |
+| ---------- | ------ | --------- |
+| Projektisuunnitelma | 1.3 | 15 |
+| Vaatimusmäärittely | 1.4 | 20 |
+| Testausraportti | 1.0 | 8 |
+| Ylläpitodokumentti | 1.0 | |
+| Loppudokumentti | 1.0 | |
+
+
+
