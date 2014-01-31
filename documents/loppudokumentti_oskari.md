@@ -120,7 +120,7 @@ Tuote toimii websovelluksena ja sitä ei liitetä asiakasyrityksen muihin järje
 
 #### autofill-directive
 * versio ~2.0.0
-* lisenssi "MIT"
+* lisenssi -
 
 ## Rajoitteet
 
