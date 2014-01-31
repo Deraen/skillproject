@@ -1,4 +1,4 @@
-# Tilastot
+# Statistics
 
 ##
 |             |              |
@@ -20,8 +20,8 @@
 | Ylläpitodokumentti | 1.0 | 13 |
 | Loppudokumentti | 1.0 | |
 
-## Viikkotyötunnit
-| Viikko | Yhteensä | 
+## Weekly working hours
+| Week | Sum | 
 | ------ | -------- |
 | 2013-35 | 10 |
 | 2013-36 | 18 |
@@ -33,6 +33,9 @@
 | 2013-42 | 58,5 |
 | 2013-43 | 40,5 |
 | 2013-44 | 48,5 |
+
+| Week | Sum |
+| ---- | --- |
 | 2013-45 | 69,9 |
 | 2013-46 | 52,5 |
 | 2013-47 | 40 |
@@ -48,11 +51,11 @@
 | 2013-5 | 40 |
 
 
-## Työtuntien yhteenveto
+## Summary of working hours
 |       | MEET | OTH | TEA | IMP | DOC | DES | TEST | ALL |
 | ----- | ---- | --- | --- | --- | --- | --- | ---- | --- |
 | Hours | 271 | 43,75 | 173 | 426,75 | 130 | 5,5 | 36,5 | 1086,5 |
 | %     | 24,94 | 4,03 | 15,92 | 39,28 | 11,97 | 0,51 | 3,36 | 100,00 |
 
 
-## Koodirivit
+## Code lines
