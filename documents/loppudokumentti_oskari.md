@@ -119,7 +119,7 @@ Tuote toimii websovelluksena ja sitä ei liitetä asiakasyrityksen muihin järje
 * lisenssi "MIT"
 
 #### autofill-directive
-* versio ~2.0.0
+* versio 2.0.0
 * lisenssi -
 
 ## Rajoitteet
@@ -130,11 +130,11 @@ ei oleeeee /FIXME?
 
 Toimitettava tuote on webpalvelun lähdekoodi ja sen ylläpitodokumentaatio. Tuotteen lähdekoodi toimitetaan asiakkaalle Github-versiohallinnan kautta. Versiohallinta sisältää kaikki tarvittavat tiedostot tuotteen käyttöönottoon. Asiakkaalle tarjotaan myös ylläpito-ohje, joka kertoo tarkemmin myös miten jatkokehittää tuotetta.
 
-### Asiakkaalle tarjottavat dokumentit
+### Asiakkaalle tarjottavat dokumentit ja tiedostot
 - https://github.com/baabelfish/skillproject/
  
 ### Kurssihenkilökunnalle tarjottavat dokumentit
-vitullinen lista dokkareista. /FIXME
+lista dokkareista. /FIXME
 
 ## IPR
 Tuotteen kaikki oikeudet jäävät molemmille osapuolille, asiakasyritykselle sekä kehittäjille. Molemmat osapuolet saavat jatkokehittää palvelua haluammaan tavalla. Oikeudet on määritelty tarkemmin kehitysryhmän ja asiakasyrityksen välisessä sopimuksessa.
