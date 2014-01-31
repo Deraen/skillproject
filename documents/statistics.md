@@ -21,6 +21,32 @@
 | Loppudokumentti | 1.0 | |
 
 ## Viikkotyötunnit
+Viikot	Yhteensä
+Viikko 2013-35	10
+Viikko 2013-36	18
+Viikko 2013-37	38
+Viikko 2013-38	78,5
+Viikko 2013-39	57,5
+Viikko 2013-40	60,6
+Viikko 2013-41	56
+Viikko 2013-42	58,5
+Viikko 2013-43	40,5
+Viikko 2013-44	48,5
+Viikko 2013-45	69,9
+Viikko 2013-46	52,5
+Viikko 2013-47	40
+Viikko 2013-48	52
+Viikko 2013-49	55
+Viikko 2013-50	22,5
+Viikko 2013-51	12,5
+Viikko 2013-52	12
+Viikko 2014-1	13
+Viikko 2014-2	57
+Viikko 2014-3	102,5
+Viikko 2014-4	91,5
+Viikko 2014-5	29
+
+
 
 ## Työtuntien yhteenveto
 |       | MEET | OTH | TEA | IMP | DOC | DES | TEST | ALL |
