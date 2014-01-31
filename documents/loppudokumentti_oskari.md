@@ -141,12 +141,12 @@ Tuotteen kaikki oikeudet jäävät molemmille osapuolille, asiakasyritykselle se
 
 
 # Tilastot
-|             |              | |     |     |
-| ----------- | ------------ | | --- | --- |
-| Ryhmän nimi | Mahtirojekti | |Ryhmän koko | 5 | 
-| Asiakas | Gofore Oy | | Projektin nimi | Skillproject | 
-| Kehitysmalli | Kanban | | Toteutustekniikka | JavaScript |
-| Projektin tila | Valmistunut ajoissa, toimitus asiakkaalle sovittu | 
+|             |              |      |     |
+| ----------- | ------------ | ---: | --- |
+| Ryhmän nimi | Mahtirojekti | Ryhmän koko | 5 | 
+| Asiakas | Gofore Oy | Projektin nimi | Skillproject | 
+| Kehitysmalli | Kanban | Toteutustekniikka | JavaScript |
+| Projektin tila | Valmistunut ajoissa, toimitus asiakkaalle sovittu | | |
 
 | Dokumentti | Versio | Sivumäärä |
 | ---------- | ------ | --------- |
