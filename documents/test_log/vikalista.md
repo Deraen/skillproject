@@ -1,4 +1,4 @@
-#Vikalista
+#Viat ja puutteet
 
 
 ##1. Rekiströityminen ja kirjautuminen
@@ -9,11 +9,15 @@
 ###1.2 Rekisteröityminen jo kannasta löytyvällä sähköpostiosoittella
 - virheilmoitusta tulisi muuttaa selkokielisemmäksi
 
+###1.3 Salasanan palauttaminen
+- joissain tilanteissa sähköpostiin saapunut linkki ohjaa näkymään, jossa ei ole käyttäjäm sähköpostia näkyvissä
+  - tässä tapauksessa salasanan palauttaminen ei onnistu, vaan käyttäjän tulee pyytää uusi linkki sähköpostiin
+
 
 ##2. Käyttäjä profiili
 
 ###2.1 Projektikokemuksen kokemusarvo
-- tieto ei päivity automaattisesti käyttäjän Taito-välilehdellä kyseisen taidon kokemuskenttään
+- tieto ei päivity automaattisesti käyttäjän Taito-välilehdellä kyseisen taidon kokemuskenttään (kokonaiskokemus, EI projektikokemus)
 
 
 ##3. Taidon profiili
@@ -22,13 +26,16 @@
 - yhdistämistapahtumasta tulisi jäädä lokimerkintä järjestelmälokiin
 
 
+##4. Ryhmän profiili
+
+###4.1 Taulukoiden sortaus
+- ei toimi
+
 ##4. Yleiset kommentit / havainnot
 
 ###4.1 Selaimen back-toiminnallisuuden käyttö, kun ollaan Muokkaa-tilassa (profiilin, taidon, projektin tai ryhmän muokkaaminen)
-- Profiilin, taidon ja projektin tapauksessa toimii virheellisesti tilanteessa, jossa aktiivinen välilehti on Perustiedot/Kuvaus
-  - tässä tapauksessa back-toiminto ei vie Perustiedot/Kuvaus -näkymään vaan edelliseen välilehteen
-  - vaiheet uudelleentoteuttamiseen: klikataan profiiliin > klikataan Taidot-välilehteen > klikataan Perustiedot-välilehteen > klikataan Muokkaa > klikataan back > lopputuloksena poistutaan muokkaustilasta ja aktiivinen näkymä on Taidot-välilehti
-- Ryhmän sivulla back-toiminto vie aina ryhmän Jäsenet-välilehteen riippumatta Muokkaa-tilan aikana aktiivisena olevasta välilehdestä
+- ryhmän sivulla back-toiminto vie kaksi askelta taaksepäin
+  - ts. muokkaa-tilassa back-toiminnon käyttäminen lopettaa muokkaustilan, mutta vaihtaa lisäksi aktiivista välilehteä edelliseen aktiivisena olleeseen välilehteen 
 
 
 
